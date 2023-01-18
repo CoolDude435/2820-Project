@@ -6,3 +6,6 @@ rewritten again in an object-oriented programming style. It was a quick
 hack, and it needs a lot of cleanup and refactoring. A perfect code base to teach
 the value of software developement fundamentals!
 <br>
+**HW0**
+Configured Eclipse to use the WARP code and changed argument in run configuration to access OutputFiles folder.
+<br>
