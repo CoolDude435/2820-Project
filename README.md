@@ -9,3 +9,6 @@ the value of software developement fundamentals!
 **HW0**
 Configured Eclipse to use the WARP code and changed argument in run configuration to access OutputFiles folder.
 <br>
+**HW1**
+Instantiated WorkLoadDescription and used collections sort to alphabetically list the flows. Runs with file StressTest.txt. 
+<br>
