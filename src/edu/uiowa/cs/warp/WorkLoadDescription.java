@@ -2,6 +2,7 @@
  * 
  */
 package edu.uiowa.cs.warp;
+import java.util.Collections;
 
 /**
  * Reads the input file, whose name is passed as input parameter to the constructor, and builds a
@@ -57,5 +58,22 @@ public class WorkLoadDescription extends VisualizationObject {
     inputGraphString = gf.readGraphFile(inputFile);
     this.inputFileName = gf.getGraphFileName();
     description = new Description(inputGraphString);
+  }
+  
+  public static void main(String args[]) {
+      //instantiates the WorkLoadDescription
+      WorkLoadDescription script = new WorkLoadDescription("StressTest.txt");
+      //gets ArrayList of flow names that does not include the first line
+      Description flows = script.description;
+      flows.remove(0);
+      //use collections sort to list the flows alphabetically 
+      Collections.sort(flows);
+      //print filename and removes .txt from each flow line
+      System.out.println(script.inputFileName.substring(0,script.inputFileName.length()-4));
+      //prints each flow
+      //this runs until names.size()-1 so that the bracket isn't printed
+      for(int i =0; i< flows.size()-1; i++) {
+          System.out.print("Flow " + (i+1) + ": "+ flows.get(i));
+      }
   }
 }
