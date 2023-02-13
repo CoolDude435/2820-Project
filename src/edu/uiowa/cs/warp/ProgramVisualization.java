@@ -4,29 +4,60 @@
 package edu.uiowa.cs.warp;
 
 /**
+ * The ProgramVisualization class is the visual representation of 
+ * a WARP program for a given graph.
+ * 
  * @author sgoddard
  * @version 1.5
  * 
  */
 public class ProgramVisualization extends VisualizationObject {
-
+	/**
+	 * SOURCE_SUFFIX is the file extension of the source files for ProgramVisualization
+	 */
   private static final String SOURCE_SUFFIX = ".dsl";
+  /**
+   * sourceCode is instructions for table mapping to time slots
+   */
   private ProgramSchedule sourceCode;
+  /**
+   * program is the program that is to be visualized
+   */
   private Program program;
+  /**
+   * deadlinesMet verifies if the deadline is met. Will return true if it is,
+   * false if not.
+   */
   private Boolean deadlinesMet;
-
+  
+  /**
+   * ProgramVisualization will construct a program visualization of 
+   * the warp program.
+   * 
+   * @param warp is Warp that will be visualized
+   */
   ProgramVisualization(WarpInterface warp) {
     super(new FileManager(), warp, SOURCE_SUFFIX);
     this.program = warp.toProgram();
     this.sourceCode = program.getSchedule();
     this.deadlinesMet = warp.deadlinesMet();
   }
-
+  
+  /**
+   * GuiVisualization displays a GUi of the warp visualization
+   */
   @Override
   public GuiVisualization displayVisualization() {
     return new GuiVisualization(createTitle(), createColumnHeader(), createVisualizationData());
   }
-
+  
+  /**
+   * createHeader creates a header for the ProgramVisualization.
+   * The header includes number of faults, the minimum packet reception rate,
+   * and the number of channels.
+   * 
+   * @return returns the header with the included information
+   */
   @Override
   protected Description createHeader() {
     Description header = new Description();
@@ -43,7 +74,13 @@ public class ProgramVisualization extends VisualizationObject {
     header.add(String.format("nChannels: %d\n", program.getNumChannels()));
     return header;
   }
-
+  
+  /**
+   * createFooter creates a footer for ProgramVisualization.
+   * It includes a message for flow deadlines. It returns a warning if they are not met
+   * 
+   * @return returns a footer with a deadline message that fits the case.
+   */
   @Override
   protected Description createFooter() {
     Description footer = new Description();
@@ -58,7 +95,12 @@ public class ProgramVisualization extends VisualizationObject {
     return footer;
   }
 
-
+  /**
+   * createColumnHeader creates an array of column headers that include the 
+   * column names that correspond to time slots.
+   * 
+   * @return an array with column headers for time slots
+   */
   @Override
   protected String[] createColumnHeader() {
     var orderedNodes = program.toWorkLoad().getNodeNamesOrderedAlphabetically();
@@ -70,7 +112,12 @@ public class ProgramVisualization extends VisualizationObject {
     }
     return columnNames;
   }
-
+  
+  /**
+   * createVisualizationData creates a matrix of the visualization data
+   * 
+   * @return returns a matrix of visualization data
+   */
   @Override
   protected String[][] createVisualizationData() {
     if (visualizationData == null) {
