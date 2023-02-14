@@ -8,7 +8,6 @@ import java.util.HashMap;
 
 /**
  * @author sgoddard
- *	TEST TEST
  */
 // Old Scheduler Worked as class Scheduler{} on Feb 17
 public class Program implements SystemAttributes {
@@ -1142,6 +1141,11 @@ public class Program implements SystemAttributes {
     scheduleBuilt = schedule;
   }
 
+  /**
+   * getSchedule returns the ProgramSchedule object that is scheduleBuilt.
+   * 
+   * @return returns a ProgramSchedule object
+   */
   public ProgramSchedule getSchedule() {
     return scheduleBuilt;
   }
@@ -1202,6 +1206,12 @@ public class Program implements SystemAttributes {
     return workLoad.getNumFaults();
   }
 
+  /**
+   * getNodeMapIndex returns a HashMap of ordered node names as Strings and their respective
+   * indices as Integers.
+   * 
+   * @return returns a HashMap of Strings and Integers
+   */
   public HashMap<String, Integer> getNodeMapIndex() {
     var orderedNodes = workLoad.getNodeNamesOrderedAlphabetically(); // create an array of node
                                                                      // names
