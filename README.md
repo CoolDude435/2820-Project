@@ -12,3 +12,9 @@ Configured Eclipse to use the WARP code and changed argument in run configuratio
 **HW1**
 Instantiated WorkLoadDescription and used collections sort to alphabetically list the flows. Runs with file StressTest.txt. 
 <br>
+**HW2**
+Generated JavaDoc for assigned WARP Classes. 
+<br>
+Annalisa Karacay completed Warp.java, ProgramVisualization.java, and VisualizationImplementation.java.
+<br>
+Isaac Griswold completed Flow.java, WorkLoad.java, and Program.java.
