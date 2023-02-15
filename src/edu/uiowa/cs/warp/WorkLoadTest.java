@@ -7,8 +7,13 @@ import org.junit.jupiter.api.Test;
 class WorkLoadTest {
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testAddFlow() {
+		WorkLoad WL = new WorkLoad(0.9, 0.99, "stressTest.txt");
+		WL.addFlow("newFlow");
+		System.out.println(WL.getFlows());
+		
 	}
 
+	
+	
 }
