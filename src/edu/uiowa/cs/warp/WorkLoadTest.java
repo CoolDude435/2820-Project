@@ -37,7 +37,7 @@ class WorkLoadTest {
 	void duplicateNames() {
 		load2.addFlow("dupName");
 		load2.addFlow("dupName");
-		String[] expected = {"F0", "F1", "F2", "F3", "F4", "F5", "dupName"};
+		String[] expected = {"F0", "F1", "F2", "F3", "F4", "F5", "dupName", "dupName"};
 	    System.out.println(load2.getFlowNames());
 		testAddFlowHelper(expected, load2);
 	}
@@ -80,7 +80,7 @@ class WorkLoadTest {
 		getTotalTxHelper(expected, load2, "F0");
 	}
 	
-	// getFlowPriority() and setPriority Tests
+	// getFlowPriority() and setPriority() Tests
 	void testGetFlowPriorityHelper(Integer expected, WorkLoad load, String flowName) {
 		assertEquals(expected, load.getFlowPriority(flowName));
 	}
@@ -111,9 +111,15 @@ class WorkLoadTest {
 		testGetFlowPriorityHelper(expected, load1, "F8");
 	}
 	
+	// getFlowTxAttemptsPerLink() Test
+	void getFlowTxAttemptsPerLinkHelper(Integer expected, WorkLoad load, String flowName) {
+		assertEquals(expected, load.getFlowTxAttemptsPerLink(flowName));
+	}
 	
-	
-	
+	@Test
+	void testGetFlowTxAttemptsPerLink() {
+		System.out.println(load1.getFlowTxAttemptsPerLink("F0"));
+	}
 	
 	
 	
