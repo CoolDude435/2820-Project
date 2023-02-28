@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
 //test
+//test2
 class WorkLoadTest {
 	
 	private static WorkLoad load1;
