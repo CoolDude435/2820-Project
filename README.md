@@ -7,14 +7,26 @@ hack, and it needs a lot of cleanup and refactoring. A perfect code base to teac
 the value of software developement fundamentals!
 <br>
 **HW0**
+<br>
 Configured Eclipse to use the WARP code and changed argument in run configuration to access OutputFiles folder.
 <br>
 **HW1**
+<br>
 Instantiated WorkLoadDescription and used collections sort to alphabetically list the flows. Runs with file StressTest.txt. 
 <br>
 **HW2**
+<br>
 Generated JavaDoc for assigned WARP Classes. 
 <br>
 Annalisa Karacay completed Warp.java, ProgramVisualization.java, and VisualizationImplementation.java.
 <br>
 Isaac Griswold completed Flow.java, WorkLoad.java, and Program.java.
+<br>
+**HW3**
+<br>
+Developed and executed JUnit tests for methods in WorkLoad.java
+<br>
+Isaac Griswold completed JUnit tests for methods a-h
+<br>
+Annalisa Karacay completed JUnit tests for methods i-p
+<br>
