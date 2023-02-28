@@ -10,6 +10,7 @@ import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 
+//test
 
 
 class WorkLoadTest {
@@ -183,7 +184,6 @@ class WorkLoadTest {
 		int[] expectedIndecies = new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 		testGetNodeIndexHelper(names, expectedIndecies, load3);
 		}
-//>>>>>>> 6a4b67d71f4f42a6b14ba4c5484187a8f49ea6f0
 
 	
 	//getNodesInFlow() Test
