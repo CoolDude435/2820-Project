@@ -8,11 +8,13 @@ the value of software developement fundamentals!
 <br>
 **HW0**
 <br>
-Configured Eclipse to use the WARP code and changed argument in run configuration to access OutputFiles folder.
+Configured Eclipse to use the WARP code and changed argument in run configuration to access
+ OutputFiles folder.
 <br>
 **HW1**
 <br>
-Instantiated WorkLoadDescription and used collections sort to alphabetically list the flows. Runs with file StressTest.txt. 
+Instantiated WorkLoadDescription and used collections sort to alphabetically list the flows.
+ Runs with file StressTest.txt. 
 <br>
 **HW2**
 <br>
@@ -30,3 +32,5 @@ Isaac Griswold completed JUnit tests for methods a-h
 <br>
 Annalisa Karacay completed JUnit tests for methods i-p
 <br>
+Fixed minor errors in WARP code such as spelling in comments. Also mixed the formatted print 
+statement in addFlow() method. The %s did not have a string argument to pair with.

@@ -415,7 +415,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   }
 
   /**
-   * getFlowTxAttemptsPerLink get and returns the numTxPerLink of the designated flow.
+   * getFlowTxAttemptsPerLink gets and returns the numTxPerLink of the designated flow.
    * 
    * @param flowName is the String name of the target flow
    * @return returns the transmission attempts per link
