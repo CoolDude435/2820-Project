@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import edu.uiowa.cs.utilities.Utilities;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 import org.junit.Before;
@@ -170,6 +171,50 @@ class WorkLoadTest {
 			getFlowTxAttemptsPerLinkHelper(expected, load1, names[i]);
 		}
 	}
+	
+	
+	// setFlowsInRMorder() Test
+	
+	@Test
+	void testSetFlowsInRModerTorture() {   // set StressTest.txt and make sure that order of each element is right
+		String[] expected = 
+			{"F1", "AF1", "F2", "AF2", "F3", "F4", "AF4", "F5", "AF5", "F6", "F7", "F8", "F9", "F10", "AF10"};
+		load1.setFlowsInRMorder();
+		ArrayList<String> namesRM = load1.getFlowNamesInPriorityOrder();
+		for (int i=0; i<namesRM.size()-1; i++) {
+			assertEquals(expected[i], namesRM.get(i));
+		}
+	}
+	
+	
+	// getNodeNamesOrderedAlphabetically() Test
+	
+	@Test
+	void testGetNodeNamesOrderedAlpha() {
+		String[] expected = {"A", "B", "C", "D", "F", "G", "I", "P", "R", "V", "X"};
+		String[] actual = load3.getNodeNamesOrderedAlphabetically();
+		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testGetNodeNamesOrderedAlpha2() {    // Adds nodes to load3 to test modified flow
+		String[] expected = {"A", "B", "C", "D", "F", "G", "I", "P", "R", "V", "X", "Z"};
+		load3.addNodeToFlow("F0", "Z");
+		String[] actual = load3.getNodeNamesOrderedAlphabetically();
+		assertArrayEquals(expected, actual);
+	}
+	
+	@Test
+	void testGetNodeNamesOrderedAlpha3() {    // Adds additional flow and nodes, also duplicate nodes
+		String[] expected = {"A", "B", "C", "D", "F", "G", "I", "M", "P", "R", "V", "X", "Z"};
+		load3.addFlow("F6");
+		load3.addNodeToFlow("F6", "Z");
+		load3.addNodeToFlow("F6", "M");
+		load3.addNodeToFlow("F0", "M");
+		String[] actual = load3.getNodeNamesOrderedAlphabetically();
+		assertArrayEquals(expected, actual);
+	}
+	
 	
 	
 	//Annalisa's Portion (JUnit tests for methods i-p)
