@@ -17,7 +17,7 @@ class WorkLoadTest {
 	private static WorkLoad load2;
 	private static WorkLoad load3;
 	
-	//Partner Portion
+	// Isaac's Portion (JUnit tests for methods a-h)
 
 	// addFlow() Test
 	void testAddFlowHelper(String[] expected, WorkLoad load) {
@@ -26,25 +26,28 @@ class WorkLoadTest {
 	
 	@Test
 	void testAddFlow() {
-		load1.addFlow("newFlow");
+		// Manually enter the flows in StressTest with the added flow
 		String[] expected = 
 			{"F1", "F5", "F2", "F4", "F3","F6", "F7", "F8", "F9", "F10", "AF1", "AF5", "AF2", "AF4", "AF10", "newFlow"};
+		load1.addFlow("newFlow");
 		testAddFlowHelper(expected, load1);		
 	}
 	
 	@Test
 	void testAddFlowduplicateNames() {
+		// Adding the same name multiple times should not be an issue, but an error message should print to console
+		String[] expected = {"F0", "F1", "F2", "F3", "F4", "F5", "dupName", "dupName"}; 
 		load2.addFlow("dupName");
 		load2.addFlow("dupName");
-		String[] expected = {"F0", "F1", "F2", "F3", "F4", "F5", "dupName", "dupName"};  
 	    //System.out.println(load2.getFlowNames());         used to find "%s" error
 		testAddFlowHelper(expected, load2);
 	}
 	
 	@Test
 	void testAddFlowNull() {
-		load3.addFlow(null);
+		// Testing what happens when the name of the added flow is null
 		String[] expected = {"F0", "F1", "F2", "F3", "F4", "F5", null};
+		load3.addFlow(null);
 		testAddFlowHelper(expected, load3);
 	}
 
@@ -56,23 +59,23 @@ class WorkLoadTest {
 	
 	@Test
 	void testAddNodeToFlow() {
-		load3.addNodeToFlow("F0", "D");
 		String[] expected = {"A", "B", "C", "D"};
+		load3.addNodeToFlow("F0", "D");
 		addNodeHelper(expected, load3, "F0");
 	}
 	
 	@Test
 	void testAddNodeToFlow2() {
-		load2.addNodeToFlow("F0", "A");
-		load2.addNodeToFlow("F0", "A");
 		String[] expected = {"A", "B", "C", "A", "A"};
+		load2.addNodeToFlow("F0", "A");
+		load2.addNodeToFlow("F0", "A");
 		addNodeHelper(expected, load2, "F0");
 	}
 	
 	@Test
 	void testAddNodeToFlowNull() {
-		load3.addNodeToFlow("F0", null);
 		String[] expected = {"A", "B", "C", null};
+		load3.addNodeToFlow("F0", null);
 		addNodeHelper(expected, load3, "F0");
 	}
 	
@@ -98,6 +101,8 @@ class WorkLoadTest {
 	void testGetTotalTxTorture() {      // Tests all five flows in Example3.txt
 		Integer[] expected = {4, 4, 4, 4, 4};
 		String[] names = load3.getFlowNames();
+		// i is used as an index to iterate through the expected values array and the name of string
+		// these values are then passed one by one into the helper function
 		for (int i=0; i<names.length-1; i++) {
 			getTotalTxHelper(expected[i], load3, names[i]);
 		}
@@ -108,6 +113,8 @@ class WorkLoadTest {
 	void testGetFlowPriorityHelper(Integer expected, WorkLoad load, String flowName) {
 		assertEquals(expected, load.getFlowPriority(flowName));
 	}
+	
+	// Combining getter and setter tests into one helper function
 	
 	@Test
 	void testGetFlowPriority() {
@@ -155,13 +162,16 @@ class WorkLoadTest {
 	}
 	
 	@Test
-	void testGetFlowTxAttemptsPerLinkTorture() {
+	void testGetFlowTxAttemptsPerLinkTorture() {     // tests all flows in StressTest.txt
 		Integer expected = 3;
 		String[] names = load1.getFlowNames();
+		// expected is 3 for all flows so no array was used to iterate through
 		for (int i=0; i<names.length-1; i++) {
 			getFlowTxAttemptsPerLinkHelper(expected, load1, names[i]);
 		}
 	}
+	
+	
 	//Annalisa's Portion (JUnit tests for methods i-p)
 	
 	@BeforeEach
