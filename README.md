@@ -34,3 +34,9 @@ Annalisa Karacay completed JUnit tests for methods i-p
 <br>
 Fixed minor errors in WARP code such as spelling in comments. Also mixed the formatted print 
 statement in addFlow() method. The %s did not have a string argument to pair with.
+<br>
+**HW4**
+<br>
+Created UML Lab Diagrams for SchedualableObject.java, WorkLoad.java, and a series of Reliability Java files. 
+<br>
+Created public method and generated code in RelabilityAnalysis.java.
