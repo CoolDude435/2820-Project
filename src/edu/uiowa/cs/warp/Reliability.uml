@@ -7067,6 +7067,15 @@ snk nodes from the instruction string in a program schedule time slot.
               <ownedOperation xmi:id="_DS7HQL1WEe2Ek7-6YsU1Aw" name="getReliabilities">
                 <ownedParameter xmi:id="_DS8VYL1WEe2Ek7-6YsU1Aw" type="_tWxOcL1UEe2Ek7-6YsU1Aw" direction="return"/>
               </ownedOperation>
+              <ownedOperation xmi:id="_kd9UEL3rEe2lE4tWeJL-jQ" name="numTxPerLinkAndTotalTxCost" visibility="public">
+                <ownedParameter xmi:id="_kd9UEb3rEe2lE4tWeJL-jQ" type="_uY8dIL1UEe2Ek7-6YsU1Aw" direction="return"/>
+                <ownedParameter xmi:id="_kd-iML3rEe2lE4tWeJL-jQ" name="flow" type="_tSWogL1UEe2Ek7-6YsU1Aw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_0zSjwL3rEe2lE4tWeJL-jQ" name="ReliabilityAnalysis" visibility="package">
+                <ownedParameter xmi:id="_40H78L3rEe2lE4tWeJL-jQ" type="_tWjzEL1UEe2Ek7-6YsU1Aw" direction="return"/>
+                <ownedParameter xmi:id="_0zTx4L3rEe2lE4tWeJL-jQ" name="e2e" type="_uh8BEL1UEe2Ek7-6YsU1Aw"/>
+                <ownedParameter xmi:id="_0zTx4b3rEe2lE4tWeJL-jQ" name="minPacketReceptionRate" type="_uh8BEL1UEe2Ek7-6YsU1Aw"/>
+              </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Interface" xmi:id="_tWloQL1UEe2Ek7-6YsU1Aw" name="ReliabilityParameters" visibility="package">
               <ownedComment xmi:id="_umi0RL1UEe2Ek7-6YsU1Aw">
