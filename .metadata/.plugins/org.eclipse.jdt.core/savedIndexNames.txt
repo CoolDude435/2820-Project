@@ -1,3 +1,1 @@
-INDEX VERSION 1.131+C:\Users\isaac\OneDrive\Documents\GitHub\cs2820\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
-3935821144.index
+INDEX VERSION 1.131+/Users/annalisakaracay/Documents/GitHub/cs2820/.metadata/.plugins/org.eclipse.jdt.core
