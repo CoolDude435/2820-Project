@@ -41,13 +41,28 @@ import java.util.ArrayList;
  *  *
  */
 public class ReliabilityAnalysis {
+	private boolean onlyNumFaultsConstructor;
+	
+	
+	public ReliabilityAnalysis (Program program) {
+      // TODO Auto-generated constructor stub
+        }
+	
+	public ReliabilityAnalysis (Double e2e, Double minPacketReceptionRate) {
+      onlyNumFaultsConstructor = false;
+		// TODO implement this operation
+      throw new UnsupportedOperationException("not implemented");
+   }
+   
+   public ReliabilityAnalysis (Integer numFaults) {
+      onlyNumFaultsConstructor = true;
+	   // TODO implement this operation
+      throw new UnsupportedOperationException("not implemented");
+   }
+   
    public Boolean verifyReliabilities() {
       // TODO Auto-generated method stub
        return true;
-        }
-   
-   public ReliabilityAnalysis (Program program) {
-      // TODO Auto-generated constructor stub
         }
    
    public ReliabilityTable getReliabilities() {
@@ -55,19 +70,11 @@ public class ReliabilityAnalysis {
       throw new UnsupportedOperationException("not implemented");
    }
    
-   public ArrayList numTxPerLinkAndTotalTxCost(Flow flow) {
+   public ArrayList <Integer> numTxPerLinkAndTotalTxCost(Flow flow) {
       // TODO implement this operation
       throw new UnsupportedOperationException("not implemented");
    }
    
-   public ReliabilityAnalysis (Double e2e, Double minPacketReceptionRate) {
-      // TODO implement this operation
-      throw new UnsupportedOperationException("not implemented");
-   }
    
-   public ReliabilityAnalysis (Integer numFaults) {
-      // TODO implement this operation
-      throw new UnsupportedOperationException("not implemented");
-   }
    
    }
