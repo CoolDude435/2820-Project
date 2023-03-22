@@ -7061,8 +7061,8 @@ snk nodes from the instruction string in a program schedule time slot.
                 <eAnnotations xmi:id="_udJAor1UEe2Ek7-6YsU1Aw" source="http://www.eclipse.org/uml2/2.0.0/UML">
                   <details xmi:id="_udJAo71UEe2Ek7-6YsU1Aw" key="create"/>
                 </eAnnotations>
-                <ownedParameter xmi:id="_udJAob1UEe2Ek7-6YsU1Aw" name="program" type="_tV2ocL1UEe2Ek7-6YsU1Aw"/>
                 <ownedParameter xmi:id="_udJnsL1UEe2Ek7-6YsU1Aw" type="_tWjzEL1UEe2Ek7-6YsU1Aw" direction="return"/>
+                <ownedParameter xmi:id="_udJAob1UEe2Ek7-6YsU1Aw" name="program" type="_tV2ocL1UEe2Ek7-6YsU1Aw"/>
               </ownedOperation>
               <ownedOperation xmi:id="_DS7HQL1WEe2Ek7-6YsU1Aw" name="getReliabilities">
                 <ownedParameter xmi:id="_DS8VYL1WEe2Ek7-6YsU1Aw" type="_tWxOcL1UEe2Ek7-6YsU1Aw" direction="return"/>
@@ -7071,10 +7071,22 @@ snk nodes from the instruction string in a program schedule time slot.
                 <ownedParameter xmi:id="_kd9UEb3rEe2lE4tWeJL-jQ" type="_uY8dIL1UEe2Ek7-6YsU1Aw" direction="return"/>
                 <ownedParameter xmi:id="_kd-iML3rEe2lE4tWeJL-jQ" name="flow" type="_tSWogL1UEe2Ek7-6YsU1Aw"/>
               </ownedOperation>
-              <ownedOperation xmi:id="_0zSjwL3rEe2lE4tWeJL-jQ" name="ReliabilityAnalysis" visibility="package">
+              <ownedOperation xmi:id="_0zSjwL3rEe2lE4tWeJL-jQ" name="ReliabilityAnalysis" visibility="public">
+                <eAnnotations xmi:id="_tsAqcMjgEe2eOaAItNFrdA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_tsAqccjgEe2eOaAItNFrdA" key="create"/>
+                </eAnnotations>
                 <ownedParameter xmi:id="_40H78L3rEe2lE4tWeJL-jQ" type="_tWjzEL1UEe2Ek7-6YsU1Aw" direction="return"/>
                 <ownedParameter xmi:id="_0zTx4L3rEe2lE4tWeJL-jQ" name="e2e" type="_uh8BEL1UEe2Ek7-6YsU1Aw"/>
                 <ownedParameter xmi:id="_0zTx4b3rEe2lE4tWeJL-jQ" name="minPacketReceptionRate" type="_uh8BEL1UEe2Ek7-6YsU1Aw"/>
+              </ownedOperation>
+              <ownedOperation xmi:id="_8e_9oMjgEe2eOaAItNFrdA" name="ReliabilityAnalysis" visibility="public">
+                <eAnnotations xmi:id="_9iYtQMjgEe2eOaAItNFrdA" source="http://www.eclipse.org/uml2/2.0.0/UML">
+                  <details xmi:id="_9iZUUMjgEe2eOaAItNFrdA" key="create"/>
+                </eAnnotations>
+                <ownedParameter xmi:id="_8e_9ocjgEe2eOaAItNFrdA" type="_tWjzEL1UEe2Ek7-6YsU1Aw" direction="return"/>
+                <ownedParameter xmi:id="_8fAksMjgEe2eOaAItNFrdA" name="numFaults">
+                  <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+                </ownedParameter>
               </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Interface" xmi:id="_tWloQL1UEe2Ek7-6YsU1Aw" name="ReliabilityParameters" visibility="package">
@@ -7227,8 +7239,8 @@ the file visualization that is requested in Warp.
                 <eAnnotations xmi:id="_udSKkr1UEe2Ek7-6YsU1Aw" source="http://www.eclipse.org/uml2/2.0.0/UML">
                   <details xmi:id="_udSxoL1UEe2Ek7-6YsU1Aw" key="create"/>
                 </eAnnotations>
-                <ownedParameter xmi:id="_udSKkb1UEe2Ek7-6YsU1Aw" name="warp" type="_tYiJAL1UEe2Ek7-6YsU1Aw"/>
                 <ownedParameter xmi:id="_udSxob1UEe2Ek7-6YsU1Aw" type="_tW1f4L1UEe2Ek7-6YsU1Aw" direction="return"/>
+                <ownedParameter xmi:id="_udSKkb1UEe2Ek7-6YsU1Aw" name="warp" type="_tYiJAL1UEe2Ek7-6YsU1Aw"/>
               </ownedOperation>
             </packagedElement>
             <packagedElement xmi:type="uml:Class" xmi:id="_tW3VEL1UEe2Ek7-6YsU1Aw" name="ReportVisualization">
