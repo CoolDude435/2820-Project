@@ -40,8 +40,25 @@ import java.util.ArrayList;
  * @version 1.5
  *  *
  */
+
 public class ReliabilityAnalysis {
+	//test for correct output (temporary)
+	public static void main(String[] args) {
+		ReliabilityAnalysis test = new ReliabilityAnalysis(0);
+        
+        WorkLoad load = new WorkLoad(.9,.99,"Example2.txt");
+        
+        FlowMap flows = load.getFlows();
+        
+        flows.entrySet().forEach(entry -> {
+            Flow flow = entry.getValue();
+            System.out.println("old: "+ load.getFixedTxPerLinkAndTotalTxCost(flow));
+            System.out.println("new: "+ test.numTxPerLinkAndTotalTxCost(flow));
+        });
+	}
+	
 	private boolean onlyNumFaultsConstructor;
+	int numFaults = 0;
 	
 	
 	public ReliabilityAnalysis (Program program) {
@@ -55,9 +72,10 @@ public class ReliabilityAnalysis {
    }
    
    public ReliabilityAnalysis (Integer numFaults) {
+	   this.numFaults = numFaults;
       onlyNumFaultsConstructor = true;
 	   // TODO implement this operation
-      throw new UnsupportedOperationException("not implemented");
+      //throw new UnsupportedOperationException("not implemented");
    }
    
    public Boolean verifyReliabilities() {
@@ -72,7 +90,31 @@ public class ReliabilityAnalysis {
    
    public ArrayList <Integer> numTxPerLinkAndTotalTxCost(Flow flow) {
       // TODO implement this operation
-      throw new UnsupportedOperationException("not implemented");
+      //throw new UnsupportedOperationException("not implemented");
+	   ArrayList<Integer> returnArrayList = new ArrayList<Integer>();
+      
+	   if(onlyNumFaultsConstructor) {
+    	  var nodesInFlow = flow.nodes;
+    	    var nNodesInFlow = nodesInFlow.size();
+    	    ArrayList<Integer> txArrayList = new ArrayList<Integer>();
+    	    /*
+    	     * Each node will have at most numFaults+1 transmissions. Because we don't know which nodes will
+    	     * send the message over an edge, we give the cost to each node.
+    	     */
+    	    for (int i = 0; i < nNodesInFlow; i++) {
+    	      txArrayList.add(numFaults + 1);
+    	    }
+    	    /*
+    	     * now compute the maximum # of TX, assuming at most numFaults occur on an edge per period, and
+    	     * each edge requires at least one successful TX.
+    	     */
+    	    var numEdgesInFlow = nNodesInFlow - 1;
+    	    var maxFaultsInFlow = numEdgesInFlow * numFaults;
+    	    txArrayList.add(numEdgesInFlow + maxFaultsInFlow);
+    	    
+    	    returnArrayList = txArrayList;
+      }
+	   return returnArrayList;
    }
    
    

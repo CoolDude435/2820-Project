@@ -576,7 +576,8 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
    * @param flow is the flow that is being computed
    * @return returns an ArrayList with the desired information about TX and the nodes
    */
-  private ArrayList<Integer> getFixedTxPerLinkAndTotalTxCost(Flow flow) {
+  //DELETE OR AT LEAST CHANGE BACK TO PRIAVTE!!
+  public ArrayList<Integer> getFixedTxPerLinkAndTotalTxCost(Flow flow) {
     var nodesInFlow = flow.nodes;
     var nNodesInFlow = nodesInFlow.size();
     ArrayList<Integer> txArrayList = new ArrayList<Integer>();
@@ -611,23 +612,24 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   private ArrayList<Integer> numTxAttemptsPerLinkAndTotalTxAttempts(Flow flow, Double e2e, Double M,
       boolean optimizationRequested) {
     var nodesInFlow = flow.nodes;
-    var nNodesInFlow = nodesInFlow.size(); // The last entry will contain the worst-case cost of
-                                           // transmitting E2E in isolation
-    // var nPushes = Array(repeating: 0, count: nNodesInFlow+1);
-    var nPushes = new Integer[nNodesInFlow + 1]; // Array to track nPushes for each node in this
-                                                 // flow (same as nTx per link)
+    
+    // The last entry will contain the worst-case cost of transmitting E2E in isolation
+    var nNodesInFlow = nodesInFlow.size();
+    
+    //var nPushes = Array(repeating: 0, count: nNodesInFlow+1);
+    
+    // Array to track nPushes for each node in this flow (same as nTx per link)
+    var nPushes = new Integer[nNodesInFlow + 1];
+                                                 
     Arrays.fill(nPushes, 0); // initialize to all 0 values
+    
     var nHops = nNodesInFlow - 1;
     // minLinkReliablityNeded is the minimum reliability needed per link in a flow to hit E2E
     // reliability for the flow
-    Double minLinkReliablityNeded = Math.max(e2e, Math.pow(e2e, (1.0 / (double) nHops))); // use max
-                                                                                          // to
-                                                                                          // handle
-                                                                                          // rounding
-                                                                                          // error
-                                                                                          // when
-                                                                                          // e2e ==
-                                                                                          // 1.0
+    
+    //use the max to handle rounding error when e2e == 1.0
+    Double minLinkReliablityNeded = Math.max(e2e, Math.pow(e2e, (1.0 / (double) nHops))); 
+    
     // Now compute reliability of packet reaching each node in the given time slot
     // Start with a 2-D reliability window that is a 2-D matrix of no size
     // each row is a time slot, stating at time 0
@@ -646,106 +648,66 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     // var currentReliabilityRow = (Double[]) reliabilityWindow.get(0).toArray();
     // Want reliabilityWindow[0][0] = 1.0 (i.e., P(packet@FlowSrc) = 1
     // but I din't want to mess with the newReliablityRow vector I use below
-    // So, we initialize this first entry to 1.0, wich is reliabilityWindow[0][0]
+    // So, we initialize this first entry to 1.0, which is reliabilityWindow[0][0]
     // We will then update this row with computed values for each node and put it
     // back in the matrix
     currentReliabilityRow[0] = 1.0; // initialize (i.e., P(packet@FlowSrc) = 1
-    Double e2eReliabilityState = currentReliabilityRow[nNodesInFlow - 1]; // the analysis will end
-                                                                          // when the 2e2
-                                                                          // reliability metrix is
-                                                                          // met, initially the
-                                                                          // state is not met and
-                                                                          // will be 0 with this
-                                                                          // statement
+    
+    //the analysis will end when the 2e2 reliability matrix is met, 
+    //initially the state is not met and will be 0 with this statement
+    Double e2eReliabilityState = currentReliabilityRow[nNodesInFlow - 1]; 
+    
     var timeSlot = 0; // start time at 0
-    while (e2eReliabilityState < e2e) { // change to while and increment increment timeSlot becuase
-                                        // we don't know how long this schedule window will last
+    
+    // change to while and increment increment timeSlot because
+    // we don't know how long this schedule window will last
+    while (e2eReliabilityState < e2e) {
+    	
       var prevReliabilityRow = currentReliabilityRow;
-      currentReliabilityRow = newReliabilityRow.toArray(new Double[newReliabilityRow.size()]); // would
-                                                                                               // be
-                                                                                               // reliabilityWindow[timeSlot]
-                                                                                               // if
-                                                                                               // working
-                                                                                               // through
-                                                                                               // a
-                                                                                               // schedule
+      
+      //would be reliabilityWindow[timeSlot] if working through a schedule
+      currentReliabilityRow = newReliabilityRow.toArray(new Double[newReliabilityRow.size()]); 
+      
       // Now use each flow:src->sink to update reliability computations
       // this is the update formula for the state probabilities
       // nextState = (1 - M) * prevState + M*NextHighestFlowState
       // use MinLQ for M in above equation
       // NewSinkNodeState = (1-M)*PrevSnkNodeState + M*PrevSrcNodeState
 
-      for (int nodeIndex = 0; nodeIndex < (nNodesInFlow - 1); nodeIndex++) { // loop through each
-                                                                             // node in the flow and
-                                                                             // update the sates for
-                                                                             // each link (i.e.,
-                                                                             // sink->src pair)
+      for (int nodeIndex = 0; nodeIndex < (nNodesInFlow - 1); nodeIndex++) { 
+    	  // loop through each node in the flow and update the sates for
+    	  // each link (i.e.,sink-> src pair)                                                                                                                                            
         var flowSrcNodeindex = nodeIndex;
         var flowSnkNodeindex = nodeIndex + 1;
         var prevSrcNodeState = prevReliabilityRow[flowSrcNodeindex];
         var prevSnkNodeState = prevReliabilityRow[flowSnkNodeindex];
         Double nextSnkState;
-        if ((prevSnkNodeState < minLinkReliablityNeded) && prevSrcNodeState > 0) { // do a push
-                                                                                   // until PrevSnk
-                                                                                   // state > e2e to
-                                                                                   // ensure next
-                                                                                   // node reaches
-                                                                                   // target E2E BUT
-                                                                                   // skip if no
-                                                                                   // chance of
-                                                                                   // success (i.e.,
-                                                                                   // source doesn't
-                                                                                   // have packet)
-          nextSnkState = ((1.0 - M) * prevSnkNodeState) + (M * prevSrcNodeState); // need to
-                                                                                  // continue
-                                                                                  // attempting to
-                                                                                  // Tx, so update
-                                                                                  // current state
-          nPushes[nodeIndex] += 1; // increment the number of pushes for for this node to snk node
+        
+        // do a push until PrevSnk state > e2e to ensure next node reaches target E2E BUT
+    	// skip if no chance of success (i.e., source doesn't have packet)
+        if ((prevSnkNodeState < minLinkReliablityNeded) && prevSrcNodeState > 0) { 
+          //need to continue attempting to Tx, so update current state
+          nextSnkState = ((1.0 - M) * prevSnkNodeState) + (M * prevSrcNodeState); 
+          // increment the number of pushes for for this node to snk node
+          nPushes[nodeIndex] += 1;
         } else {
-          nextSnkState = prevSnkNodeState; // snkNode has met its reliability. Thus move on to the
-                                           // next node and record the reliability met
+          // snkNode has met its reliability. 
+          //Thus move on to the next node and record the reliability met
+          nextSnkState = prevSnkNodeState; 
         }
-
-        if (currentReliabilityRow[flowSrcNodeindex] < prevReliabilityRow[flowSrcNodeindex]) { // probabilities
-                                                                                              // are
-                                                                                              // non-decreasing
-                                                                                              // so
-                                                                                              // update
-                                                                                              // if
-                                                                                              // we
-                                                                                              // were
-                                                                                              // higher
-                                                                                              // by
-                                                                                              // carring
-                                                                                              // old
-                                                                                              // value
-                                                                                              // forward
-          currentReliabilityRow[flowSrcNodeindex] = prevReliabilityRow[flowSrcNodeindex]; // carry
-                                                                                          // forward
-                                                                                          // the
-                                                                                          // previous
-                                                                                          // state
-                                                                                          // for the
-                                                                                          // src
-                                                                                          // node,
-                                                                                          // which
-                                                                                          // may get
-                                                                                          // over
-                                                                                          // written
-                                                                                          // later
-                                                                                          // by
-                                                                                          // another
-                                                                                          // instruction
-                                                                                          // in this
-                                                                                          // slot
+        
+        //probabilities are non-decreasing so update if we were higher by carrying old value forward
+        if (currentReliabilityRow[flowSrcNodeindex] < prevReliabilityRow[flowSrcNodeindex]) {
+          //carry forward the previous state for the src node, which may get over written later 
+          //by another instruct in this slot.
+          currentReliabilityRow[flowSrcNodeindex] = prevReliabilityRow[flowSrcNodeindex]; 
         }
         currentReliabilityRow[flowSnkNodeindex] = nextSnkState;
       }
 
       e2eReliabilityState = currentReliabilityRow[nNodesInFlow - 1];
       Vector<Double> currentReliabilityVector = new Vector<Double>();
-      // convert the row to a vector so we can add it to the reliability window
+      //convert the row to a vector so we can add it to the reliability window
       Collections.addAll(currentReliabilityVector, currentReliabilityRow);
       if (timeSlot < reliabilityWindow.size()) {
         reliabilityWindow.set(timeSlot, (currentReliabilityVector));
@@ -755,9 +717,10 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
       timeSlot += 1; // increase to next time slot
     }
     var size = reliabilityWindow.size();
-    nPushes[nNodesInFlow] = size; // The total (worst-case) cost to transmit E2E in isolation with
-                                  // specified reliability target is the number of rows in the
-                                  // reliabilityWindow
+    //The total (worst-case) cost to transmit E2E in isolation with specified 
+    //reliability target is the number of rows in the reliabilityWindow
+    nPushes[nNodesInFlow] = size; 
+    
     // Now convert the array to the ArrayList needed to return
     ArrayList<Integer> nPushesArrayList = new ArrayList<Integer>();
     Collections.addAll(nPushesArrayList, nPushes);
@@ -777,6 +740,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     Set<String> keys = nodes.keySet(); // get the names from the node map
     String[] nodeNames = keys.toArray(new String[keys.size()]);
     Arrays.sort(nodeNames); // NodeNames are now sorted
+    
     // However, if names are actually strings of integers, then the sort doesn't come out
     // the way we would like. So, handle that case
     var nodeNamesAsInts = new Integer[nodeNames.length];
@@ -787,16 +751,19 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
         // nodeName is an alpha representation of an integer
         nodeNamesAsInts[i] = Integer.parseInt(nodeName);
       } else {
-        // nodeName is an alpha name and not an integer, so set flag and terminate loop
-        allIntNames = false; // set false because name not is a number; && above makes sure we only
-                             // set it once
-        break; // can stop the loop once we know not all of the names are ints
+    	  //nodeName is an alpha name and not an integer, so set flag and terminate loop
+        
+    	  //set false because name not is a number; && above 
+    	  //makes sure we only set it once
+    	  allIntNames = false; 
+    	  
+    	  break; // can stop the loop once we know not all of the names are ints
       }
     }
     if (allIntNames) {
       // If all names are ints, then we need to sort them accordingly
       // Otherwise, we get names in what appears to not be in order because
-      Arrays.sort(nodeNamesAsInts); // sort the ints in assending order
+      Arrays.sort(nodeNamesAsInts); // sort the ints in ascending order
       for (int i = 0; i < nodeNamesAsInts.length; i++) {
         nodeNames[i] = Integer.toString(nodeNamesAsInts[i]); // convert int to string
       }
@@ -879,11 +846,10 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     var hyperPeriod = 1; // hyperPeriod is LCM of all periods. Initialize to 1
     for (String flowName : getFlowNames()) {
       // var dm = new Utlitities();
-      hyperPeriod = Utilities.lcm(hyperPeriod, getFlowPeriod(flowName)); // Find LCM of hyperPeriod
-                                                                         // so far and the current
-                                                                         // period, then update the
-                                                                         // hyperPeriod with that
-                                                                         // value
+      
+    	//Find LCM of hyperPeriod so far and the current period,
+    	//then update the hyperPeriod with that value
+      hyperPeriod = Utilities.lcm(hyperPeriod, getFlowPeriod(flowName)); 
     }
     return hyperPeriod;
   }
