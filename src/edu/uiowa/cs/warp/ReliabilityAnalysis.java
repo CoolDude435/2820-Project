@@ -42,7 +42,8 @@ import java.util.ArrayList;
  */
 
 public class ReliabilityAnalysis {
-	//test for correct output (temporary)
+	
+	//tests for correct output (temporary)
 	public static void main(String[] args) {
 		ReliabilityAnalysis test = new ReliabilityAnalysis(0);
         
@@ -58,7 +59,10 @@ public class ReliabilityAnalysis {
 	}
 	
 	private boolean onlyNumFaultsConstructor;
-	int numFaults = 0;
+	private int numFaults = 0;
+	double e2e = 0.99;
+	double minPacketReceptionRate = 0.9;
+	
 	
 	
 	public ReliabilityAnalysis (Program program) {
@@ -88,11 +92,16 @@ public class ReliabilityAnalysis {
       throw new UnsupportedOperationException("not implemented");
    }
    
+   /**
+    * numTxPerLinkAndTotalTxCost creates an ArrayList with numbers that correspond to the nodes in the flow
+    * that hold the cost of transmissions then computes the max transmissions and adds it to the array list
+    * 
+    * @param flow takes in a flow
+    * 
+    * @return ArrayList that has number of transmission attempts per link and total transmission cost
+    */
    public ArrayList <Integer> numTxPerLinkAndTotalTxCost(Flow flow) {
-      // TODO implement this operation
-      //throw new UnsupportedOperationException("not implemented");
 	   ArrayList<Integer> returnArrayList = new ArrayList<Integer>();
-      
 	   if(onlyNumFaultsConstructor) {
     	  var nodesInFlow = flow.nodes;
     	    var nNodesInFlow = nodesInFlow.size();
@@ -113,10 +122,12 @@ public class ReliabilityAnalysis {
     	    txArrayList.add(numEdgesInFlow + maxFaultsInFlow);
     	    
     	    returnArrayList = txArrayList;
-      }
+	   
+	   }else {
+		   //...
+	   }
+	   
 	   return returnArrayList;
    }
-   
-   
    
    }
