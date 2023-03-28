@@ -45,28 +45,11 @@ import java.util.Vector;
  */
 
 public class ReliabilityAnalysis {
-	
-	//tests for correct output (temporary)
-	public static void main(String[] args) {
-		ReliabilityAnalysis test = new ReliabilityAnalysis(0);
-        
-        WorkLoad load = new WorkLoad(.9,.99,"Example2.txt");
-        
-        FlowMap flows = load.getFlows();
-        
-        flows.entrySet().forEach(entry -> {
-            Flow flow = entry.getValue();
-            System.out.println("old: "+ load.getFixedTxPerLinkAndTotalTxCost(flow));
-            System.out.println("new: "+ test.numTxPerLinkAndTotalTxCost(flow));
-        });
-	}
-	
+
 	private boolean onlyNumFaultsConstructor;
 	private int numFaults = 0;
 	double e2e = 0.99;
 	double minPacketReceptionRate = 0.9;
-	
-	
 	
 	public ReliabilityAnalysis (Program program) {
       // TODO Auto-generated constructor stub
