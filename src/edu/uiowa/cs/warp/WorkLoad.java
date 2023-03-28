@@ -32,7 +32,6 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   private static final Integer DEFAULT_TX_NUM = 0;
   private static final String FLOW_WARNING =
       "\n\tWarning! Bad situation: " + "Flow %s doesn't exist but trying to ";
-
   private Integer numFaults = 0;
   private Double minPacketReceptionRate = 0.0;
   private Double e2e = 0.0;
@@ -42,9 +41,8 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   // private Integer nFlows = 0;
   private NodeMap nodes; // map of all graph nodes in the WARP graph (<name, Node>)
   private String name; // name of the WARP graph defining the workload
-  private ArrayList<String> flowNamesInOriginalOrder = new ArrayList<>(); // array to hold names of
-                                                                          // flows to preserve their
-                                                                          // order
+  //array to hold names of flows to preserve their order
+  private ArrayList<String> flowNamesInOriginalOrder = new ArrayList<>(); 
   private ArrayList<String> flowNamesInPriorityOrder = new ArrayList<>();
   // private FileManager fm;
 
@@ -535,10 +533,8 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
       Double nTx = 1.0; // set nTx to 1 by default (1 transmission per link required at a minimum
                         // and when m == 1.0
       if (m < 1.0) {
-        /*
-         * now compute nTXper link based on Ryan's formula: log(1 - e2e^(1/hops)) / log(1 - M) = #
-         * txs per hop
-         */
+         //now compute nTXper link based on Ryan's formula: 
+         //log(1 - e2e^(1/hops)) / log(1 - M) = # txs per hop
         nTx = Math.log((1.0 - Math.pow(e2e, (1.0 / (double) nHops)))) / Math.log(1.0 - m);
       }
       /* set numTxPerLink based on M, E2E, and flow length */
@@ -557,9 +553,9 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   private void finalizeFlowWithFixedFaultTolerance(String flowName) {
     var flowNode = flows.get(flowName);
     if (flowNode != null) {
-      /* set numTxPerLink based on numFaults */
+      // set numTxPerLink based on numFaults
       flowNode.numTxPerLink = numFaults + 1;
-      /* Now compute nTx per link to reach E2E requirement. */
+      // Now compute nTx per link to reach E2E requirement. */
       ArrayList<Integer> linkTxAndTotalCost = getFixedTxPerLinkAndTotalTxCost(flowNode);
       flowNode.linkTxAndTotalCost = linkTxAndTotalCost;
       flows.put(flowName, flowNode); // update flow node in Flows array
@@ -569,29 +565,14 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     }
   }
 
-  /**
-   * getFixedTxPerLinkAndTotalTxCost returns an ArrayList with each node in the flow represented
-   * as its cost in transmissions followed by the maximum number of TX.
-   * 
-   * @param flow is the flow that is being computed
-   * @return returns an ArrayList with the desired information about TX and the nodes
-   */
-  //DELETE OR AT LEAST CHANGE BACK TO PRIAVTE!!
+  //DELETE
   public ArrayList<Integer> getFixedTxPerLinkAndTotalTxCost(Flow flow) {
     var nodesInFlow = flow.nodes;
     var nNodesInFlow = nodesInFlow.size();
     ArrayList<Integer> txArrayList = new ArrayList<Integer>();
-    /*
-     * Each node will have at most numFaults+1 transmissions. Because we don't know which nodes will
-     * send the message over an edge, we give the cost to each node.
-     */
     for (int i = 0; i < nNodesInFlow; i++) {
       txArrayList.add(numFaults + 1);
     }
-    /*
-     * now compute the maximum # of TX, assuming at most numFaults occur on an edge per period, and
-     * each edge requires at least one successful TX.
-     */
     var numEdgesInFlow = nNodesInFlow - 1;
     var maxFaultsInFlow = numEdgesInFlow * numFaults;
     txArrayList.add(numEdgesInFlow + maxFaultsInFlow);
