@@ -590,7 +590,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
    *                              use the optimized flow
    * @return returns an ArrayList of TX attempts with total cost of transmissions as last value
    */
-  private ArrayList<Integer> numTxAttemptsPerLinkAndTotalTxAttempts(Flow flow, Double e2e, Double M,
+  public ArrayList<Integer> numTxAttemptsPerLinkAndTotalTxAttempts(Flow flow, Double e2e, Double M,
       boolean optimizationRequested) {
     var nodesInFlow = flow.nodes;
     
