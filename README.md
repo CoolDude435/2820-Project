@@ -64,3 +64,15 @@ Deleted numTxAttemptsPerLinkAndTotalTxAttempts and getFixedTxPerLinkAndTotalTxCo
 Updated JavaDocs
 <br>
 Updated UML Diagrams
+<br>
+**Sprint1**
+<br>
+Sequence Diagram: Status- Working on by Annalisa and Justin
+<br>
+JavaDocs: Status
+<br>
+**Sprint2**
+<br>
+
+
+
