@@ -512,6 +512,9 @@
       <stereotypes xmi:id="_bxXicMjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_bxYwkMjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_bxfeQcjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0IDTQM3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0IEhYM3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0IafoM3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
       <visibility xmi:id="_LO0cRL1VEe2Ek7-6YsU1Aw" label="-"/>
       <cardinality xmi:id="_LO0cRb1VEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
       <type xmi:id="_LO0cRr1VEe2Ek7-6YsU1Aw" name="FileManager">
@@ -905,6 +908,9 @@
       <stereotypes xmi:id="_bxUfIMjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_bxWUUMjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_bxhTcMjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0H134M3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0H_B0M3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0IeKAM3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
       <visibility xmi:id="_-8HUjb1UEe2Ek7-6YsU1Aw" label="-"/>
       <cardinality xmi:id="_-8HUjr1UEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
       <type xmi:id="_-8HUj71UEe2Ek7-6YsU1Aw" name="WarpInterface">
@@ -925,6 +931,9 @@
       <stereotypes xmi:id="_bxQ0wMjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_bxTRAMjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_bxh6gMjjEe28N_H3pzo_aQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0HiV4M3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0HvxQM3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_0If_MM3iEe2rq8ghud4W9w" name="LegacyStyledElement"/>
       <visibility xmi:id="_-8HUkr1UEe2Ek7-6YsU1Aw" label="-"/>
       <cardinality xmi:id="_-8HUk71UEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
       <type xmi:id="_-8HUlL1UEe2Ek7-6YsU1Aw" name="ReliabilityAnalysis">
