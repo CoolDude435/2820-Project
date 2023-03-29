@@ -40,3 +40,27 @@ statement in addFlow() method. The %s did not have a string argument to pair wit
 Created UML Lab Diagrams for SchedualableObject.java, WorkLoad.java, and a series of Reliability Java files. 
 <br>
 Created public method and generated code in RelabilityAnalysis.java.
+<br>
+**HW5**
+<br>
+Justin Lin completed a.i.
+<br>
+Annalisa Karacay completed a.ii.
+<br>
+We worked together to go back through WorkLoad to refactor and update any places that the old methods were called:
+<br>
+Added an instance variable reliabilityAnalysis so numTxPerLinkAndTotalTxCost can be called
+<br>
+First WorkLoad constructor will create reliabilityAnalysis using the constructor with e2e and m as parameters
+<br>
+Second WorkLoad constructor will create reliabilityAnalysis using the constructor with only numFaults as its parameter
+<br>
+Updated the methods finalizeFlowWithE2eParameters and finalizeFlowWithFixedFaultTolerance to use numTxPerLinkAndTotalTxCost
+<br>
+instead of numTxAttemptsPerLinkAndTotalTxAttempts and getFixedTxPerLinkAndTotalTxCost
+<br>
+Deleted numTxAttemptsPerLinkAndTotalTxAttempts and getFixedTxPerLinkAndTotalTxCost
+<br>
+Updated JavaDocs
+<br>
+Updated UML Diagrams
