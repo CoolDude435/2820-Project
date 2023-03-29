@@ -45,10 +45,12 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   private ArrayList<String> flowNamesInOriginalOrder = new ArrayList<>(); 
   private ArrayList<String> flowNamesInPriorityOrder = new ArrayList<>();
   // private FileManager fm;
+  private ReliabilityAnalysis reliabilityAnalysis;
 
   WorkLoad(Double m, Double e2e, String inputFileName) {
     super(inputFileName);
     setDefaultParameters();
+    reliabilityAnalysis = new ReliabilityAnalysis(e2e, m);
     minPacketReceptionRate = m; // use file manager passed to this object
     this.e2e = e2e; // use populate this flows object as the input file is read
     /*
@@ -61,6 +63,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
   WorkLoad(Integer numFaults, Double m, Double e2e, String inputFileName) {
     super(inputFileName);
     setDefaultParameters();
+    reliabilityAnalysis = new ReliabilityAnalysis(numFaults);
     this.numFaults = numFaults;
     minPacketReceptionRate = m; // use file manager passed to this object
     this.e2e = e2e; // use populate this flows object as the input file is read
@@ -541,7 +544,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
       flowNode.numTxPerLink = (int) Math.ceil(nTx);
       /* Now compute nTx per link to reach E2E requirement. */
       ArrayList<Integer> linkTxAndTotalCost =
-          numTxAttemptsPerLinkAndTotalTxAttempts(flowNode, e2e, m, true);
+          reliabilityAnalysis.numTxPerLinkAndTotalTxCost(flowNode);
       flowNode.linkTxAndTotalCost = linkTxAndTotalCost;
       flows.put(flowName, flowNode); // update flow node in Flows array
     } else { // should never happen...
@@ -556,7 +559,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
       // set numTxPerLink based on numFaults
       flowNode.numTxPerLink = numFaults + 1;
       // Now compute nTx per link to reach E2E requirement. */
-      ArrayList<Integer> linkTxAndTotalCost = getFixedTxPerLinkAndTotalTxCost(flowNode);
+      ArrayList<Integer> linkTxAndTotalCost = reliabilityAnalysis.numTxPerLinkAndTotalTxCost(flowNode);
       flowNode.linkTxAndTotalCost = linkTxAndTotalCost;
       flows.put(flowName, flowNode); // update flow node in Flows array
     } else { // should never happen...
@@ -564,7 +567,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
           + "trying to get its numTxPerLink property\n.", flowName);
     }
   }
-
+  /*
   //DELETE
   public ArrayList<Integer> getFixedTxPerLinkAndTotalTxCost(Flow flow) {
     var nodesInFlow = flow.nodes;
@@ -590,6 +593,7 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
    *                              use the optimized flow
    * @return returns an ArrayList of TX attempts with total cost of transmissions as last value
    */
+  /*
   public ArrayList<Integer> numTxAttemptsPerLinkAndTotalTxAttempts(Flow flow, Double e2e, Double M,
       boolean optimizationRequested) {
     var nodesInFlow = flow.nodes;
@@ -707,7 +711,8 @@ public class WorkLoad extends WorkLoadDescription implements ReliabilityParamete
     Collections.addAll(nPushesArrayList, nPushes);
     return nPushesArrayList;
   }
-
+  */
+  
   /** 
    * getNodeNamesOrderedAlphabetically is a method that returns an array of Strings that contains
    * all of the node names in alphabetical order.

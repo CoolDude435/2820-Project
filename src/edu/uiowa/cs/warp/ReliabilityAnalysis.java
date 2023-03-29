@@ -224,26 +224,7 @@ public class ReliabilityAnalysis {
 	   
 	   return returnArrayList;
    }
-   
-   public static void main(String[] args) {
-	   WorkLoad load = new WorkLoad(.9,.99,"StressTest.txt");
-       FlowMap flows = load.getFlows();
-       
-       ReliabilityAnalysis tester = new ReliabilityAnalysis(.99,.9);
-
-       flows.entrySet().forEach(entry -> {
-           Flow flow = entry.getValue();
-           System.out.println("old: "+ load.numTxAttemptsPerLinkAndTotalTxAttempts(flow,.99,.9,false));
-           System.out.println("new: "+ tester.numTxPerLinkAndTotalTxCost(flow));
-       });
-
-       
-	   }
-       
-       
-       
-	   
-	   
+      
    }
    
    
