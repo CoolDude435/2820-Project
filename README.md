@@ -74,6 +74,7 @@ The sequence diagram was created to show the end-to-end reliability of each flow
 Design Documentation: Status- Worked on by Jake and Elizabeth
 <br>
 The Design Documentation was created to show the who, what, when, and how we plan to complete the project.
+The Project plan can be seen in ProjectPlan.doc.
 <br>
 README was updated by Justin and Elizabeth 
 <br>
