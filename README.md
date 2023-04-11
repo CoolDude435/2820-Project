@@ -71,7 +71,7 @@ Sequence Diagram: Status- Working on by Annalisa and Justin
 <br>
 The sequence diagram was created to show the end-to-end reliability of each flow.
 <br>
-It can be found at file SequenceDiagram.png. It will be updated as work is completed throughout the project.
+It can be found in file Sequence Diagram folder. It will be updated as work is completed throughout the project.
 <br>
 Design Documentation: Status- Worked on by Jake and Elizabeth
 <br>
