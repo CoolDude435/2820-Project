@@ -18,41 +18,40 @@ public class ReliabilityVisualization extends VisualizationObject {
    
    private WarpInterface warp;
    private ReliabilityAnalysis ra;
+   private Program program;
    
    /*package*/ 
    ReliabilityVisualization (WarpInterface warp) {
       super(new FileManager(), warp, SOURCE_SUFFIX);
       this.warp = warp;
+      this.program = warp.toProgram();
       this.ra = warp.toReliabilityAnalysis();
    }
    
    @Override
    public GuiVisualization displayVisualization() {
-     //return new GuiVisualization(createTitle(), createHeader(), createVisualizationData());
-     // TODO implement this operation
- 	 throw new UnsupportedOperationException("not implemented");
+     //return new GuiVisualization(createTitle(), (String[])createHeader().toArray(), createVisualizationData());
+	   // TODO implement this operation
+	   throw new UnsupportedOperationException("not implemented");
    }
    
    @Override
    protected Description createHeader() {
-	 /*
+	 
      Description header = new Description();
 
      header.add(createTitle());
      header.add(String.format("Scheduler Name: %s\n", program.getSchedulerName()));
-		*/
+		
      /* The following parameters are output based on a special schedule or the fault model */
-	   /*
-     if (program.getNumFaults() > 0) { // only specify when deterministic fault model is assumed
+	   
+     if (warp.toProgram().getNumFaults() > 0) { // only specify when deterministic fault model is assumed
        header.add(String.format("numFaults: %d\n", program.getNumFaults()));
      }
      header.add(String.format("M: %s\n", String.valueOf(program.getMinPacketReceptionRate())));
      header.add(String.format("E2E: %s\n", String.valueOf(program.getE2e())));
      header.add(String.format("nChannels: %d\n", program.getNumChannels()));
      return header;
-     */
-	// TODO implement this operation
-	throw new UnsupportedOperationException("not implemented");
    }
    
    @Override
@@ -78,9 +77,7 @@ public class ReliabilityVisualization extends VisualizationObject {
    }
    
    private String createTitle() {
-	    //return String.format("WARP program for graph %s\n", program.getName());
-	    // TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
+	    return String.format("WARP program for graph %s\n", program.getName());
 	  }
    
    }

@@ -49,8 +49,8 @@ public class ReliabilityAnalysis {
 
 	private boolean onlyNumFaultsConstructor;
 	private int numFaults = 0;
-	double e2e = 0.99;
-	double minPacketReceptionRate = 0.9;
+	private double e2e = 0.99;
+	private double minPacketReceptionRate = 0.9;
 	
 	public ReliabilityAnalysis (Program program) {
       // TODO Auto-generated constructor stub
@@ -60,15 +60,11 @@ public class ReliabilityAnalysis {
 		this.e2e = e2e;
 		this.minPacketReceptionRate = minPacketReceptionRate;
 		onlyNumFaultsConstructor = false;
-		// TODO implement this operation
-		//throw new UnsupportedOperationException("not implemented");
    }
    
    public ReliabilityAnalysis (Integer numFaults) {
 	   this.numFaults = numFaults;
       onlyNumFaultsConstructor = true;
-	   // TODO implement this operation
-      //throw new UnsupportedOperationException("not implemented");
    }
    
    public Boolean verifyReliabilities() {
