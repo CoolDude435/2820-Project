@@ -81,6 +81,21 @@ public class ReliabilityAnalysis {
       throw new UnsupportedOperationException("not implemented");
    }
    
+   public void buildReliabilities() {
+	// TODO implement this operation
+	throw new UnsupportedOperationException("not implemented");
+   }
+   
+   public void setTargetHeaderRow() {
+	// TODO implement this operation
+		throw new UnsupportedOperationException("not implemented");
+   }
+   
+   public void printRATable() {
+	// TODO implement this operation
+		throw new UnsupportedOperationException("not implemented");
+   }
+   
    /**
     * numTxPerLinkAndTotalTxCost creates an ArrayList with numbers that correspond to the nodes in the flow
     * that hold the cost of transmissions then computes the max transmissions and adds it to the array list
