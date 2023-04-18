@@ -30,9 +30,7 @@ public class ReliabilityVisualization extends VisualizationObject {
    
    @Override
    public GuiVisualization displayVisualization() {
-     //return new GuiVisualization(createTitle(), (String[])createHeader().toArray(), createVisualizationData());
-	   // TODO implement this operation
-	   throw new UnsupportedOperationException("not implemented");
+     return new GuiVisualization(createTitle(), createColumnHeader(), createVisualizationData());
    }
    
    @Override
@@ -52,6 +50,18 @@ public class ReliabilityVisualization extends VisualizationObject {
      header.add(String.format("E2E: %s\n", String.valueOf(program.getE2e())));
      header.add(String.format("nChannels: %d\n", program.getNumChannels()));
      return header;
+   }
+   
+   @Override
+   protected String[] createColumnHeader() {
+	   	var orderedNodes = program.toWorkLoad().getNodeNamesOrderedAlphabetically();
+	    String[] columnNames = new String[orderedNodes.length + 1];
+	    columnNames[0] = "Time Slot"; // add the Time Slot column header first
+	    /* loop through the node names, adding each to the header */
+	    for (int i = 0; i < orderedNodes.length; i++) {
+	      columnNames[i + 1] = orderedNodes[i];
+	    }
+	    return columnNames;
    }
    
    @Override
