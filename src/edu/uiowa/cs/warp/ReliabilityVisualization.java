@@ -57,11 +57,11 @@ public class ReliabilityVisualization extends VisualizationObject {
    protected String[] createColumnHeader() {
 	   	ArrayList<String> flowNames = program.toWorkLoad().getFlowNamesInPriorityOrder();
 	   	ArrayList<String> columnHeaders = new ArrayList<String>();
-	   	for (int i=0;i<flowNames.size();i++) {
+	   	for (int flow=0;flow<flowNames.size();flow++) {
 	   		FlowMap flowMap = program.toWorkLoad().getFlows();
-	   		ArrayList<Node> nodesInFlow = flowMap.get(flowNames.get(i)).getNodes();
-	   		for (int k=0;k<nodesInFlow.size();k++) {
-	   			String header = flowNames.get(i) + ":" + nodesInFlow.get(k);
+	   		ArrayList<Node> nodesInFlow = flowMap.get(flowNames.get(flow)).getNodes();
+	   		for (int node=0;node<nodesInFlow.size();node++) {
+	   			String header = flowNames.get(flow) + ":" + nodesInFlow.get(node);
 	   			columnHeaders.add(header);
 	   		}
 	   	}
@@ -70,24 +70,21 @@ public class ReliabilityVisualization extends VisualizationObject {
    
    @Override
    protected String[][] createVisualizationData() {
-	   /*
+	   
 	   if (visualizationData == null) {
-       int numRows = sourceCode.getNumRows();
-       int numRows = 
-       int numColumns = sourceCode.getNumColumns();
-       visualizationData = new String[numRows][numColumns + 1];
+       int numRows = program.getSchedule().size();
+       int numColumns = createColumnHeader().length;
+       visualizationData = new String[numRows][numColumns];
 
        for (int row = 0; row < numRows; row++) {
-         visualizationData[row][0] = String.format("%s", row);
+         /*visualizationData[row][0] = String.format("%s", row);*/
          for (int column = 0; column < numColumns; column++) {
-           visualizationData[row][column + 1] = sourceCode.get(row, column);
+        	 visualizationData[row][column] = "0";
+           //visualizationData[row][column + 1] = sourceCode.get(row, column);
          }
        	}
        }
      return visualizationData;
-     */
-	// TODO implement this operation
-	   throw new UnsupportedOperationException("not implemented");
    }
    
    private String createTitle() {
