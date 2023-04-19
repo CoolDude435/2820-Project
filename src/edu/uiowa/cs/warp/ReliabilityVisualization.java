@@ -21,6 +21,11 @@ public class ReliabilityVisualization extends VisualizationObject {
    private ReliabilityAnalysis ra;
    private Program program;
    
+   /**
+    * ReliabilityVisualization will construct a reliability visualization of the warp program.
+    * 
+    * @param warp is Warp that will be visualized
+    */
    /*package*/ 
    ReliabilityVisualization (WarpInterface warp) {
       super(new FileManager(), warp, SOURCE_SUFFIX);
@@ -29,11 +34,21 @@ public class ReliabilityVisualization extends VisualizationObject {
       this.ra = warp.toReliabilityAnalysis();
    }
    
+   /**
+   * displayVisualization displays a GUi of the reliability visualization
+   */
    @Override
    public GuiVisualization displayVisualization() {
      return new GuiVisualization(createTitle(), createColumnHeader(), createVisualizationData());
    }
    
+   /**
+   * createHeader creates a header for RelizabilityVisualization.
+   * The header includes the scheduler name, number of faults, the minimum packet reception rate,
+   * and the number of channels. 
+   * 
+   * @return returns the header with the included information. 
+   */
    @Override
    protected Description createHeader() {
 	 
@@ -53,6 +68,12 @@ public class ReliabilityVisualization extends VisualizationObject {
      return header;
    }
    
+   /**
+   * createColumnHeader creates an array of of column headers that includes the flow
+   * and node name for each corresponding time slot. 
+   * 
+   * @return returns a string array of the column headers 
+   */
    @Override
    protected String[] createColumnHeader() {
 	   	ArrayList<String> flowNames = program.toWorkLoad().getFlowNamesInPriorityOrder();
@@ -68,6 +89,11 @@ public class ReliabilityVisualization extends VisualizationObject {
 	   	return (String[])columnHeaders.toArray();
    }
    
+  /**
+   *  createVisualizationData creates a table of the reliability visualization data
+   *  
+   *  @return returns a table of the reliability visualization Data 
+   */
    @Override
    protected String[][] createVisualizationData() {
 	   
@@ -88,6 +114,10 @@ public class ReliabilityVisualization extends VisualizationObject {
      return visualizationData;
    }
    
+   /**
+    * createTitle creates a title for the output file stating which graph is being analyzed.  
+    *
+    */
    private String createTitle() {
 	    return String.format("Reliability Analysis for graph %s\n", program.getName());
 	  }
