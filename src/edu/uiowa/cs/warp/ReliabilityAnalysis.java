@@ -51,6 +51,7 @@ public class ReliabilityAnalysis {
 	private int numFaults = 0;
 	private double e2e = 0.99;
 	private double minPacketReceptionRate = 0.9;
+	private ReliabilityTable reliabilityTable;
 	
 	public ReliabilityAnalysis (Program program) {
       // TODO Auto-generated constructor stub
@@ -64,7 +65,7 @@ public class ReliabilityAnalysis {
    
    public ReliabilityAnalysis (Integer numFaults) {
 	   this.numFaults = numFaults;
-      onlyNumFaultsConstructor = true;
+	   onlyNumFaultsConstructor = true;
    }
    
    public Boolean verifyReliabilities() {
@@ -73,8 +74,7 @@ public class ReliabilityAnalysis {
         }
    
    public ReliabilityTable getReliabilities() {
-      // TODO implement this operation
-      throw new UnsupportedOperationException("not implemented");
+      return reliabilityTable;
    }
    
    public void buildReliabilities() {
@@ -82,10 +82,15 @@ public class ReliabilityAnalysis {
 	throw new UnsupportedOperationException("not implemented");
    }
    
-   public void setTargetHeaderRow() {
+   public void setHeaderRow() {
 	// TODO implement this operation
 		throw new UnsupportedOperationException("not implemented");
    }
+   
+   public void getHeaderRow() {
+		// TODO implement this operation
+			throw new UnsupportedOperationException("not implemented");
+	   }
    
    public ReliabilityTable printRATable() {
 	// TODO implement this operation
