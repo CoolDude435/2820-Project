@@ -26,5 +26,10 @@ class ReliabilityVisualizationTest {
 	void createTitle() {
 		fail("Not yet implemented");
 	}
+	
+	@Test
+	void createVisualizationData() {
+		fail("Not yet implemented");
+	}
 
 }
