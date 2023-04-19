@@ -84,11 +84,27 @@ README was updated by Justin and Elizabeth
 <br>
 UML Sequence/Class Diagram: Status - UML will be updated as progress is made - Updated by Annalisa
 <br>
-Visualization Class and Methods: Status - Worked on by Justin and Annalisa
+ReliabilityVisualization Class and Methods: Status - Worked on by Justin and Annalisa
 <br>
-JUinit Tests for Visualization: Status - Worked on by Annalisa creating the template for tests
+ReliabilityVisualization(WarpInterface): Status - Complete
 <br>
-Javadoc Comments: Status - Worked on by 
+displayVisualization(): Status - Complete
+<br>
+createHeader(): Status - Complete
+<br>
+createColumnHeader(): Status - Complete
+<br>
+createVisualizationData(): Status - Incomplete, waiting on ReliabilityAnalysis implementation in Sprint3
+<br>
+createTitle(): Status - Complete
+<br>
+JUnit Tests for ReliabilityVisualization and ReliabilityAnalysis:
+<br>
+Status - Worked on by Annalisa and Jake
+<br>
+
+<br>
+JavaDoc Comments: Status - Worked on by Jake and Elizabeth
 <br>
 Design Documentation: Status - Worked on by 
 <br>
