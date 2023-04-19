@@ -12,23 +12,23 @@ class ReliabilityVisualizationTest {
 	}
 	
 	@Test
-	void createHeader() {
+	void createHeaderTest() {
 		fail("Not yet implemented");
 	}
 	
 	@Test
-	void createData() {
+	void createColumnHeaderTest() {
 		fail("Not yet implemented");
-		//call to ReliabilityAnalysis
+		
 	}
 	
 	@Test
-	void createTitle() {
+	void createTitleTest() {
 		fail("Not yet implemented");
 	}
 	
 	@Test
-	void createVisualizationData() {
+	void createVisualizationDataTest() {
 		fail("Not yet implemented");
 	}
 
