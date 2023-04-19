@@ -75,12 +75,13 @@ public class ReliabilityVisualization extends VisualizationObject {
        int numRows = program.getSchedule().size();
        int numColumns = createColumnHeader().length;
        visualizationData = new String[numRows][numColumns];
-
+       ReliabilityTable reliabilityTable = ra.getReliabilities();
        for (int row = 0; row < numRows; row++) {
-         /*visualizationData[row][0] = String.format("%s", row);*/
          for (int column = 0; column < numColumns; column++) {
         	 visualizationData[row][column] = "0";
-           //visualizationData[row][column + 1] = sourceCode.get(row, column);
+        	 //visualizationData[row][column] = reliabilityTable.get(row).get(column).toString();
+        	 //This will grab the data from our reliability analysis but it is not implemented yet
+        	 //Will just create a 2D array of zeros with the correct number of rows and columns
          }
        	}
        }
