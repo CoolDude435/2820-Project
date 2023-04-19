@@ -82,6 +82,32 @@ README was updated by Justin and Elizabeth
 <br>
 **Sprint2**
 <br>
+UML Sequence/Class Diagram: Status - UML will be updated as progress is made - Updated by Annalisa
+<br>
+Visualization Class and Methods: Status - Worked on by Justin and Annalisa
+<br>
+JUinit Tests for Visualization: Status - Worked on by Annalisa creating the template for tests
+<br>
+Javadoc Comments: Status - Worked on by 
+<br>
+Design Documentation: Status - Worked on by 
+<br>
+README: Status - Updated by Elizabeth 
+<br>
+**Sprint3**
+<br>
+UML Diagram: Status - Will be updated as progress is made. 
+<br>
+ReliabilityVisualization: Status - The base was created in Sprint 2
+<br>
+ReliabilityAnalysis: Status - The base was created in Sprint 2
+<br>
+JUinit Tests: Status - Continuing work done in Sprint 2 as well as adding new tests as needed
+<br>
+Javadoc Comments: Status - Will be updated as progress is made. 
+<br>
+README: Status - Continuously updated 
+<br>
 
 
 
