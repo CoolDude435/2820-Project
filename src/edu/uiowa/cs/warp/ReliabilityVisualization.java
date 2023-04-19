@@ -89,7 +89,7 @@ public class ReliabilityVisualization extends VisualizationObject {
    }
    
    private String createTitle() {
-	    return String.format("WARP program for graph %s\n", program.getName());
+	    return String.format("Reliability Analysis for graph %s\n", program.getName());
 	  }
    
    }
