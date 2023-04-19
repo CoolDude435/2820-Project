@@ -1,5 +1,6 @@
 package edu.uiowa.cs.warp;
 
+import java.util.ArrayList;
 
 /**
  * ReliabilityVisualization creates the visualizations for
@@ -54,14 +55,17 @@ public class ReliabilityVisualization extends VisualizationObject {
    
    @Override
    protected String[] createColumnHeader() {
-	   	var orderedNodes = program.toWorkLoad().getNodeNamesOrderedAlphabetically();
-	    String[] columnNames = new String[orderedNodes.length + 1];
-	    columnNames[0] = "Time Slot"; // add the Time Slot column header first
-	    /* loop through the node names, adding each to the header */
-	    for (int i = 0; i < orderedNodes.length; i++) {
-	      columnNames[i + 1] = orderedNodes[i];
-	    }
-	    return columnNames;
+	   	ArrayList<String> flowNames = program.toWorkLoad().getFlowNamesInPriorityOrder();
+	   	ArrayList<String> columnHeaders = new ArrayList<String>();
+	   	for (int i=0;i<flowNames.size();i++) {
+	   		FlowMap flowMap = program.toWorkLoad().getFlows();
+	   		ArrayList<Node> nodesInFlow = flowMap.get(flowNames.get(i)).getNodes();
+	   		for (int k=0;k<nodesInFlow.size();k++) {
+	   			String header = flowNames.get(i) + ":" + nodesInFlow.get(k);
+	   			columnHeaders.add(header);
+	   		}
+	   	}
+	   	return (String[])columnHeaders.toArray();
    }
    
    @Override
