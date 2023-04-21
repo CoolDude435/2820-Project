@@ -14,7 +14,7 @@ public class ReliabilityVisualizationTest {
 	private static final double E2E = .99;
 	private static final int NUM_CHANNELS = 16;
 	
-	private Program program1;
+	Program program1;
 	Program program2;
 	Program program3;
 	
