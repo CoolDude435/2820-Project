@@ -86,7 +86,8 @@ public class ReliabilityVisualization extends VisualizationObject {
 	   			columnHeaders.add(header);
 	   		}
 	   	}
-	   	return (String[])columnHeaders.toArray();
+	   	String[] result = new String[columnHeaders.size()];
+	   	return (String[])columnHeaders.toArray(result);
    }
    
   /**
@@ -118,7 +119,7 @@ public class ReliabilityVisualization extends VisualizationObject {
     * createTitle creates a title for the output file stating which graph is being analyzed.  
     *
     */
-   private String createTitle() {
+   protected String createTitle() {
 	    return String.format("Reliability Analysis for graph %s\n", program.getName());
 	  }
    
