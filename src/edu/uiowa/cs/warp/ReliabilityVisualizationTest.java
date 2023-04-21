@@ -159,6 +159,24 @@ public class ReliabilityVisualizationTest {
         }
 	}
 	
+	@Test
+	public void createVisualizationDataTest3() {
+		ReliabilityVisualization visualization = new ReliabilityVisualization(warp3);
+	    String[][] visualizationData = visualization.createVisualizationData();
+        assertNotNull(visualizationData);
+
+        int expectedNumRows =visualizationData.length;
+        int expectedNumColumns = visualization.createColumnHeader().length;
+        assertEquals(expectedNumRows, visualizationData.length);
+        assertEquals(expectedNumColumns, visualizationData[0].length);
+    
+        for (int row = 0; row < visualizationData.length; row++) {
+        	for (int column = 0; column < visualizationData[0].length; column++) {
+        		assertEquals("0", visualizationData[row][column]);
+        	}
+        }
+	}
+	
 	
 
 }
