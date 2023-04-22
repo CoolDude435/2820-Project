@@ -98,17 +98,17 @@ createVisualizationData(): Status - Incomplete, waiting on ReliabilityAnalysis i
 <br>
 createTitle(): Status - Complete
 <br>
-JUnit Tests for ReliabilityVisualization and ReliabilityAnalysis:
+JUnit Tests for ReliabilityVisualization:
 <br>
 Status - Worked on by Annalisa and Jake
 <br>
-
+JUnit Tests for ReliabilityAnalysis: Status - Working on by Justin; waiting on implementation
 <br>
 JavaDoc Comments: Status - Worked on by Jake and Elizabeth
 <br>
-Design Documentation: Status - Worked on by 
+Design Documentation: Status - Worked on by Elizabeth
 <br>
-README: Status - Updated by Elizabeth 
+README: Status - Updated by Elizabeth and Justin
 <br>
 **Sprint3**
 <br>
