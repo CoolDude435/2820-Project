@@ -66,8 +66,16 @@ public class ReliabilityAnalysisTest {
 		//method not yet implemented
 	}
 	
+	/**
+	 * Tests the numTxPerLinkAndTotalTxCost() method in ReliabilityAnalysis
+	 * Creates a new WorkLoad with the Example.txt file
+	 * Call numTxPerLinkAndTotalTxCost() on flow F0
+	 * Test that ArrayList against the expected output
+	 * 
+	 * @see ReliabilityAnalysis numTxPerLinkAndTotalTxCost()
+	 */
 	@Test
-	void numTxPerLinkAndTotalTxCost() {
+	void numTxPerLinkAndTotalTxCostTest() {
 		ReliabilityAnalysis reliAnalysis = new ReliabilityAnalysis(0);
 		WorkLoad load1 = new WorkLoad(M, E2E, "Example.txt");
 		FlowMap fMap = load1.getFlows();
