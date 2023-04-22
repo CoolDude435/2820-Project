@@ -36,6 +36,8 @@ public class ReliabilityVisualization extends VisualizationObject {
    
    /**
    * displayVisualization displays a GUi of the reliability visualization
+   * 
+   * @return returns the GuiVisualization created from the title, columnHeaders, and data
    */
    @Override
    public GuiVisualization displayVisualization() {
@@ -118,6 +120,7 @@ public class ReliabilityVisualization extends VisualizationObject {
    /**
     * createTitle creates a title for the output file stating which graph is being analyzed.  
     *
+    * @return returns the title for the graph's reliability that will be analyzed
     */
    protected String createTitle() {
 	    return String.format("Reliability Analysis for graph %s\n", program.getName());
