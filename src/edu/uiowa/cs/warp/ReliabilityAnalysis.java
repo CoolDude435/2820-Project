@@ -53,45 +53,86 @@ public class ReliabilityAnalysis {
 	private double minPacketReceptionRate = 0.9;
 	private ReliabilityTable reliabilityTable;
 	
+	/**
+	 * ReliabilityAnalysis is a constructor to set up the Reliability analysis from a program. 
+	 * 
+	 * @param program the program that will be used during analysis 
+	 */
 	public ReliabilityAnalysis (Program program) {
       // TODO Auto-generated constructor stub
         }
 	
+	/**
+	 * ReliabilityAnalysis is a constructor to set up the Reliability analysis from the minimum
+	 * packet reception rate. 
+	 * 
+	 * @param e2e minimum link quality in the system thats being analyzed 
+	 * @param minPacketReceptionRate the minimum packet reception rate thats being analyzed
+	 */
 	public ReliabilityAnalysis (Double e2e, Double minPacketReceptionRate) {
 		this.e2e = e2e;
 		this.minPacketReceptionRate = minPacketReceptionRate;
 		onlyNumFaultsConstructor = false;
    }
    
+	/**
+	 *RelizbilityAnalysis is a constructor to set up the Reliability analysis based on the number of 
+	 *faults tolerated. 
+	 * 
+	 * @param numFaults the number of faults tolerated in the system. 
+	 */
    public ReliabilityAnalysis (Integer numFaults) {
 	   this.numFaults = numFaults;
 	   onlyNumFaultsConstructor = true;
    }
    
+   /**
+    * verifyReliabilities is a call to see if all the reliabilities of the flows pass.
+    * 
+    * @return
+    */
    public Boolean verifyReliabilities() {
       // TODO Auto-generated method stub
        return true;
         }
    
+   /**
+    * getReliabilities returns the table containing reliability of the flows. 
+    * 
+    * @return reliabilityTable
+    */
    public ReliabilityTable getReliabilities() {
       return reliabilityTable;
    }
    
+   /**
+    * buildReliabilities creates the table containing the reliability of the flows. 
+    */
    public void buildReliabilities() {
 	// TODO implement this operation
 	throw new UnsupportedOperationException("not implemented");
    }
    
+   /**
+    * setHeaderRow updates the header row of the reliability table. 
+    */
    public void setHeaderRow() {
 	// TODO implement this operation
 		throw new UnsupportedOperationException("not implemented");
    }
    
+   /**
+    * getHeaderRow returns the header row of the reliability table. 
+    */
    public void getHeaderRow() {
 		// TODO implement this operation
 			throw new UnsupportedOperationException("not implemented");
 	   }
    
+   /**
+    * printRATable prints out the contents of the reliability analysis table.  
+    * @return
+    */
    public ReliabilityTable printRATable() {
 	// TODO implement this operation
 		throw new UnsupportedOperationException("not implemented");
