@@ -53,6 +53,7 @@ public class ReliabilityVisualizationTest {
 	 * This method creates a ReliabilityVisualization object with given input, 
 	 * and calls createColumnHeader() method.
      * Then compares the output with an expected array of column headers.
+     * Unknown Error in Test2. The test method will be fixed and implemented for Sprint3
      * 
      * @see ReliabilityVisualization createColumnHeader)
 	 */
