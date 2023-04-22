@@ -37,16 +37,53 @@ public class ReliabilityVisualizationTest {
 		program3 = warp3.toProgram();
 	}
 	
-	
+	/**
+	 * Tests displayVisualization method in ReliabilityVisualization.
+	 * Tests to make sure guiVisualization has output from 
+	 * displayVisualization by checking not null.
+	 */
 	@Test
 	void displayVisualizationTest() {
-		fail("Not yet implemented");
+		
+		ReliabilityVisualization visualization = new ReliabilityVisualization(warp2);
+		GuiVisualization guiVisualization = visualization.displayVisualization();
+		
+		assertNotNull(guiVisualization);
+		
+		
+	}
+	/**
+	 * Tests createHeader method in ReliabilityVisualization.
+	 * Outputs of the createHeader method are compared to the 
+	 * expected results according to input from warp2 in first
+	 * test and warp3 in second test.
+	 */
+	@Test
+	void createHeaderTest1() {
+		
+		ReliabilityVisualization visualization = new ReliabilityVisualization(warp2);
+		Description header = visualization.createHeader();
+		
+		assertEquals("Reliability Analysis for graph Example1A\n", header.get(0));
+		assertEquals("Scheduler Name: Priority\n", header.get(1));
+		assertEquals("M: 0.65\n", header.get(2));
+		assertEquals("E2E: 0.54\n", header.get(3));
+		assertEquals("nChannels: 15\n", header.get(4));
 	}
 	
 	@Test
-	void createHeaderTest() {
-		fail("Not yet implemented");
+	void createHeaderTest2() {
+		
+		ReliabilityVisualization visualization = new ReliabilityVisualization(warp3);
+		Description header = visualization.createHeader();
+		
+		assertEquals("Reliability Analysis for graph StressTest4\n", header.get(0));
+		assertEquals("Scheduler Name: Priority\n", header.get(1));
+		assertEquals("M: 0.9\n", header.get(2));
+		assertEquals("E2E: 0.9\n", header.get(3));
+		assertEquals("nChannels: 20\n", header.get(4));
 	}
+	
 	
 	/**
 	 * Tests createColumnHeader in ReliabilityVisualization.
