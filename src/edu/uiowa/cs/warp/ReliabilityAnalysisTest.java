@@ -36,15 +36,8 @@ public class ReliabilityAnalysisTest {
 		program3 = warp3.toProgram();
 	}
 	
-	@Test
-	void verifyReliabilitiesTest() {
-		//method not yet implemented
-	}
 	
-	@Test
-	void getReliabilitiesTest() {
-		//method not yet implemented
-	}
+
 	
 	@Test
 	void buildReliabilitiesTest() {
@@ -62,7 +55,17 @@ public class ReliabilityAnalysisTest {
 	}
 	
 	@Test
-	void printRATableTest() {
+	void getFixedTxPerLinkAndTotalTxCostTest() {
+		//method not yet implemented
+	}
+	
+	@Test
+	void getTxPerLinkAndTotalTxCostTest() {
+		//method not yet implemented
+	}
+	
+	@Test
+	void setReliabilityHeaderRowTest() {
 		//method not yet implemented
 	}
 	
@@ -88,6 +91,39 @@ public class ReliabilityAnalysisTest {
 		for (int i=0;i<actual.size();i++) {
 			assertSame(expected.get(i),actual.get(i));
 		}
+	}
+	
+	
+	//Annalisa's Tests
+	
+	@Test
+	void verifyReliabilitiesTest() {
+		//method not yet implemented
+	}
+	
+	@Test
+	void getReliabilitiesTest() {
+		//method not yet implemented
+	}
+	@Test
+	void buildReliabilityTableTest() {
+		//method not yet implemented
+	}
+	@Test
+	void carryForwardReliabilitiesTest() {
+		//method not yet implemented
+	}
+	@Test
+	void printRaTableTest() {
+		//method not yet implemented
+	}
+	@Test
+	void setReliabilitiesTest() {
+		//method not yet implemented
+	}
+	@Test
+	void setInitialStateForReleasedFlowsTest() {
+		//method not yet implemented
 	}
 	
 }
