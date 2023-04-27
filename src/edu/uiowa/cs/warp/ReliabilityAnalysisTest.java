@@ -105,22 +105,27 @@ public class ReliabilityAnalysisTest {
 	void getReliabilitiesTest() {
 		//method not yet implemented
 	}
+	
 	@Test
 	void buildReliabilityTableTest() {
 		//method not yet implemented
 	}
+	
 	@Test
 	void carryForwardReliabilitiesTest() {
 		//method not yet implemented
 	}
+	
 	@Test
 	void printRaTableTest() {
 		//method not yet implemented
 	}
+	
 	@Test
 	void setReliabilitiesTest() {
 		//method not yet implemented
 	}
+	
 	@Test
 	void setInitialStateForReleasedFlowsTest() {
 		//method not yet implemented
