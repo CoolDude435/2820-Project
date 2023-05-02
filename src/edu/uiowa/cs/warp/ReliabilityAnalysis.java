@@ -3,8 +3,11 @@ package edu.uiowa.cs.warp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Vector;
 
+import edu.uiowa.cs.warp.WarpDSL;
+import edu.uiowa.cs.warp.SystemAttributes.ScheduleChoices;
 import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
 
 /**
@@ -56,7 +59,8 @@ public class ReliabilityAnalysis {
 	private ReliabilityTable reliabilityTable;
 	private Program program;
 	private ArrayList<String> reliabilityHeaderRow;
-	
+	private NodeMap nodeMap;
+	private WarpDSL warpDSL = new WarpDSL();
 	/**
 	 * ReliabilityAnalysis is a constructor to set up the Reliability analysis from a program. 
 	 * 
@@ -117,8 +121,7 @@ public class ReliabilityAnalysis {
     * setHeaderRow updates the header row of the reliability table. 
     */
    public void setReliabilityHeaderRow(ArrayList<String> reliabilityHeaderRow) {
-	// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
+	   this.reliabilityHeaderRow = reliabilityHeaderRow;
    }
    
    /**
@@ -151,17 +154,36 @@ public class ReliabilityAnalysis {
 	   if ((reliabilityTable != null)||(program == null)) {
 		   return;
 	   }
-	   /*
-	   ProgramSchedule schedule = program.getSchedule();
-	   String list = schedule.get(1).get(1);
-	   ArrayList<InstructionParameters> params = getInstructionParameters("hi");
-	   getInstructionParameters("Hi");
-	   ArrayList<InstructionParameters> instructionParameters = getInstructionParameters("d"); */
-	// TODO implement this operation
-	throw new UnsupportedOperationException("not implemented");
+	   //setting headerRow and populating NodeMap
+	   ArrayList<String> headerRow = new ArrayList<String>();
+	   NodeMap nodeMap = new NodeMap();
+	   ArrayList<String> flowNames = program.toWorkLoad().getFlowNamesInPriorityOrder();
+	   for (int i=0;i<flowNames.size();i++) {
+		   FlowMap flowMap = program.toWorkLoad().getFlows();
+		   Flow flow = flowMap.get(flowNames.get(i));
+		   ArrayList<Node> nodesInFlow = flow.getNodes();
+		   Integer flowPhase = program.toWorkLoad().getFlowPhase(flowNames.get(i));
+		   for (int k=0;k<nodesInFlow.size();k++) {
+			   boolean src = false;
+			   if (k==0) {
+				   src = true;
+			   }
+			   String header = flowNames.get(i) + ":" + nodesInFlow.get(k);
+			   headerRow.add(header);
+			   ReliabilityNode reliNode = new ReliabilityNode(headerRow.size()-1,src,flowPhase);
+			   nodeMap.put(header, reliNode);  
+	   		}
+	   	}
+	   	setReliabilityHeaderRow(headerRow);
+	   	reliabilityTable = new ReliabilityTable(program.getSchedule().size(),headerRow.size());
+	   	setInitialStateForReleasedFlows(nodeMap,reliabilityTable);
+	   
+	   
+	   
+	   
    }
-   
-   private void carryForwardReliabilities(Integer timeSlot, NodeMap nodeMap, ReliabilityTable reliabilities) {
+
+private void carryForwardReliabilities(Integer timeSlot, NodeMap nodeMap, ReliabilityTable reliabilities) {
 	// TODO implement this operation
 		throw new UnsupportedOperationException("not implemented");
    }
@@ -185,8 +207,15 @@ public class ReliabilityAnalysis {
    }
    
    private void setInitialStateForReleasedFlows(NodeMap nodeMap, ReliabilityTable reliabilities) {
-	// TODO implement this operation
-				throw new UnsupportedOperationException("not implemented");
+	   
+	   for (String node : nodeMap.keySet()) {
+		   ReliabilityNode reliNode = nodeMap.get(node);
+		   if (reliNode.flowSrc == true) {
+			   for (int i=0;i<reliabilities.size();i++) {
+				   reliabilities.set(i,reliNode.index, 1.0);
+			   }
+		   }
+	   }
    }
 
    
@@ -334,9 +363,55 @@ public class ReliabilityAnalysis {
 	   return returnArrayList;
    }
       
+   private class ReliabilityNode{
+	   Integer index = 0;
+	   boolean flowSrc = false;
+	   Integer flowPhase = 0;
+	   
+	   public ReliabilityNode(Integer index, boolean flowSrc, Integer flowPhase) {
+		   this.index = index;
+		   this.flowSrc = flowSrc;
+		   this.flowPhase = flowPhase;
+	   }
+   }
    
-   	public static void main() {
-	   System.out.println("hi");
+   private class NodeMap extends HashMap<String,ReliabilityNode>{
+	   public NodeMap() {
+		   super();
+	   }
+   }
+   
+   	public static void main(String[] args) {
+   		WarpSystem warp3;
+		WorkLoad stressTest = new WorkLoad(.9,.9, "StressTest4.txt");
+
+		warp3 = new WarpSystem(stressTest, 20, ScheduleChoices.PRIORITY);
+   		Program program = warp3.toProgram();
+   		ReliabilityAnalysis reliAna = new ReliabilityAnalysis(program);
+   		WarpDSL warpDSL = new WarpDSL();
+   		/*
+   		for (int i=0;i<program.getSchedule().get(0).size();i++) {
+   			String string = program.getSchedule().get(0).get(i);
+   			System.out.println(string);
+   			ArrayList<InstructionParameters> list = warpDSL.getInstructionParameters(string);
+   			for (int k=0;k<list.size();k++) {
+   				System.out.println(list.get(k).getFlow() + ", " + list.get(k).getSnk() + ", " + list.get(k).getSrc());
+
+   			}
+   		
+   		}*/
+   		reliAna.buildReliabilities();
+   		for (int i=0;i<reliAna.reliabilityHeaderRow.size();i++) {
+   			System.out.print(reliAna.reliabilityHeaderRow.get(i) + " ");
+   		}
+   		System.out.println();
+   		for (int i=0;i<reliAna.reliabilityTable.getNumRows();i++) {
+   			for (int k=0;k<reliAna.reliabilityTable.getNumColumns();k++) {
+   				System.out.print(reliAna.getReliabilities().get(i, k) + ", ");
+   			}
+   			System.out.println();
+   		}
+   		
    	}
    }
    
