@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Vector;
 
+import edu.uiowa.cs.warp.WarpDSL.InstructionParameters;
+
 /**
  * ReliabilityAnalysis analyzes the end-to-end reliability of messages transmitted in flows for the
  * WARP system.
@@ -52,6 +54,8 @@ public class ReliabilityAnalysis {
 	private double e2e = 0.99;
 	private double minPacketReceptionRate = 0.9;
 	private ReliabilityTable reliabilityTable;
+	private Program program;
+	private ArrayList<String> reliabilityHeaderRow;
 	
 	/**
 	 * ReliabilityAnalysis is a constructor to set up the Reliability analysis from a program. 
@@ -59,7 +63,10 @@ public class ReliabilityAnalysis {
 	 * @param program the program that will be used during analysis 
 	 */
 	public ReliabilityAnalysis (Program program) {
-      // TODO Auto-generated constructor stub
+		this.numFaults = program.getNumFaults();
+		this.e2e = program.getE2e();
+		this.minPacketReceptionRate = program.getMinPacketReceptionRate();
+		this.program = program;
         }
 	
 	/**
@@ -86,37 +93,30 @@ public class ReliabilityAnalysis {
 	   onlyNumFaultsConstructor = true;
    }
    
+   private ReliabilityRow getFinalReliabilityRow() {
+	   return reliabilityTable.get(reliabilityTable.size()-1);
+   }
+   
    /**
     * verifyReliabilities is a call to see if all the reliabilities of the flows pass.
     * 
     * @return
     */
    public Boolean verifyReliabilities() {
-      // TODO Auto-generated method stub
+	   ReliabilityRow finalRow = getFinalReliabilityRow();
+	   for (int i=0;i<finalRow.size();i++) {
+		   if (finalRow.get(i)>=e2e) {
+			   System.out.println("Error: E2E is not met");
+			   return false;
+		   }
+	   }
        return true;
         }
    
    /**
-    * getReliabilities returns the table containing reliability of the flows. 
-    * 
-    * @return reliabilityTable
-    */
-   public ReliabilityTable getReliabilities() {
-      return reliabilityTable;
-   }
-   
-   /**
-    * buildReliabilities creates the table containing the reliability of the flows. 
-    */
-   public void buildReliabilities() {
-	// TODO implement this operation
-	throw new UnsupportedOperationException("not implemented");
-   }
-   
-   /**
     * setHeaderRow updates the header row of the reliability table. 
     */
-   public void setHeaderRow() {
+   public void setReliabilityHeaderRow(ArrayList<String> reliabilityHeaderRow) {
 	// TODO implement this operation
 		throw new UnsupportedOperationException("not implemented");
    }
@@ -124,19 +124,71 @@ public class ReliabilityAnalysis {
    /**
     * getHeaderRow returns the header row of the reliability table. 
     */
-   public void getHeaderRow() {
-		// TODO implement this operation
-			throw new UnsupportedOperationException("not implemented");
+   public ArrayList<String> getReliabilityHeaderRow() {
+	   if (reliabilityHeaderRow == null) {
+		   System.out.println("Error: reliabilityHeaderRow is not set!");
+		   return new ArrayList<String>();
 	   }
+	   return reliabilityHeaderRow;
+	   }
+   
+   /**
+    * getReliabilities returns the table containing reliability of the flows. 
+    * 
+    * @return reliabilityTable
+    */
+   public ReliabilityTable getReliabilities() {
+	   if (reliabilityTable == null) {
+		   buildReliabilities();
+	   }
+	   return reliabilityTable;
+   }
+   
+   /**
+    * buildReliabilities creates the table containing the reliability of the flows. 
+    */
+   public void buildReliabilities() {
+	   if ((reliabilityTable != null)||(program == null)) {
+		   return;
+	   }
+	   /*
+	   ProgramSchedule schedule = program.getSchedule();
+	   String list = schedule.get(1).get(1);
+	   ArrayList<InstructionParameters> params = getInstructionParameters("hi");
+	   getInstructionParameters("Hi");
+	   ArrayList<InstructionParameters> instructionParameters = getInstructionParameters("d"); */
+	// TODO implement this operation
+	throw new UnsupportedOperationException("not implemented");
+   }
+   
+   private void carryForwardReliabilities(Integer timeSlot, NodeMap nodeMap, ReliabilityTable reliabilities) {
+	// TODO implement this operation
+		throw new UnsupportedOperationException("not implemented");
+   }
    
    /**
     * printRATable prints out the contents of the reliability analysis table.  
     * @return
     */
-   public ReliabilityTable printRATable() {
+   public void printRaTable(ReliabilityTable reliabilities, Integer timeSlot) {
+	   ReliabilityRow reliRow = reliabilities.get(timeSlot);
+	   for (int i=0;i<reliRow.size();i++) {
+		   System.out.print(reliRow.get(i) + ", ");
+	   }
 	// TODO implement this operation
 		throw new UnsupportedOperationException("not implemented");
    }
+   
+   private void setReliabilities(ReliabilityTable rm) {
+	// TODO implement this operation
+			throw new UnsupportedOperationException("not implemented");
+   }
+   
+   private void setInitialStateForReleasedFlows(NodeMap nodeMap, ReliabilityTable reliabilities) {
+	// TODO implement this operation
+				throw new UnsupportedOperationException("not implemented");
+   }
+
    
    /**
     * numTxPerLinkAndTotalTxCost creates an ArrayList with numbers that correspond to the nodes in the flow
@@ -282,6 +334,10 @@ public class ReliabilityAnalysis {
 	   return returnArrayList;
    }
       
+   
+   	public static void main() {
+	   System.out.println("hi");
+   	}
    }
    
    
