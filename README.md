@@ -110,19 +110,43 @@ Design Documentation: Status - Worked on by Elizabeth
 <br>
 README: Status - Updated by Elizabeth and Justin
 <br>
+<br>
 **Sprint3**
 <br>
-UML Diagram: Status - Will be updated as progress is made. 
+The focus of sprint 3 was to finish creating the methods in ReliabilityAnalysis, creating JUinit tests for 
+ReliabilityAnalysis, as well as Javadoc for the method and all Juint tests.  
+<br>
+UML Diagram: 
+<br>
+Status - Will be updated as progress is made. 
+<br>
+<br>
+Code Methods:
 <br>
 ReliabilityVisualization: Status - The base was created in Sprint 2
 <br>
-ReliabilityAnalysis: Status - The base was created in Sprint 2
+ReliabilityAnalysis: Status - The base was created in Sprint 2; Justin worked on and finished the methods 
+in reliabilityAnalysis. 
 <br>
-JUinit Tests: Status - Continuing work done in Sprint 2 as well as adding new tests as needed
 <br>
-Javadoc Comments: Status - Will be updated as progress is made. 
+JUinit Tests:
 <br>
-README: Status - Continuously updated 
+Status - Continuing work done in Sprint 2 as well as adding new tests as needed; 
+being worked on by Annalisa and Jake
+<br>
+<br>
+Javadoc Comments: 
+<br>
+Status - Will be updated as progress is made.
+<br>
+The Javadocs for the JUinit test was completed by . . . 
+<br>
+The Javadocs for the ReliabilityAnalysis was completed by . . . 
+<br>
+<br>
+README: 
+<br>
+Status - Continuously updated; being updated by Elizabeth 
 <br>
 
 
