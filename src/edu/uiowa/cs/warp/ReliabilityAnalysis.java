@@ -180,8 +180,6 @@ public class ReliabilityAnalysis {
 	   	setInitialStateForReleasedFlows();
 	   	
 	   	ProgramSchedule schedule = program.getSchedule();
-	   	System.out.println("Rows:" + schedule.getNumRows());
-	   	System.out.println("Columns:" + schedule.getNumColumns());
 	   	for (int timeSlot=0;timeSlot<schedule.getNumRows();timeSlot++) {
 	   		for (int k=0;k<schedule.getNumColumns();k++) {
 	   			ArrayList<InstructionParameters> instructionList = warpDSL.getInstructionParameters(schedule.get(timeSlot, k));
@@ -191,7 +189,11 @@ public class ReliabilityAnalysis {
 	   					double prevSnkNodeState = 0.0;
 	   					double prevSrcNodeState = 0.0;
 	   					double newSinkNodeState = 0.0;
-	   					if (timeSlot==0) {
+	   					boolean isFirstTimeSlot = timeSlot==0;
+	   					Integer flowPeriod = program.toWorkLoad().getFlowPeriod(parameters.getFlow());
+	   					Integer flowPhase = program.toWorkLoad().getFlowPhase(parameters.getFlow());
+	   					boolean isNewPeriod = ((timeSlot%flowPeriod) == flowPhase);
+	   					if ((isFirstTimeSlot==true) || (isNewPeriod==true)) {
 	   						prevSnkNodeState = 0.0;
 	   						prevSrcNodeState = 1.0;
 	   						newSinkNodeState = (1-minPacketReceptionRate)*prevSnkNodeState + 
@@ -212,26 +214,29 @@ public class ReliabilityAnalysis {
 	   				
 	   			}
 	   			carryForwardReliabilities(timeSlot);
-	   			System.out.println("timeSlot:" + timeSlot);
+	   			//carryForwardReliabilities(timeSlot+1);
 	   		}
 	   	}
 	   	carryForwardReliabilities(reliabilityTable.getNumRows()-1);
    }
 
 void carryForwardReliabilities(Integer timeSlot) {
-		for (int i=0;i<reliabilityTable.getNumColumns();i++) {
+		if (timeSlot<reliabilityTable.getNumRows()) {
+			for (int i=0;i<reliabilityTable.getNumColumns();i++) {
 			ReliabilityNode reliNode = nodeMap.get(reliabilityHeaderRow.get(i));
-			if (((timeSlot+1)%reliNode.getFlowPeriod()) != reliNode.getFlowPhase()) {
+			if ((timeSlot%reliNode.getFlowPeriod()) != reliNode.getFlowPhase()) {
 				if (timeSlot != 0) {
 					double max = Math.max(reliabilityTable.get(timeSlot-1).get(i), reliabilityTable.get(timeSlot).get(i));
 					reliabilityTable.set(timeSlot, i, max);
 				}
 				
+			} 
 			}
+			/*
 			if (timeSlot==reliabilityTable.getNumRows()-1) {
 				double max = Math.max(reliabilityTable.get(timeSlot-1).get(i), reliabilityTable.get(timeSlot).get(i));
 				reliabilityTable.set(timeSlot, i, max);
-			}
+			}*/
 		}
    }
    
@@ -448,7 +453,7 @@ void carryForwardReliabilities(Integer timeSlot) {
 		WarpSystem warp4 = new WarpSystem(WL, 16, ScheduleChoices.PRIORITY);
    		Program program = warp3.toProgram();
    		Program program2 = warp4.toProgram();
-   		ReliabilityAnalysis reliAna = new ReliabilityAnalysis(program);
+   		ReliabilityAnalysis reliAna = new ReliabilityAnalysis(program2);
    		WarpDSL warpDSL = new WarpDSL();
    		reliAna.buildReliabilities();
    		
