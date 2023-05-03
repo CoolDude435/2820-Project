@@ -1,8 +1,12 @@
 package edu.uiowa.cs.warp;
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -96,15 +100,59 @@ public class ReliabilityAnalysisTest {
 	
 	//Annalisa's Tests
 	
-	@Test
-	void verifyReliabilitiesTest() {
-		//method not yet implemented
-	}
+	/**
+	* Tests verifyReliabilities() method
+	* Creates WarpSystem object with given WorkLoad, number of channels, scheduling choice
+	* Creates ReliabilityAnalysis object with the program of WarpSystem object.
+	* Calls verifyReliabilities() method and asserts that result is true,
+	* which tells that E2E reliability has been met.
+	* Also tests case where E2E reliability is not met. 
+	* Creates another WarpSystem object with WorkLoad where E2E reliability is higher than maximum E2E reliability that can
+	* be reached by the system. 
+	* Creates a ReliabilityAnalysis object with program of WarpSystem object. 
+	* Calls the verifyReliabilities() method and asserts that result is false,
+	* indicating that the E2E reliability has not been met.
+	*
+	* @see ReliabilityAnalysis
+	*/
 	
 	@Test
-	void getReliabilitiesTest() {
-		//method not yet implemented
+	void testVerifyReliabilities() {
+	    WorkLoad load = new WorkLoad(0.8, 0.95, "example.txt");
+	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
+	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
+	    boolean result = analysis.verifyReliabilities();
+	    assertTrue(result);
+	    
+	    // Test the case where E2E is not met
+	    WorkLoad load2 = new WorkLoad(0.9, 0.98, "example.txt");
+	    WarpSystem system2 = new WarpSystem(load2, 4, ScheduleChoices.PRIORITY);
+	    ReliabilityAnalysis analysis2 = new ReliabilityAnalysis(system2.toProgram());
+	    boolean result2 = analysis2.verifyReliabilities();
+	    assertFalse(result2);
 	}
+
+	/**
+	* Test verifies that getReliabilities method in ReliabilityAnalysis returns a non-null ReliabilityTable object.
+	* Creates new ReliabilityAnalysis object with Program object and calls getReliabilities method.
+	* If returned ReliabilityTable object is not null, the test passes.
+	* If returned ReliabilityTable object is null, the test fails.
+	* 
+	* @see ReliabilityAnalysis getReliabilities
+	*/
+	
+	@Test
+	void testGetReliabilities() {
+	    // create a new reliability analysis object
+	    ReliabilityAnalysis ra = new ReliabilityAnalysis(program1);
+	    
+	    // get the reliability table
+	    ReliabilityTable table = ra.getReliabilities();
+	    
+	    // check that the table is not null
+	    assertNotNull(table);
+	}
+
 	
 	@Test
 	void buildReliabilityTableTest() {
@@ -112,23 +160,45 @@ public class ReliabilityAnalysisTest {
 	}
 	
 	@Test
-	void carryForwardReliabilitiesTest() {
-		//method not yet implemented
+	void testCarryForwardReliabilities() {
+	    // Create a new ReliabilityAnalysis object with a test reliability table
+	    ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program1);
+	    
+
+	    // Call carryForwardReliabilities() with time slot 1
+	    reliabilityAnalysis.carryForwardReliabilities(1);
+
+	    // Verify that the reliability table was updated correctly
+	    List<Double> expectedRow = Arrays.asList(1.0, 0.5, 0.75, 1.0, 0.5, 0.5, 0.75);
+	    assertEquals(expectedRow, reliabilityAnalysis.getReliabilities().get(1));
+
+	    // Call carryForwardReliabilities() with time slot 2
+	    reliabilityAnalysis.carryForwardReliabilities(2);
+
+	    // Verify that the reliability table was updated correctly
+	    expectedRow = Arrays.asList(1.0, 0.75, 0.875, 1.0, 0.75, 0.75, 0.875);
+	    assertEquals(expectedRow, reliabilityAnalysis.getReliabilities().get(2));
 	}
 	
 	@Test
-	void printRaTableTest() {
-		//method not yet implemented
-	}
-	
-	@Test
-	void setReliabilitiesTest() {
-		//method not yet implemented
-	}
-	
-	@Test
-	void setInitialStateForReleasedFlowsTest() {
-		//method not yet implemented
+	void testSetInitialStateForReleasedFlows() {
+	    // Create a new ReliabilityAnalysis object with a test node map and table
+	    ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program1);
+	    reliabilityAnalysis.NodeMap(/* test node map */);
+	    reliabilityAnalysis.setReliabilityTable(/* test reliability table */);
+
+	    // Call the method being tested
+	    reliabilityAnalysis.setInitialStateForReleasedFlows();
+
+	    // Check that the reliabilityTable was updated as expected
+	    for (String node : reliabilityAnalysis.getNodeMap().keySet()) {
+	        ReliabilityAnalysis reliNode = reliabilityAnalysis.getNodeMap().get(node);
+	        if (reliNode.isFlowSrc() == true) {
+	            for (int i = 0; i < reliabilityAnalysis.getReliabilities().getNumRows(); i++) {
+	                assertEquals(1.0, reliabilityAnalysis.getReliabilities().get(i, reliNode.getIndex()));
+	            }
+	        }
+	    }
 	}
 	
 }
