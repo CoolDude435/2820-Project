@@ -115,7 +115,7 @@ public class ReliabilityAnalysis {
 		   }
 	   }
        return true;
-        }
+     }
    
    /**
     * setHeaderRow updates the header row of the reliability table. 
@@ -218,7 +218,7 @@ public class ReliabilityAnalysis {
 	   	carryForwardReliabilities(reliabilityTable.getNumRows()-1);
    }
 
-private void carryForwardReliabilities(Integer timeSlot) {
+void carryForwardReliabilities(Integer timeSlot) {
 		for (int i=0;i<reliabilityTable.getNumColumns();i++) {
 			ReliabilityNode reliNode = nodeMap.get(reliabilityHeaderRow.get(i));
 			if (((timeSlot+1)%reliNode.getFlowPeriod()) != reliNode.getFlowPhase()) {
@@ -250,7 +250,7 @@ private void carryForwardReliabilities(Integer timeSlot) {
 	   
    }
    
-   private void setInitialStateForReleasedFlows() {
+   void setInitialStateForReleasedFlows() {
 	   
 	   for (String node : nodeMap.keySet()) {
 		   ReliabilityNode reliNode = nodeMap.get(node);
