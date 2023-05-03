@@ -129,8 +129,7 @@ public class ReliabilityAnalysis {
     */
    public ArrayList<String> getReliabilityHeaderRow() {
 	   if (reliabilityHeaderRow == null) {
-		   System.out.println("Error: reliabilityHeaderRow is not set!");
-		   return new ArrayList<String>();
+		   buildReliabilities();
 	   }
 	   return reliabilityHeaderRow;
 	   }
@@ -163,6 +162,7 @@ public class ReliabilityAnalysis {
 		   Flow flow = flowMap.get(flowNames.get(i));
 		   ArrayList<Node> nodesInFlow = flow.getNodes();
 		   Integer flowPhase = program.toWorkLoad().getFlowPhase(flowNames.get(i));
+		   Integer flowPeriod = program.toWorkLoad().getFlowPeriod(flowNames.get(i));
 		   for (int k=0;k<nodesInFlow.size();k++) {
 			   boolean src = false;
 			   if (k==0) {
@@ -170,49 +170,93 @@ public class ReliabilityAnalysis {
 			   }
 			   String header = flowNames.get(i) + ":" + nodesInFlow.get(k);
 			   headerRow.add(header);
-			   ReliabilityNode reliNode = new ReliabilityNode(headerRow.size()-1,src,flowPhase);
+			   ReliabilityNode reliNode = new ReliabilityNode(headerRow.size()-1,src,flowPhase, flowPeriod);
 			   nodeMap.put(header, reliNode);  
 	   		}
 	   	}
+	   	this.nodeMap = nodeMap;
 	   	setReliabilityHeaderRow(headerRow);
 	   	reliabilityTable = new ReliabilityTable(program.getSchedule().size(),headerRow.size());
-	   	setInitialStateForReleasedFlows(nodeMap,reliabilityTable);
-	   
-	   
-	   
-	   
+	   	setInitialStateForReleasedFlows();
+	   	
+	   	ProgramSchedule schedule = program.getSchedule();
+	   	System.out.println("Rows:" + schedule.getNumRows());
+	   	System.out.println("Columns:" + schedule.getNumColumns());
+	   	for (int timeSlot=0;timeSlot<schedule.getNumRows();timeSlot++) {
+	   		for (int k=0;k<schedule.getNumColumns();k++) {
+	   			ArrayList<InstructionParameters> instructionList = warpDSL.getInstructionParameters(schedule.get(timeSlot, k));
+	   			for (int j=0;j<instructionList.size();j++) {
+	   				InstructionParameters parameters = instructionList.get(j);
+	   				if (parameters.getSnk().equals("unused")==false) {
+	   					double prevSnkNodeState = 0.0;
+	   					double prevSrcNodeState = 0.0;
+	   					double newSinkNodeState = 0.0;
+	   					if (timeSlot==0) {
+	   						prevSnkNodeState = 0.0;
+	   						prevSrcNodeState = 1.0;
+	   						newSinkNodeState = (1-minPacketReceptionRate)*prevSnkNodeState + 
+	   											minPacketReceptionRate*prevSrcNodeState;
+	   					} else {
+	   						String prevSnkNode = parameters.getFlow() + ":" + parameters.getSnk();
+	   						String prevSrcNode = parameters.getFlow() + ":" + parameters.getSrc();
+	   						prevSnkNodeState = reliabilityTable.get(timeSlot-1, nodeMap.get(prevSnkNode).getIndex());
+	   						prevSrcNodeState = reliabilityTable.get(timeSlot-1, nodeMap.get(prevSrcNode).getIndex());
+	   						newSinkNodeState = (1-minPacketReceptionRate)*prevSnkNodeState + 
+												minPacketReceptionRate*prevSrcNodeState;
+	   					}
+	   					String snkNode = parameters.getFlow() + ":" + parameters.getSnk(); 
+	   					Integer snkNodeIndex = nodeMap.get(snkNode).getIndex();
+	   					reliabilityTable.set(timeSlot, snkNodeIndex, newSinkNodeState);
+	   					
+	   				}
+	   				
+	   			}
+	   			carryForwardReliabilities(timeSlot);
+	   			System.out.println("timeSlot:" + timeSlot);
+	   		}
+	   	}
+	   	carryForwardReliabilities(reliabilityTable.getNumRows()-1);
    }
 
-private void carryForwardReliabilities(Integer timeSlot, NodeMap nodeMap, ReliabilityTable reliabilities) {
-	// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
+private void carryForwardReliabilities(Integer timeSlot) {
+		for (int i=0;i<reliabilityTable.getNumColumns();i++) {
+			ReliabilityNode reliNode = nodeMap.get(reliabilityHeaderRow.get(i));
+			if (((timeSlot+1)%reliNode.getFlowPeriod()) != reliNode.getFlowPhase()) {
+				if (timeSlot != 0) {
+					double max = Math.max(reliabilityTable.get(timeSlot-1).get(i), reliabilityTable.get(timeSlot).get(i));
+					reliabilityTable.set(timeSlot, i, max);
+				}
+				
+			}
+			if (timeSlot==reliabilityTable.getNumRows()-1) {
+				double max = Math.max(reliabilityTable.get(timeSlot-1).get(i), reliabilityTable.get(timeSlot).get(i));
+				reliabilityTable.set(timeSlot, i, max);
+			}
+		}
    }
    
    /**
     * printRATable prints out the contents of the reliability analysis table.  
     * @return
     */
-   public void printRaTable(ReliabilityTable reliabilities, Integer timeSlot) {
-	   ReliabilityRow reliRow = reliabilities.get(timeSlot);
+   public void printRaTable(Integer timeSlot) {
+	   if (reliabilityTable==null) {
+		   buildReliabilities();
+	   }
+	   ReliabilityRow reliRow = reliabilityTable.get(timeSlot);
 	   for (int i=0;i<reliRow.size();i++) {
 		   System.out.print(reliRow.get(i) + ", ");
 	   }
-	// TODO implement this operation
-		throw new UnsupportedOperationException("not implemented");
+	   
    }
    
-   private void setReliabilities(ReliabilityTable rm) {
-	// TODO implement this operation
-			throw new UnsupportedOperationException("not implemented");
-   }
-   
-   private void setInitialStateForReleasedFlows(NodeMap nodeMap, ReliabilityTable reliabilities) {
+   private void setInitialStateForReleasedFlows() {
 	   
 	   for (String node : nodeMap.keySet()) {
 		   ReliabilityNode reliNode = nodeMap.get(node);
-		   if (reliNode.flowSrc == true) {
-			   for (int i=0;i<reliabilities.size();i++) {
-				   reliabilities.set(i,reliNode.index, 1.0);
+		   if (reliNode.isFlowSrc() == true) {
+			   for (int i=0;i<reliabilityTable.getNumRows();i++) {
+				   reliabilityTable.set(i,reliNode.getIndex(), 1.0);
 			   }
 		   }
 	   }
@@ -367,11 +411,26 @@ private void carryForwardReliabilities(Integer timeSlot, NodeMap nodeMap, Reliab
 	   Integer index = 0;
 	   boolean flowSrc = false;
 	   Integer flowPhase = 0;
+	   Integer flowPeriod = 0;
 	   
-	   public ReliabilityNode(Integer index, boolean flowSrc, Integer flowPhase) {
+	   public ReliabilityNode(Integer index, boolean flowSrc, Integer flowPhase, Integer flowPeriod) {
 		   this.index = index;
 		   this.flowSrc = flowSrc;
 		   this.flowPhase = flowPhase;
+		   this.flowPeriod = flowPeriod;
+	   }
+	   
+	   public Integer getIndex() {
+		   return this.index;
+	   }
+	   public boolean isFlowSrc() {
+		   return this.flowSrc;
+	   }
+	   public Integer getFlowPhase() {
+		   return this.flowPhase;
+	   }
+	   public Integer getFlowPeriod() {
+		   return this.flowPeriod;
 	   }
    }
    
@@ -384,23 +443,36 @@ private void carryForwardReliabilities(Integer timeSlot, NodeMap nodeMap, Reliab
    	public static void main(String[] args) {
    		WarpSystem warp3;
 		WorkLoad stressTest = new WorkLoad(.9,.9, "StressTest4.txt");
-
-		warp3 = new WarpSystem(stressTest, 20, ScheduleChoices.PRIORITY);
+		warp3 = new WarpSystem(stressTest, 16, ScheduleChoices.PRIORITY);
+		WorkLoad WL = new WorkLoad(.8,.99, "Example1a.txt");
+		WarpSystem warp4 = new WarpSystem(WL, 16, ScheduleChoices.PRIORITY);
    		Program program = warp3.toProgram();
+   		Program program2 = warp4.toProgram();
    		ReliabilityAnalysis reliAna = new ReliabilityAnalysis(program);
    		WarpDSL warpDSL = new WarpDSL();
+   		reliAna.buildReliabilities();
+   		
+   		
    		/*
    		for (int i=0;i<program.getSchedule().get(0).size();i++) {
-   			String string = program.getSchedule().get(0).get(i);
+   			String string = program.getSchedule().get(1).get(i);
    			System.out.println(string);
    			ArrayList<InstructionParameters> list = warpDSL.getInstructionParameters(string);
+   			
+   			
    			for (int k=0;k<list.size();k++) {
+   				System.out.println(list.size());
    				System.out.println(list.get(k).getFlow() + ", " + list.get(k).getSnk() + ", " + list.get(k).getSrc());
-
+   				//System.out.println(program.toWorkLoad().getFlowPhase(list.get(k).getFlow()));
    			}
    		
+   		}
+   		
+   		for (String reliNode : reliAna.nodeMap.keySet()) {
+   			System.out.print(reliNode + ":" + reliAna.nodeMap.get(reliNode).getFlowPhase() + " ");
+   			
    		}*/
-   		reliAna.buildReliabilities();
+   		
    		for (int i=0;i<reliAna.reliabilityHeaderRow.size();i++) {
    			System.out.print(reliAna.reliabilityHeaderRow.get(i) + " ");
    		}
