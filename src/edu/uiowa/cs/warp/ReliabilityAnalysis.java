@@ -87,7 +87,7 @@ public class ReliabilityAnalysis {
    }
    
 	/**
-	 *RelizbilityAnalysis is a constructor to set up the Reliability analysis based on the number of 
+	 *ReliabilityAnalysis is a constructor to set up the Reliability analysis based on the number of 
 	 *faults tolerated. 
 	 * 
 	 * @param numFaults the number of faults tolerated in the system. 
@@ -102,11 +102,12 @@ public class ReliabilityAnalysis {
    }
    
    /**
-    * verifyReliabilities is a call to see if all the reliabilities of the flows pass.
+    * verifyReliabilities checks to see if the end to end reliability is met
+    * by the flows and outputs an error message if end to end reliability is not met
     * 
-    * @return
+    * @return a boolean of true or false if end to end reliability is met
     */
-   public Boolean verifyReliabilities() {
+   public boolean verifyReliabilities() {
 	   ReliabilityRow finalRow = getFinalReliabilityRow();
 	   for (int i=0;i<finalRow.size();i++) {
 		   if (finalRow.get(i)>=e2e) {
@@ -119,13 +120,17 @@ public class ReliabilityAnalysis {
    
    /**
     * setHeaderRow updates the header row of the reliability table. 
+    * 
+    * @param takes an ArrayList of Strings that is requested to be set as the reliabilityHeaderRow
     */
    public void setReliabilityHeaderRow(ArrayList<String> reliabilityHeaderRow) {
 	   this.reliabilityHeaderRow = reliabilityHeaderRow;
    }
    
    /**
-    * getHeaderRow returns the header row of the reliability table. 
+    * getHeaderRow returns the header row of the reliability table.
+    * 
+    * @return an ArrayList of Strings which is the reliabilityHeaderRow
     */
    public ArrayList<String> getReliabilityHeaderRow() {
 	   if (reliabilityHeaderRow == null) {
@@ -135,9 +140,10 @@ public class ReliabilityAnalysis {
 	   }
    
    /**
-    * getReliabilities returns the table containing reliability of the flows. 
+    * getReliabilities returns the table containing reliability of the flows
+    * and calls buildReliabilities() if the table is not built yet
     * 
-    * @return reliabilityTable
+    * @return reliabilityTable containing the reliability of the nodes in each flow
     */
    public ReliabilityTable getReliabilities() {
 	   if (reliabilityTable == null) {
@@ -228,7 +234,14 @@ public class ReliabilityAnalysis {
 	   	carryForwardReliabilities(reliabilityTable.getNumRows()-1);
    }
 
-void carryForwardReliabilities(Integer timeSlot) {
+   /**
+    * carryForwardReliabilities moves up all reliabilities of the nodes from the last timeSlot
+    * if they were not affected by the schedule or it isn't the start of a new period for the flow
+    * of the node. Also doesn't change anything if it is the first timeSlot
+    * 
+    * @param timeSlot the timeSlot that reliabilities are requested to be carried forward to
+    */
+   void carryForwardReliabilities(Integer timeSlot) {
 		if (timeSlot<reliabilityTable.getNumRows()) {
 			for (int i=0;i<reliabilityTable.getNumColumns();i++) {
 			ReliabilityNode reliNode = nodeMap.get(reliabilityHeaderRow.get(i));
@@ -249,20 +262,11 @@ void carryForwardReliabilities(Integer timeSlot) {
    }
    
    /**
-    * printRATable prints out the contents of the reliability analysis table.  
-    * @return
+    * setInititalStateForReleasedFlows iterates through the entries in the nodeMap and for any
+    * ReliabilityNode entry that is a srcNode set their index in the reliabilityTable to 1.0
+    * for all timeSlots reflecting that starting probability of the flow which is 1.0.
+    * called in buildReliabilities as a helper function 
     */
-   public void printRaTable(Integer timeSlot) {
-	   if (reliabilityTable==null) {
-		   buildReliabilities();
-	   }
-	   ReliabilityRow reliRow = reliabilityTable.get(timeSlot);
-	   for (int i=0;i<reliRow.size();i++) {
-		   System.out.print(reliRow.get(i) + ", ");
-	   }
-	   
-   }
-   
    void setInitialStateForReleasedFlows() {
 	   for (String node : nodeMap.keySet()) {
 		   ReliabilityNode reliNode = nodeMap.get(node);
@@ -425,6 +429,15 @@ void carryForwardReliabilities(Integer timeSlot) {
 	   Integer flowPhase = 0;
 	   Integer flowPeriod = 0;
 	   
+	   /**
+	    * constructor for ReliabilityNode that will contain the information of the index,
+	    * flowSrc, flowPhase, and flowPeriod of a node
+	    * 
+	    * @param index an Integer index of the column where the node is located in the reliabilityTable
+	    * @param flowSrc a boolean determining if the node is a srcNode for its flow
+	    * @param flowPhase an Integer which indicates the flowPhase of the flow of the node
+	    * @param flowPeriod and Integer which indicates the flowPeriod of the flow of the node
+	    */
 	   public ReliabilityNode(Integer index, boolean flowSrc, Integer flowPhase, Integer flowPeriod) {
 		   this.index = index;
 		   this.flowSrc = flowSrc;
@@ -432,15 +445,38 @@ void carryForwardReliabilities(Integer timeSlot) {
 		   this.flowPeriod = flowPeriod;
 	   }
 	   
+	   /**
+	    * getIndex is a getter method for the index of the node
+	    * 
+	    * @return an Integer which is the index of the node
+	    */
 	   public Integer getIndex() {
 		   return this.index;
 	   }
+	   
+	   /**
+	    * isFlowSrc is a getter method for the boolean which indicates if the node is a srcNode
+	    * 
+	    * @return a boolean which indicates if the node is a srcNode
+	    */
 	   public boolean isFlowSrc() {
 		   return this.flowSrc;
 	   }
+	   
+	    /**
+	     * getFlowPhase is a getter method for the flowPhase of the flow of the node
+	     * 
+	     * @return an Integer which is the flowPhase of the flow the node is in
+	     */
 	   public Integer getFlowPhase() {
 		   return this.flowPhase;
 	   }
+	   
+	   /**
+	    * getFlowPeriod is a getter method for the flowPeriod of the flow of the node
+	    * 
+	    * @return an Integer which is the flowPeriod of the flow the node is in
+	    */
 	   public Integer getFlowPeriod() {
 		   return this.flowPeriod;
 	   }
@@ -484,7 +520,7 @@ void carryForwardReliabilities(Integer timeSlot) {
    			System.out.print(reliNode + ":" + reliAna.nodeMap.get(reliNode).getFlowPhase() + " ");
    			
    		}*/
-   		
+   		/*
    		for (int i=0;i<reliAna.reliabilityHeaderRow.size();i++) {
    			System.out.print(reliAna.reliabilityHeaderRow.get(i) + " ");
    		}
@@ -494,7 +530,7 @@ void carryForwardReliabilities(Integer timeSlot) {
    				System.out.print(reliAna.getReliabilities().get(i, k) + ", ");
    			}
    			System.out.println();
-   		}
+   		}*/
    		
    	}
    }
