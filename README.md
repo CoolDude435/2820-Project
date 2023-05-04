@@ -113,41 +113,97 @@ README: Status - Updated by Elizabeth and Justin
 <br>
 **Sprint3**
 <br>
-The focus of sprint 3 was to finish creating the methods in ReliabilityAnalysis, creating JUinit tests for 
-ReliabilityAnalysis, as well as Javadoc for the method and all Juint tests.  
+The focus of Sprint 3 was to finish creating the methods in ReliabilityAnalysis, creating JUnit tests for
 <br>
-UML Diagram: 
+ReliabilityAnalysis, as well as Javadoc for the method and all JUnit tests. Also, completing
 <br>
-Status - Will be updated as progress is made. 
+the Sequence Diagram for the ra config and UML Diagrams for ReliabilityAnalysis and ReliabilityVisualization
 <br>
-<br>
-Code Methods:
-<br>
-ReliabilityVisualization: Status - The base was created in Sprint 2
-<br>
-ReliabilityAnalysis: Status - The base was created in Sprint 2; Justin worked on and finished the methods 
-in reliabilityAnalysis. 
+
+___
+__Code Methods:__
 <br>
 <br>
-JUinit Tests:
+ReliabilityVisualization: Status - Completed by Justin in Sprint2
+<br>
+-creates the data and information needed to display a GUI visualization of the reliabilities
+<br>
+<br>
+*ReliabilityVisualization(): Status-Complete
+<br>
+*displayVisualization(): Status-Complete
+<br>
+*createHeader(): Status-Complete
+<br>
+*createColumnHeader(): Status-Complete
+<br>
+*createVisualizationData(): Status-Complete
+<br>
+*createTitle(): Status-Complete
+<br>
+
+___
+ReliabilityAnalysis: Status - The base was created in Sprint 2, Completed by Justin in Sprint3
+<br>
+<br>
+*ReliabilityAnalysis(): Status-Complete
+<br>
+*getFinalReliabilityRow(): Status-Complete
+<br>
+*verifyReliabilities(): Status-Complete
+<br>
+*setReliabilityHeaderRow(): Status-Complete
+<br>
+*getReliabilityHeaderRow(): Status-Complete
+<br>
+*getReliabilities(): Status-Complete
+<br>
+*buildReliabilities(): Status-Complete
+<br>
+*carryForwardReliabilities(): Status-Complete
+<br>
+*setInitialStateForReleasedFlows(): Status-Complete
+<br>
+*numTxPerLinkAndTotalTxCost(): Status-Complete
+<br>
+___
+ReliabilityNode: Helper class for ReliabilityAnalysis Status-Complete
+<br>
+-contains information about a node and is used as entries inside NodeMap
+<br>
+<br>
+NodeMap: Helper class for ReliabilityAnalysis Status-Complete
+<br>
+-extends HashMap with String as the keys and ReliabilityNode as the entries
+<br>
+with no change in functionality
+<br>
+___
+JUnit Tests:
 <br>
 Status - Continuing work done in Sprint 2 as well as adding new tests as needed; 
 being worked on by Annalisa and Jake
 <br>
 <br>
+___
 Javadoc Comments: 
 <br>
 Status - Will be updated as progress is made.
 <br>
-The Javadocs for the JUinit test was completed by . . . 
+The Javadocs for the JUnit test was completed by . . . 
 <br>
 The Javadocs for the ReliabilityAnalysis was completed by . . . 
+<br>
+<br>
+UML Diagram: 
+<br>
+Status - Will be updated at the very end when all classes and methods are complete
+<br>
+<br>
+UML Sequence Diagram:
 <br>
 <br>
 README: 
 <br>
 Status - Continuously updated; being updated by Elizabeth 
 <br>
-
-
-
