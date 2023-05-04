@@ -156,7 +156,15 @@ public class ReliabilityAnalysis {
 	   //setting headerRow and populating NodeMap
 	   ArrayList<String> headerRow = new ArrayList<String>();
 	   NodeMap nodeMap = new NodeMap();
+	   //default schedule type of priority
 	   ArrayList<String> flowNames = program.toWorkLoad().getFlowNamesInPriorityOrder();
+	   if (program.getSchedulerName().equals("DeadlineMonotonic")) {
+		   program.toWorkLoad().setFlowsInDMorder();
+		   flowNames = program.toWorkLoad().getFlowNamesInPriorityOrder();
+	   } else if (program.getSchedulerName().equals("RateMonotonic")) {
+		   program.toWorkLoad().setFlowsInRMorder();
+		   flowNames = program.toWorkLoad().getFlowNamesInPriorityOrder(); 
+	   }
 	   for (int i=0;i<flowNames.size();i++) {
 		   FlowMap flowMap = program.toWorkLoad().getFlows();
 		   Flow flow = flowMap.get(flowNames.get(i));
@@ -256,7 +264,6 @@ void carryForwardReliabilities(Integer timeSlot) {
    }
    
    void setInitialStateForReleasedFlows() {
-	   
 	   for (String node : nodeMap.keySet()) {
 		   ReliabilityNode reliNode = nodeMap.get(node);
 		   if (reliNode.isFlowSrc() == true) {
@@ -448,15 +455,15 @@ void carryForwardReliabilities(Integer timeSlot) {
    	public static void main(String[] args) {
    		WarpSystem warp3;
 		WorkLoad stressTest = new WorkLoad(.9,.9, "StressTest4.txt");
-		warp3 = new WarpSystem(stressTest, 16, ScheduleChoices.PRIORITY);
+		warp3 = new WarpSystem(stressTest, 16, ScheduleChoices.RM);
 		WorkLoad WL = new WorkLoad(.8,.99, "Example1a.txt");
 		WarpSystem warp4 = new WarpSystem(WL, 16, ScheduleChoices.PRIORITY);
    		Program program = warp3.toProgram();
    		Program program2 = warp4.toProgram();
-   		ReliabilityAnalysis reliAna = new ReliabilityAnalysis(program2);
+   		ReliabilityAnalysis reliAna = new ReliabilityAnalysis(program);
    		WarpDSL warpDSL = new WarpDSL();
    		reliAna.buildReliabilities();
-   		
+   		System.out.println(program.getSchedulerName());
    		
    		/*
    		for (int i=0;i<program.getSchedule().get(0).size();i++) {
@@ -482,7 +489,7 @@ void carryForwardReliabilities(Integer timeSlot) {
    			System.out.print(reliAna.reliabilityHeaderRow.get(i) + " ");
    		}
    		System.out.println();
-   		for (int i=0;i<reliAna.reliabilityTable.getNumRows();i++) {
+   		for (int i=0;i<20;i++) {
    			for (int k=0;k<reliAna.reliabilityTable.getNumColumns();k++) {
    				System.out.print(reliAna.getReliabilities().get(i, k) + ", ");
    			}
