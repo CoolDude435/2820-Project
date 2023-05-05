@@ -41,15 +41,43 @@ public class ReliabilityAnalysisTest {
 	}
 	
 	
-
-	
 	@Test
 	void buildReliabilitiesTest() {
 		//method not yet implemented
 	}
 	
+	/**
+	 * Sets the header row of a reliability table
+	 * Creates new ReliabilityAnalysis object with program1, builds the reliabilities, and
+	 * sets a new header row using setReliabilityHeaderRow() method. 
+	 * Verifies that new header row was set correctly by checking if it matches expected header row
+	 * 
+	 * @see ReliabilityAnalysis setReliabilityHeaderRow()
+	 */
 	@Test
-    void setReliabilityHeaderRowTest() {
+    void setReliabilityHeaderRowTes1t() {
+        // Create a new ReliabilityAnalysis object with a test reliability table
+        ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program1);
+        reliabilityAnalysis.buildReliabilities();
+
+        ArrayList<String> newHeader = new ArrayList<>(Arrays.asList("Node", "Reliability"));
+        reliabilityAnalysis.setReliabilityHeaderRow(newHeader);
+
+        // Verify that header row was updated correctly
+        assertEquals(newHeader, reliabilityAnalysis.getReliabilityHeaderRow());
+    }
+	
+	/**
+	 * Same as previous, but tests file StressTest4.txt
+	 * Sets the header row of a reliability table
+	 * Creates new ReliabilityAnalysis object with program3, builds the reliabilities, and
+	 * sets a new header row using setReliabilityHeaderRow() method. 
+	 * Verifies that new header row was set correctly by checking if it matches expected header row
+	 * 
+	 * @see ReliabilityAnalysis setReliabilityHeaderRow()
+	 */
+	@Test
+    void setReliabilityHeaderRowStressTest() {
         // Create a new ReliabilityAnalysis object with a test reliability table
         ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program3);
         reliabilityAnalysis.buildReliabilities();
@@ -61,6 +89,12 @@ public class ReliabilityAnalysisTest {
         assertEquals(newHeader, reliabilityAnalysis.getReliabilityHeaderRow());
     }
 	
+	/**
+	 * Creates new ReliabilityAnalysis object with program3, builds the reliabilities
+	 * Then it compares the header row with the expected values to check they match.
+	 * 
+	 * @see ReliabilityAnalysis getReliabilityHeader()
+	 */
 	@Test
 	public void getReliabilityHeaderRowTest1() {
 	    // Create a new ReliabilityAnalysis object
@@ -78,6 +112,13 @@ public class ReliabilityAnalysisTest {
 	    assertEquals(expectedHeaderRow, new ArrayList<String>(reliabilityAnalysis.getReliabilityHeaderRow()));
 	}
 	
+	/**
+	 * Same as test before, but checks StressTest4.txt
+	 * Creates new ReliabilityAnalysis object with program3, builds the reliabilities
+	 * Then it compares the header row with the expected values to check they match.
+	 * 
+	 * @see ReliabilityAnalysis getReliabilityHeader()
+	 */
 	@Test
 	public void getReliabilityHeaderStressTest() {
 	    // Create a new ReliabilityAnalysis object
@@ -100,8 +141,6 @@ public class ReliabilityAnalysisTest {
 	    
 	    assertEquals(expectedHeaderRow, new ArrayList<String>(reliabilityAnalysis.getReliabilityHeaderRow()));
 	}
-
-		
 	
 	/**
 	 * Tests the numTxPerLinkAndTotalTxCost() method in ReliabilityAnalysis
@@ -127,19 +166,15 @@ public class ReliabilityAnalysisTest {
 		}
 	}
 	
-	
-	//Annalisa's Tests
-	
 	/**
 	* Tests verifyReliabilities() method with StressTest4.txt
-	* Creates WarpSystem object with given WorkLoad, number of channels, scheduling choice
 	* Creates ReliabilityAnalysis object with the program of WarpSystem object.
 	* Calls verifyReliabilities() method and asserts that result is true,
 	* which tells that E2E reliability has been met.
+	* 
 	* Also tests case where E2E reliability is not met. 
-	* Creates another WarpSystem object with WorkLoad where E2E reliability is higher than maximum E2E reliability that can
-	* be reached by the system. 
-	* Creates a ReliabilityAnalysis object with program of WarpSystem object. 
+	* Creates another WarpSystem object where E2E reliability is 
+	* higher than max E2E reliability that can be reached 
 	* Calls the verifyReliabilities() method and asserts that result is false,
 	* indicating that the E2E reliability has not been met.
 	*
@@ -166,17 +201,9 @@ public class ReliabilityAnalysisTest {
 	
 	/**
 	* Tests verifyReliabilities() method with Example.txt (which is never not met)
-	* Same as previous test, but with different file
-	* Creates WarpSystem object with given WorkLoad, number of channels, scheduling choice
 	* Creates ReliabilityAnalysis object with the program of WarpSystem object.
 	* Calls verifyReliabilities() method and asserts that result is true,
 	* which tells that E2E reliability has been met.
-	* Also tests case where E2E reliability is not met. 
-	* Creates another WarpSystem object with WorkLoad where E2E reliability is higher than maximum E2E reliability that can
-	* be reached by the system. 
-	* Creates a ReliabilityAnalysis object with program of WarpSystem object. 
-	* Calls the verifyReliabilities() method and asserts that result is false,
-	* indicating that the E2E reliability has not been met.
 	*
 	* @see ReliabilityAnalysis verifyReliabilities()
 	*/
@@ -193,15 +220,13 @@ public class ReliabilityAnalysisTest {
 	
 	/**
 	* Tests verifyReliabilities() method with StressTest.txt
-	* Same as previous test, but with different file
-	* Creates WarpSystem object with given WorkLoad, number of channels, scheduling choice
 	* Creates ReliabilityAnalysis object with the program of WarpSystem object.
 	* Calls verifyReliabilities() method and asserts that result is true,
 	* which tells that E2E reliability has been met.
+	* 
 	* Also tests case where E2E reliability is not met. 
-	* Creates another WarpSystem object with WorkLoad where E2E reliability is higher than maximum E2E reliability that can
-	* be reached by the system. 
-	* Creates a ReliabilityAnalysis object with program of WarpSystem object. 
+	* Creates another WarpSystem object where E2E reliability is 
+	* higher than max E2E reliability that can be reached 
 	* Calls the verifyReliabilities() method and asserts that result is false,
 	* indicating that the E2E reliability has not been met.
 	*
@@ -229,9 +254,9 @@ public class ReliabilityAnalysisTest {
 	* Test verifies that getReliabilities method in ReliabilityAnalysis returns a non-null ReliabilityTable object.
 	* Creates new ReliabilityAnalysis object with Program object and calls getReliabilities method.
 	* If returned ReliabilityTable object is not null, the test passes.
-	* If returned ReliabilityTable object is null, the test fails.
+	* If null, the test fails.
 	* 
-	* @see ReliabilityAnalysis getReliabilities
+	* @see ReliabilityAnalysis getReliabilities()
 	*/
 	@Test
 	void getReliabilitiesTest() {
@@ -252,7 +277,7 @@ public class ReliabilityAnalysisTest {
 	* If returned ReliabilityTable object is not null, the test passes.
 	* If returned ReliabilityTable object is null, the test fails.
 	* 
-	* @see ReliabilityAnalysis getReliabilities
+	* @see ReliabilityAnalysis getReliabilities()
 	*/
 	@Test
 	void getReliabilitiesStressTest() {
@@ -272,7 +297,7 @@ public class ReliabilityAnalysisTest {
 	 * carryForwardReliabilities() with time slot 1 and 2. Then it verifies that the reliability table was updated
 	 * correctly for each time slot.
 	 * 
-	 * @see ReliabilityAnalysis carryForwardReliabilities
+	 * @see ReliabilityAnalysis carryForwardReliabilities()
 	 */
 	@Test
 	void carryForwardReliabilitiesTest() {
@@ -302,7 +327,7 @@ public class ReliabilityAnalysisTest {
 	 * carryForwardReliabilities() with time slot 1 and 2. Then it verifies that the reliability table was updated
 	 * correctly for each time slot.
 	 * 
-	 * @see ReliabilityAnalysis carryForwardReliabilities
+	 * @see ReliabilityAnalysis carryForwardReliabilities()
 	 */
 	@Test
 	void carryForwardReliabilitiesStressTest() {
@@ -330,6 +355,14 @@ public class ReliabilityAnalysisTest {
 	    assertEquals(expectedRow, reliabilityAnalysis.getReliabilities().get(2));
 	}
 	
+	/**
+	 * Creates new ReliabilityAnalysis object with a test reliability table and builds the reliabilities.
+	 * Calls the setInitialStateForReleasedFlows() method to set the initial state for released flows.
+	 * Verifies that reliability table was updated correctly by comparing the expected 
+	 * row to the first row of the updated reliability table.
+	 * 
+	 * @see ReliabilityAnalysis setInitialStateForReleasedFlows()
+	 */
 	@Test
 	void setInitialStateForReleasedFlowsTest1() {
 	// Create a new ReliabilityAnalysis object with a test reliability table
@@ -343,8 +376,17 @@ public class ReliabilityAnalysisTest {
 	assertEquals(expectedRow, reliabilityAnalysis.getReliabilities().get(0));	    
 	}
 	
+	/**
+	 * Same as previous, but tests StressTest4.txt
+	 * Creates new ReliabilityAnalysis object with a test reliability table and builds the reliabilities.
+	 * Calls the setInitialStateForReleasedFlows() method to set the initial state for released flows.
+	 * Verifies that reliability table was updated correctly by comparing the expected 
+	 * row to the first row of the updated reliability table.
+	 * 
+	 * @see ReliabilityAnalysis setInitialStateForReleasedFlows()
+	 */
 	@Test
-	void setInitialStateForReleasedFlowsTest2() {
+	void setInitialStateForReleasedFlowsStressTest() {
 	// Create a new ReliabilityAnalysis object with a test reliability table
 	ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program3);
 	reliabilityAnalysis.buildReliabilities();
