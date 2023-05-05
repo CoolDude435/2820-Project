@@ -191,59 +191,70 @@ ___
 *ReliabilityVisualizationTest*: Status: Completed by Annalisa and Jake
 <br>
 <br>
-*displayVisualizationTest(): Status: Completed by 
+*displayVisualizationTest(): Status: Completed by Jake
 <br>
-*createHeaderTest1(): Status: Completed by 
+*createHeaderTest1(): Status: Completed by Jake
 <br>
-*createHeaderTEst2(): Status: Completed by 
+*createHeaderTest2(): Status: Completed by Jake
 <br>
-*createColumnHeaderTest1(): Status: Completed by 
+*createColumnHeaderTest1(): Status: Completed by Annalisa
 <br>
-*createColumnHeaderTest2(): Status: Completed by 
+*createColumnHeaderTest2(): Status: Completed by Annalisa
 <br>
-*createTitleTest1(): Status: Completed by 
+*createTitleTest1(): Status: Completed by Annalisa
 <br>
-*createTitleTest2(): Status: Completed by 
+*createTitleTest2(): Status: Completed by Annalisa
 <br>
-*createTitleTest3(): Status: Completed by 
+*createTitleTest3(): Status: Completed by Annalisa
 <br>
-*createVisualizationDataTest1(): Status: Completed by 
+*createVisualizationDataTest1(): Status: Completed by Annalisa
 <br>
-*createVisualizationDataTest2(): Status: Completed by 
+*createVisualizationDataTest2(): Status: Completed by Annalisa
 <br>
-*createVisualizationDataTest3(): Status: Completed by 
+*createVisualizationDataTest3(): Status: Completed by Annalisa
 <br>
 _____
-*ReliabilityAnalysisTest*: Status: Incomplete
+*ReliabilityAnalysisTest*: Status: Being worked on by Annalisa and Jake
 <br>
 <br>
-*buildReliabilitiesTest(): Status: Incomplete
+*buildReliabilitiesTest(): Status: Incomplete (to be completed by Jake)
 <br>
-*setReliabilityHeaderRowTest(): Status: Incomplete
+*setReliabilityHeaderRowTest1(): Status: Completed by Annalisa
 <br>
-*getReliabilityHeaderRowTest(): Status: Incomplete
+*setReliabilityHeaderRowStressTest(): Status: Completed by Annalisa
 <br>
+*getReliabilityHeaderRowTest1(): Status: Completed by Annalisa
+<br>
+*getReliabilityHeaderRowStressTest(): Status: Completed by Annalisa
+<br>
+*numTxPerLinkAndTotalTxCostTest(): Status: Completed by Justin
 <br>
 *verifyReliabilitiesTest1(): Status: Completed by Annalisa
 <br>
 *verifyReliabilitiesTest2(): Status: Completed by Annalisa
 <br>
-*verifyReliabilitiesTest3(): Status: Completed by Annalisa
+*verifyReliabilitiesStressTest(): Status: Completed by Annalisa
 <br>
-*getReliabilitiesTest(): Status: Completed by Annalisa
+*getReliabilitiesTest1(): Status: Completed by Annalisa
 <br>
 *getReliabilitiesStressTest(): Status: Completed by Annalisa
 <br>
 *carryForwardReliabiltiesTest(): Status: Completed by Annalisa
 <br>
-*carryForwardReliabilitiesStressTest(): Status: Working on by Annalisa
+*carryForwardReliabilitiesStressTest(): Status: Completed by Annalisa
+<br>
+*setInitialStateForReleasedFlowsTest1(): Status: Completed by Annalisa
+<br>
+*setInitialStateForReleasedFlowsStressTest(): Status: Completed by Annalisa
 <br>
 ___
 __Javadoc Comments:__
 <br>
 Status - Will be updated as progress is made.
 <br>
-The Javadocs for the JUnit test was completed by Annalisa
+The Javadocs for ReliabilityVisualizationTest JUnit tests were completed by Annalisa and Jake
+<br>
+The Javadocs for ReliabilityAnalysisTest JUnit tests will be completed by Annalisa
 <br>
 The Javadocs for the ReliabilityAnalysis was completed by Elizabeth and Justin
 <br>
@@ -255,6 +266,7 @@ Status - Will be updated at the very end when all classes and methods are comple
 <br>
 __UML Sequence Diagram:__
 <br>
+Status - Being worked on by Annalisa
 <br>
 __README:__
 <br>
