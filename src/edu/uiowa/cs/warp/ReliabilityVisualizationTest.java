@@ -38,9 +38,11 @@ public class ReliabilityVisualizationTest {
 	}
 	
 	/**
-	 * Tests displayVisualization method in ReliabilityVisualization.
+	 * Tests displayVisualization method in ReliabilityVisualization
 	 * Tests to make sure guiVisualization has output from 
-	 * displayVisualization by checking not null.
+	 * displayVisualization by checking not null
+	 * 
+	 * @see ReliabilityVisualization displayVisualization()
 	 */
 	@Test
 	void displayVisualizationTest() {
@@ -48,15 +50,16 @@ public class ReliabilityVisualizationTest {
 		ReliabilityVisualization visualization = new ReliabilityVisualization(warp2);
 		GuiVisualization guiVisualization = visualization.displayVisualization();
 		
-		assertNotNull(guiVisualization);
-		
-		
+		assertNotNull(guiVisualization);	
 	}
+	
 	/**
-	 * Tests createHeader method in ReliabilityVisualization.
-	 * Outputs of the createHeader method are compared to the 
-	 * expected results according to input from warp2 in first
-	 * test and warp3 in second test.
+	 * For Example1A.txt
+	 * Checks if createHeader() returns expected header description for given program 
+	 * Creates new ReliabilityVisualization object with program warp2
+	 * Calls createHeader() method, and verifies that returned description object is the expected
+	 * 
+	 * @see ReliabilityVisualization createHeader()
 	 */
 	@Test
 	void createHeaderTest1() {
@@ -71,6 +74,14 @@ public class ReliabilityVisualizationTest {
 		assertEquals("nChannels: 15\n", header.get(4));
 	}
 	
+	/**
+	 * For StressTest4.txt
+	 * Checks if createHeader() returns expected header description for given program 
+	 * Creates new ReliabilityVisualization object with program warp3
+	 * Calls createHeader() method, and verifies that returned description object is the expected
+	 * 
+	 * @see ReliabilityVisualization createHeader()
+	 */
 	@Test
 	void createHeaderTest2() {
 		
@@ -84,19 +95,15 @@ public class ReliabilityVisualizationTest {
 		assertEquals("nChannels: 20\n", header.get(4));
 	}
 	
-	
-	/**
+	 /**
 	 * Tests createColumnHeader in ReliabilityVisualization.
-	 * This method creates a ReliabilityVisualization object with given input, 
-	 * and calls createColumnHeader() method.
-     * Then compares the output with an expected array of column headers.
-     * Unknown Error in Test2. The test method will be fixed and implemented for Sprint3
+	 * Creates ReliabilityVisualization object with warp1,and calls createColumnHeader()
+     * Then compares output with expected array of column headers.
      * 
      * @see ReliabilityVisualization createColumnHeader)
 	 */
-	
 	@Test
-	void createColumnHeaderTest() { 
+	void createColumnHeaderTest1() { 
 		ReliabilityVisualization visualization = new ReliabilityVisualization(warp1);
    
         String[] expected = {"F0:A","F0:B",	"F0:C",	"F1:C",	"F1:B","F1:A"};
@@ -105,7 +112,14 @@ public class ReliabilityVisualizationTest {
         assertArrayEquals(expected, columnHeader);
 	}
 	
-	
+	/**
+	 * Same as previous, but for StressTest4.txt
+	 * Tests createColumnHeader in ReliabilityVisualization.
+	 * Creates ReliabilityVisualization object with warp3,and calls createColumnHeader()
+     * Then compares output with expected array of column headers.
+     * 
+     * @see ReliabilityVisualization createColumnHeader)
+	 */
 	@Test
 	void createColumnHeaderTest2() { 
 		ReliabilityVisualization visualization = new ReliabilityVisualization(warp3);
@@ -121,11 +135,9 @@ public class ReliabilityVisualizationTest {
         assertArrayEquals(expected, columnHeader);
 	}
 	
-	
 	/**
-	 * Tests createTitle() method in ReliabilityVisualization.
-	 * Creates new instance of Program with given parameters and passes it to the constructor of ReliabilityVisualization.
-	 * Calls createTitle to get title of the visualization and checks if equal to the expected.
+	 * Creates new instance of Program with warp1 and passes it to constructor of ReliabilityVisualization
+	 * Calls createTitle to get title of visualization and checks if equal to expected
 	 * 
 	 * @see ReliabilityVisualization createTitle()
 	*/
@@ -136,6 +148,13 @@ public class ReliabilityVisualizationTest {
 	    assertEquals("Reliability Analysis for graph Example\n", title);
 	}
 	
+	/**
+	 * Same as test before but tests Example1A.txt
+	 * Creates new instance of Program with warp2 and passes it to constructor of ReliabilityVisualization
+	 * Calls createTitle to get title of visualization and checks if equal to expected
+	 * 
+	 * @see ReliabilityVisualization createTitle()
+	*/
 	@Test
 	public void createTitleTest2() {
 	    ReliabilityVisualization visualization = new ReliabilityVisualization(warp2);
@@ -143,6 +162,13 @@ public class ReliabilityVisualizationTest {
 	    assertEquals("Reliability Analysis for graph Example1A\n", title);
 	}
 	
+	/**
+	 * Same as test before but tests StressTest4.txt
+	 * Creates new instance of Program with warp3 and passes it to constructor of ReliabilityVisualization
+	 * Calls createTitle to get title of visualization and checks if equal to expected
+	 * 
+	 * @see ReliabilityVisualization createTitle()
+	*/
 	@Test
 	public void createTitleTest3() {
 	    ReliabilityVisualization visualization = new ReliabilityVisualization(warp3);
@@ -150,17 +176,14 @@ public class ReliabilityVisualizationTest {
 	    assertEquals("Reliability Analysis for graph StressTest4\n", title);
 	}
 	
-	
 	/**
-	 * Tests createVisualizationData() method in the ReliabilityVisualization.
-	 * Creates new ReliabilityVisualization object with a Program object containing test data.
-	 * Calls to createVisualizationData() to get array of strings then tests that array is filled with expected values. 
-	 * Checks that first column of each row has the row number as string and the remaining columns have corresponding values.
-	 * If test passes; each row should have the expected values and array of strings should not be null.
+	 * Creates new ReliabilityVisualization object with warp1
+	 * Calls createVisualizationData() to get array of strings then tests that array is filled with expected values
+	 * Checks that first column of each row has row number as string and the remaining columns have corresponding values
+	 * If test passes; each row should have expected values and array of strings should not be null.
 	 * 
 	 * @see ReliabilityVisualization createVisualizationData() 
 	*/
-	
 	@Test
 	public void createVisualizationDataTest1() {
 		ReliabilityVisualization visualization = new ReliabilityVisualization(warp1);
@@ -179,6 +202,15 @@ public class ReliabilityVisualizationTest {
         }
 	}
 	
+	/**
+	 * Same as previous but checks file Example1a.txt
+	 * Creates new ReliabilityVisualization object with warp2
+	 * Calls createVisualizationData() to get array of strings then tests that array is filled with expected values
+	 * Checks that first column of each row has row number as string and the remaining columns have corresponding values
+	 * If test passes; each row should have expected values and array of strings should not be null.
+	 * 
+	 * @see ReliabilityVisualization createVisualizationData() 
+	*/
 	@Test
 	public void createVisualizationDataTest2() {
 		ReliabilityVisualization visualization = new ReliabilityVisualization(warp2);
@@ -197,6 +229,15 @@ public class ReliabilityVisualizationTest {
         }
 	}
 	
+	/**
+	 * Same as previous but checks file StressTest4.txt
+	 * Creates new ReliabilityVisualization object with warp3
+	 * Calls createVisualizationData() to get array of strings then tests that array is filled with expected values
+	 * Checks that first column of each row has row number as string and the remaining columns have corresponding values
+	 * If test passes; each row should have expected values and array of strings should not be null.
+	 * 
+	 * @see ReliabilityVisualization createVisualizationData() 
+	*/
 	@Test
 	public void createVisualizationDataTest3() {
 		ReliabilityVisualization visualization = new ReliabilityVisualization(warp3);
@@ -215,6 +256,4 @@ public class ReliabilityVisualizationTest {
         }
 	}
 	
-	
-
 }
