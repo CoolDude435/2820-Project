@@ -55,7 +55,7 @@ public class ReliabilityAnalysisTest {
 	 * @see ReliabilityAnalysis setReliabilityHeaderRow()
 	 */
 	@Test
-    void setReliabilityHeaderRowTes1t() {
+    void setReliabilityHeaderRowTest1() {
         // Create a new ReliabilityAnalysis object with a test reliability table
         ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program1);
         reliabilityAnalysis.buildReliabilities();
@@ -233,7 +233,7 @@ public class ReliabilityAnalysisTest {
 	* @see ReliabilityAnalysis verifyReliabilities()
 	*/
 	@Test
-	void verifyReliabilitiesTest3() {
+	void verifyReliabilitiesStressTest() {
 	    WorkLoad load = new WorkLoad(0.9, 0.0, "StressTest.txt");
 	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
@@ -259,7 +259,7 @@ public class ReliabilityAnalysisTest {
 	* @see ReliabilityAnalysis getReliabilities()
 	*/
 	@Test
-	void getReliabilitiesTest() {
+	void getReliabilitiesTest1() {
 	    // create a new reliability analysis object
 	    ReliabilityAnalysis ra = new ReliabilityAnalysis(program1);
 	    
@@ -300,7 +300,7 @@ public class ReliabilityAnalysisTest {
 	 * @see ReliabilityAnalysis carryForwardReliabilities()
 	 */
 	@Test
-	void carryForwardReliabilitiesTest() {
+	void carryForwardReliabilitiesTest1() {
 	    // Create a new ReliabilityAnalysis object with a test reliability table
 	    ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program1);
 	    reliabilityAnalysis.buildReliabilities();
