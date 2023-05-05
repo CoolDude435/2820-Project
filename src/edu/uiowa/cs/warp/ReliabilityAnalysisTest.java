@@ -122,7 +122,6 @@ public class ReliabilityAnalysisTest {
 	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
 	    analysis.buildReliabilities();
-	    System.out.println(analysis.getReliabilities());
 	    boolean result = analysis.verifyReliabilities();
 	    assertTrue(result);
 	    
@@ -131,7 +130,6 @@ public class ReliabilityAnalysisTest {
 	    WarpSystem system2 = new WarpSystem(load2, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis2 = new ReliabilityAnalysis(system2.toProgram());
 	    analysis2.buildReliabilities();
-	    System.out.println(analysis2.getReliabilities());
 	    boolean result2 = analysis2.verifyReliabilities();
 	    assertFalse(result2);
 	}
@@ -159,7 +157,6 @@ public class ReliabilityAnalysisTest {
 	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
 	    analysis.buildReliabilities();
-	    System.out.println(analysis.getReliabilities());
 	    boolean result = analysis.verifyReliabilities();
 	    assertTrue(result);
 	}
@@ -186,7 +183,6 @@ public class ReliabilityAnalysisTest {
 	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
 	    analysis.buildReliabilities();
-	    System.out.println(analysis.getReliabilities());
 	    boolean result = analysis.verifyReliabilities();
 	    assertTrue(result);
 	    
@@ -195,7 +191,6 @@ public class ReliabilityAnalysisTest {
 	    WarpSystem system2 = new WarpSystem(load2, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis2 = new ReliabilityAnalysis(system2.toProgram());
 	    analysis2.buildReliabilities();
-	    System.out.println(analysis2.getReliabilities());
 	    boolean result2 = analysis2.verifyReliabilities();
 	    assertFalse(result2);
 	}
@@ -232,6 +227,15 @@ public class ReliabilityAnalysisTest {
 	    assertNotNull(table);
 	}
 	
+	/**
+	 * Checks if method carryForwardReliabilities() updates the reliability table correctly.
+	 * It creates a new ReliabilityAnalysis object with a test reliability table, builds reliabilities and calls
+	 * carryForwardReliabilities() with time slot 1 and 2. Then it verifies that the reliability table was updated
+	 * correctly for each time slot.
+	 * 
+	 * @see ReliabilityAnalysis carryForwardReliabilities
+	 */
+	
 	@Test
 	void testCarryForwardReliabilities() {
 	    // Create a new ReliabilityAnalysis object with a test reliability table
@@ -252,9 +256,19 @@ public class ReliabilityAnalysisTest {
 	    expectedRow = Arrays.asList(1.0, 0.999, 0.972, 1.0, 0.0, 0.0);
 	    assertEquals(expectedRow, reliabilityAnalysis.getReliabilities().get(2));
 	}
-	//change expected values
+	
+	/**
+	 * Does same thing as previous test but tests StressTest.txt
+	 * Checks if method carryForwardReliabilities() updates the reliability table correctly.
+	 * It creates a new ReliabilityAnalysis object with a test reliability table, builds reliabilities and calls
+	 * carryForwardReliabilities() with time slot 1 and 2. Then it verifies that the reliability table was updated
+	 * correctly for each time slot.
+	 * 
+	 * @see ReliabilityAnalysis carryForwardReliabilities
+	 */
+	
 	@Test
-	void testCarryForwardReliabilitiesStressTest() {
+	void carryForwardReliabilitiesStressTest() {
 	    // Create a new ReliabilityAnalysis object with a test reliability table
 	    ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program3);
 	    reliabilityAnalysis.buildReliabilities();
