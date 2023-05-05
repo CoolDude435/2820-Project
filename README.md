@@ -113,6 +113,7 @@ README: Status - Updated by Elizabeth and Justin
 <br>
 **Sprint3**
 <br>
+<br>
 The focus of Sprint 3 was to finish creating the methods in ReliabilityAnalysis, creating JUnit tests for
 <br>
 ReliabilityAnalysis, as well as Javadoc for the method and all JUnit tests. Also, completing
@@ -141,7 +142,6 @@ __Code Methods:__
 <br>
 *createTitle(): Status-Complete
 <br>
-
 ___
 *ReliabilityAnalysis*: Status - The base was created in Sprint 2, Completed by Justin in Sprint3
 <br>
@@ -183,9 +183,9 @@ __JUnit Tests:__
 <br>
 -testing over the methods in ReliabilityVisualization and ReliabilityAnalysis using JUnit Tests
 <br>
-Status - Continuing work done in Sprint 2 as well as adding new tests as needed; 
+Status - Continuing work done in Sprint 2 as well as adding new tests as needed
+<br> 
 being worked on by Annalisa and Jake
-<br>
 <br>
 ___
 *ReliabilityVisualizationTest*: Status: Completed by Annalisa and Jake
