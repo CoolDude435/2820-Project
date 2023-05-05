@@ -117,7 +117,7 @@ public class ReliabilityAnalysisTest {
 	*/
 	
 	@Test
-	void testVerifyReliabilities() {
+	void verifyReliabilitiesTest1() {
 	    WorkLoad load = new WorkLoad(0.9, 0.0, "StressTest4.txt");
 	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
@@ -152,7 +152,7 @@ public class ReliabilityAnalysisTest {
 	*/
 	
 	@Test
-	void testVerifyReliabilities2() {
+	void verifyReliabilitiesTest2() {
 	    WorkLoad load = new WorkLoad(0.9, 0.0, "Example.txt");
 	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
@@ -178,7 +178,7 @@ public class ReliabilityAnalysisTest {
 	* @see ReliabilityAnalysis
 	*/
 	@Test
-	void testVerifyReliabilities3() {
+	void verifyReliabilities3() {
 	    WorkLoad load = new WorkLoad(0.9, 0.0, "StressTest.txt");
 	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
@@ -203,9 +203,8 @@ public class ReliabilityAnalysisTest {
 	* 
 	* @see ReliabilityAnalysis getReliabilities
 	*/
-	
 	@Test
-	void testGetReliabilities() {
+	void getReliabilitiesTest() {
 	    // create a new reliability analysis object
 	    ReliabilityAnalysis ra = new ReliabilityAnalysis(program1);
 	    
@@ -225,9 +224,8 @@ public class ReliabilityAnalysisTest {
 	* 
 	* @see ReliabilityAnalysis getReliabilities
 	*/
-	
 	@Test
-	void testGetReliabilitiesStressTest() {
+	void getReliabilitiesStressTest() {
 	    // create a new reliability analysis object
 	    ReliabilityAnalysis ra = new ReliabilityAnalysis(program3);
 	    
@@ -239,16 +237,15 @@ public class ReliabilityAnalysisTest {
 	}
 	
 	/**
-	 * Checks if method carryForwardReliabilities() updates the reliability table correctly.
-	 * It creates a new ReliabilityAnalysis object with a test reliability table, builds reliabilities and calls
+	 * Checks if method carryForwardReliabilities() updates reliability table correctly.
+	 * Creates new ReliabilityAnalysis object with a test reliability table, builds reliabilities and calls
 	 * carryForwardReliabilities() with time slot 1 and 2. Then it verifies that the reliability table was updated
 	 * correctly for each time slot.
 	 * 
 	 * @see ReliabilityAnalysis carryForwardReliabilities
 	 */
-	
 	@Test
-	void testCarryForwardReliabilities() {
+	void carryForwardReliabilitiesTest() {
 	    // Create a new ReliabilityAnalysis object with a test reliability table
 	    ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program1);
 	    reliabilityAnalysis.buildReliabilities();
@@ -271,13 +268,12 @@ public class ReliabilityAnalysisTest {
 	/**
 	 * Does same thing as previous test but tests StressTest.txt
 	 * Checks if method carryForwardReliabilities() updates the reliability table correctly.
-	 * It creates a new ReliabilityAnalysis object with a test reliability table, builds reliabilities and calls
+	 * Creates a new ReliabilityAnalysis object with a test reliability table, builds reliabilities and calls
 	 * carryForwardReliabilities() with time slot 1 and 2. Then it verifies that the reliability table was updated
 	 * correctly for each time slot.
 	 * 
 	 * @see ReliabilityAnalysis carryForwardReliabilities
 	 */
-	
 	@Test
 	void carryForwardReliabilitiesStressTest() {
 	    // Create a new ReliabilityAnalysis object with a test reliability table
