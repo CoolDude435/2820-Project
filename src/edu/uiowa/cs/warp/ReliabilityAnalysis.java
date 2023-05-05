@@ -56,7 +56,8 @@ public class ReliabilityAnalysis {
 	private int numFaults = 0;
 	private double e2e = 0.99;
 	private double minPacketReceptionRate = 0.9;
-	ReliabilityTable reliabilityTable;
+	public ReliabilityTable reliabilityTable;
+	//suppose to be private is public for testing purposes
 	private Program program;
 	private ArrayList<String> reliabilityHeaderRow;
 	private NodeMap nodeMap;
@@ -97,10 +98,6 @@ public class ReliabilityAnalysis {
 	   onlyNumFaultsConstructor = true;
    }
    
-   private ReliabilityRow getFinalReliabilityRow() {
-	   return reliabilityTable.get(reliabilityTable.size()-1);
-   }
-   
    /**
     * verifyReliabilities checks to see if the end to end reliability is met
     * by the flows and outputs an error message if end to end reliability is not met
@@ -109,7 +106,7 @@ public class ReliabilityAnalysis {
     */
  
    public boolean verifyReliabilities() {
-	   ReliabilityRow finalRow = getFinalReliabilityRow();
+	   ReliabilityRow finalRow = reliabilityTable.get(reliabilityTable.size()-1);
 	   for (int i=0;i<finalRow.size();i++) {
 		   if (finalRow.get(i)<e2e) {
 			   System.out.println("Error: E2E is not met");
@@ -125,6 +122,7 @@ public class ReliabilityAnalysis {
     * @param takes an ArrayList of Strings that is requested to be set as the reliabilityHeaderRow
     */
    public void setReliabilityHeaderRow(ArrayList<String> reliabilityHeaderRow) {
+	   //suppose to be private is public for testing purposes
 	   this.reliabilityHeaderRow = reliabilityHeaderRow;
    }
    
@@ -157,7 +155,9 @@ public class ReliabilityAnalysis {
     * buildReliabilities creates the table containing the reliability of the flows. 
     */
    public void buildReliabilities() {
-	   if ((reliabilityTable != null)||(program == null)) {
+	   //suppose to be private is public for testing purposes
+	   if (program == null) {
+		   System.out.println("Error: lack of a program, aborted");
 		   return;
 	   }
 	   //setting headerRow and populating NodeMap
@@ -200,6 +200,7 @@ public class ReliabilityAnalysis {
 	   			ArrayList<InstructionParameters> instructionList = warpDSL.getInstructionParameters(schedule.get(timeSlot, k));
 	   			for (int j=0;j<instructionList.size();j++) {
 	   				InstructionParameters parameters = instructionList.get(j);
+	   				//calculating the correct reliability of a node
 	   				if (parameters.getSnk().equals("unused")==false) {
 	   					double prevSnkNodeState = 0.0;
 	   					double prevSrcNodeState = 0.0;
@@ -229,7 +230,6 @@ public class ReliabilityAnalysis {
 	   				
 	   			}
 	   			carryForwardReliabilities(timeSlot);
-	   			//carryForwardReliabilities(timeSlot+1);
 	   		}
 	   	}
 	   	carryForwardReliabilities(reliabilityTable.getNumRows()-1);
@@ -242,23 +242,22 @@ public class ReliabilityAnalysis {
     * 
     * @param timeSlot the timeSlot that reliabilities are requested to be carried forward to
     */
-   void carryForwardReliabilities(Integer timeSlot) {
+   public void carryForwardReliabilities(Integer timeSlot) {
+	   	//suppose to be private is public for testing purposes
+	   	if (reliabilityTable == null) {
+	   		buildReliabilities();
+	   	}
 		if (timeSlot<reliabilityTable.getNumRows()) {
 			for (int i=0;i<reliabilityTable.getNumColumns();i++) {
-			ReliabilityNode reliNode = nodeMap.get(reliabilityHeaderRow.get(i));
-			if ((timeSlot%reliNode.getFlowPeriod()) != reliNode.getFlowPhase()) {
-				if (timeSlot != 0) {
-					double max = Math.max(reliabilityTable.get(timeSlot-1).get(i), reliabilityTable.get(timeSlot).get(i));
-					reliabilityTable.set(timeSlot, i, max);
-				}
+				ReliabilityNode reliNode = nodeMap.get(reliabilityHeaderRow.get(i));
+				if ((timeSlot%reliNode.getFlowPeriod()) != reliNode.getFlowPhase()) {
+					if (timeSlot != 0) {
+						double max = Math.max(reliabilityTable.get(timeSlot-1).get(i), reliabilityTable.get(timeSlot).get(i));
+						reliabilityTable.set(timeSlot, i, max);
+					}
 				
-			} 
+				} 
 			}
-			/*
-			if (timeSlot==reliabilityTable.getNumRows()-1) {
-				double max = Math.max(reliabilityTable.get(timeSlot-1).get(i), reliabilityTable.get(timeSlot).get(i));
-				reliabilityTable.set(timeSlot, i, max);
-			}*/
 		}
    }
    
@@ -268,7 +267,11 @@ public class ReliabilityAnalysis {
     * for all timeSlots reflecting that starting probability of the flow which is 1.0.
     * called in buildReliabilities as a helper function 
     */
-   void setInitialStateForReleasedFlows() {
+   public void setInitialStateForReleasedFlows() {
+	   //suppose to be private is public for testing purposes
+	   if (nodeMap ==  null) {
+		   buildReliabilities();
+	   }
 	   for (String node : nodeMap.keySet()) {
 		   ReliabilityNode reliNode = nodeMap.get(node);
 		   if (reliNode.isFlowSrc() == true) {
@@ -539,4 +542,3 @@ public class ReliabilityAnalysis {
    
    
    
- 
