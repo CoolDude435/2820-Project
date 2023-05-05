@@ -56,7 +56,7 @@ public class ReliabilityAnalysis {
 	private int numFaults = 0;
 	private double e2e = 0.99;
 	private double minPacketReceptionRate = 0.9;
-	private ReliabilityTable reliabilityTable;
+	ReliabilityTable reliabilityTable;
 	private Program program;
 	private ArrayList<String> reliabilityHeaderRow;
 	private NodeMap nodeMap;
@@ -107,10 +107,11 @@ public class ReliabilityAnalysis {
     * 
     * @return a boolean of true or false if end to end reliability is met
     */
+   //changed to less than
    public boolean verifyReliabilities() {
 	   ReliabilityRow finalRow = getFinalReliabilityRow();
 	   for (int i=0;i<finalRow.size();i++) {
-		   if (finalRow.get(i)>=e2e) {
+		   if (finalRow.get(i)<e2e) {
 			   System.out.println("Error: E2E is not met");
 			   return false;
 		   }
