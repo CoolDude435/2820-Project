@@ -113,7 +113,7 @@ public class ReliabilityAnalysisTest {
 	* Calls the verifyReliabilities() method and asserts that result is false,
 	* indicating that the E2E reliability has not been met.
 	*
-	* @see ReliabilityAnalysis
+	* @see ReliabilityAnalysis verifyReliabilities()
 	*/
 	
 	@Test
@@ -148,7 +148,7 @@ public class ReliabilityAnalysisTest {
 	* Calls the verifyReliabilities() method and asserts that result is false,
 	* indicating that the E2E reliability has not been met.
 	*
-	* @see ReliabilityAnalysis
+	* @see ReliabilityAnalysis verifyReliabilities()
 	*/
 	
 	@Test
@@ -175,7 +175,7 @@ public class ReliabilityAnalysisTest {
 	* Calls the verifyReliabilities() method and asserts that result is false,
 	* indicating that the E2E reliability has not been met.
 	*
-	* @see ReliabilityAnalysis
+	* @see ReliabilityAnalysis verifyReliabilities()
 	*/
 	@Test
 	void verifyReliabilities3() {
