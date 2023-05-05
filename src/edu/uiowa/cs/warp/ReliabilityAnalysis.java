@@ -107,7 +107,7 @@ public class ReliabilityAnalysis {
     * 
     * @return a boolean of true or false if end to end reliability is met
     */
-   //changed to less than
+ 
    public boolean verifyReliabilities() {
 	   ReliabilityRow finalRow = getFinalReliabilityRow();
 	   for (int i=0;i<finalRow.size();i++) {

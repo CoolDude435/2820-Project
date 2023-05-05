@@ -105,10 +105,10 @@ public class ReliabilityVisualizationTest {
         assertArrayEquals(expected, columnHeader);
 	}
 	
-	/*
+	
 	@Test
 	void createColumnHeaderTest2() { 
-		ReliabilityVisualization visualization = new ReliabilityVisualization(warp2);
+		ReliabilityVisualization visualization = new ReliabilityVisualization(warp3);
    
         String[] expected = {"F1:B","F1:C","F1:D",	"F2:C",	"F2:D",	"F2:E",	"F2:F",	"F2:G",
         		"F2:H",	"F2:I",	"F3:C",	"F3:D",	"F3:E",	"F3:J",	"F3:K",	"F3:L",	"F4:A",	"F4:B",	
@@ -120,7 +120,7 @@ public class ReliabilityVisualizationTest {
         String[] columnHeader = visualization.createColumnHeader();
         assertArrayEquals(expected, columnHeader);
 	}
-	*/
+	
 	
 	/**
 	 * Tests createTitle() method in ReliabilityVisualization.
