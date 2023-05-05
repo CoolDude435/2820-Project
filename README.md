@@ -181,11 +181,12 @@ with no change in functionality
 ___
 __JUnit Tests:__
 <br>
--testing over the methods in ReliabilityVisualization and ReliabilityAnalysis using JUnit Tests
+Testing the methods in ReliabilityVisualization and ReliabilityAnalysis using JUnit Tests
 <br>
-Status - Continuing work done in Sprint 2 as well as adding new tests as needed
+Completed ReliabilityVisualization tests in Sprint 2, finalized tests and JavaDoc in Sprint 3
+Working on ReliabilityAnalysis tests and JavaDoc in Sprint 3
 <br> 
-being worked on by Annalisa and Jake
+Status: Being worked on by Annalisa and Jake
 <br>
 ___
 *ReliabilityVisualizationTest*: Status: Completed by Annalisa and Jake
