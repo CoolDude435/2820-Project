@@ -215,6 +215,17 @@ public class ReliabilityAnalysisTest {
 	    // check that the table is not null
 	    assertNotNull(table);
 	}
+	
+	/**
+	* Same as previous test but tests StressTest.txt
+	* Test verifies that getReliabilities method in ReliabilityAnalysis returns a non-null ReliabilityTable object.
+	* Creates new ReliabilityAnalysis object with Program object and calls getReliabilities method.
+	* If returned ReliabilityTable object is not null, the test passes.
+	* If returned ReliabilityTable object is null, the test fails.
+	* 
+	* @see ReliabilityAnalysis getReliabilities
+	*/
+	
 	@Test
 	void testGetReliabilitiesStressTest() {
 	    // create a new reliability analysis object
