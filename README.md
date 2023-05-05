@@ -269,6 +269,7 @@ __UML Sequence Diagram:__
 <br>
 Status - Being worked on by Annalisa
 <br>
+<br>
 __README:__
 <br>
 Status - Continuously updated; being updated by Elizabeth and Justin
