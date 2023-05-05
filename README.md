@@ -124,7 +124,7 @@ ___
 __Code Methods:__
 <br>
 <br>
-ReliabilityVisualization: Status - Completed by Justin in Sprint2
+*ReliabilityVisualization*: Status - Completed by Justin in Sprint2
 <br>
 -creates the data and information needed to display a GUI visualization of the reliabilities
 <br>
@@ -143,7 +143,7 @@ ReliabilityVisualization: Status - Completed by Justin in Sprint2
 <br>
 
 ___
-ReliabilityAnalysis: Status - The base was created in Sprint 2, Completed by Justin in Sprint3
+*ReliabilityAnalysis*: Status - The base was created in Sprint 2, Completed by Justin in Sprint3
 <br>
 <br>
 *ReliabilityAnalysis(): Status-Complete
@@ -167,43 +167,96 @@ ReliabilityAnalysis: Status - The base was created in Sprint 2, Completed by Jus
 *numTxPerLinkAndTotalTxCost(): Status-Complete
 <br>
 ___
-ReliabilityNode: Helper class for ReliabilityAnalysis Status-Complete
+*ReliabilityNode*: Helper class for ReliabilityAnalysis Status-Complete
 <br>
 -contains information about a node and is used as entries inside NodeMap
 <br>
 <br>
-NodeMap: Helper class for ReliabilityAnalysis Status-Complete
+*NodeMap*: Helper class for ReliabilityAnalysis Status-Complete
 <br>
 -extends HashMap with String as the keys and ReliabilityNode as the entries
 <br>
 with no change in functionality
 <br>
 ___
-JUnit Tests:
+__JUnit Tests:__
+<br>
+-testing over the methods in ReliabilityVisualization and ReliabilityAnalysis using JUnit Tests
 <br>
 Status - Continuing work done in Sprint 2 as well as adding new tests as needed; 
 being worked on by Annalisa and Jake
 <br>
 <br>
 ___
-Javadoc Comments: 
+*ReliabilityVisualizationTest*: Status: Completed by Annalisa and Jake
+<br>
+<br>
+*displayVisualizationTest(): Status: Completed by 
+<br>
+*createHeaderTest1(): Status: Completed by 
+<br>
+*createHeaderTEst2(): Status: Completed by 
+<br>
+*createColumnHeaderTest1(): Status: Completed by 
+<br>
+*createColumnHeaderTest2(): Status: Completed by 
+<br>
+*createTitleTest1(): Status: Completed by 
+<br>
+*createTitleTest2(): Status: Completed by 
+<br>
+*createTitleTest3(): Status: Completed by 
+<br>
+*createVisualizationDataTest1(): Status: Completed by 
+<br>
+*createVisualizationDataTest2(): Status: Completed by 
+<br>
+*createVisualizationDataTest3(): Status: Completed by 
+<br>
+_____
+*ReliabilityAnalysisTest*: Status: Incomplete
+<br>
+<br>
+*buildReliabilitiesTest(): Status: Incomplete
+<br>
+*setReliabilityHeaderRowTest(): Status: Incomplete
+<br>
+*getReliabilityHeaderRowTest(): Status: Incomplete
+<br>
+<br>
+*verifyReliabilitiesTest1(): Status: Completed by Annalisa
+<br>
+*verifyReliabilitiesTest2(): Status: Completed by Annalisa
+<br>
+*verifyReliabilitiesTest3(): Status: Completed by Annalisa
+<br>
+*getReliabilitiesTest(): Status: Completed by Annalisa
+<br>
+*getReliabilitiesStressTest(): Status: Completed by Annalisa
+<br>
+*carryForwardReliabiltiesTest(): Status: Completed by Annalisa
+<br>
+*carryForwardReliabilitiesStressTest(): Status: Working on by Annalisa
+<br>
+___
+__Javadoc Comments:__
 <br>
 Status - Will be updated as progress is made.
 <br>
-The Javadocs for the JUnit test was completed by . . . 
+The Javadocs for the JUnit test was completed by Annalisa
 <br>
-The Javadocs for the ReliabilityAnalysis was completed by . . . 
+The Javadocs for the ReliabilityAnalysis was completed by Elizabeth and Justin
 <br>
 <br>
-UML Diagram: 
+__UML Diagram:__
 <br>
 Status - Will be updated at the very end when all classes and methods are complete
 <br>
 <br>
-UML Sequence Diagram:
+__UML Sequence Diagram:__
 <br>
 <br>
-README: 
+__README:__
 <br>
-Status - Continuously updated; being updated by Elizabeth 
+Status - Continuously updated; being updated by Elizabeth and Justin
 <br>

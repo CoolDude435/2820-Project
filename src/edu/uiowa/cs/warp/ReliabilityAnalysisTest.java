@@ -49,29 +49,15 @@ public class ReliabilityAnalysisTest {
 	}
 	
 	@Test
-	void setHeaderRowTest() {
-		//method not yet implemented
-	}
-	
-	@Test
-	void getHeaderRowTest() {
-		//method not yet implemented
-	}
-	
-	@Test
-	void getFixedTxPerLinkAndTotalTxCostTest() {
-		//method not yet implemented
-	}
-	
-	@Test
-	void getTxPerLinkAndTotalTxCostTest() {
-		//method not yet implemented
-	}
-	
-	@Test
 	void setReliabilityHeaderRowTest() {
 		//method not yet implemented
 	}
+	
+	@Test
+	void getReliabilityHeaderRowTest() {
+		//method not yet implemented
+	}
+		
 	
 	/**
 	 * Tests the numTxPerLinkAndTotalTxCost() method in ReliabilityAnalysis
@@ -178,7 +164,7 @@ public class ReliabilityAnalysisTest {
 	* @see ReliabilityAnalysis verifyReliabilities()
 	*/
 	@Test
-	void verifyReliabilities3() {
+	void verifyReliabilitiesTest3() {
 	    WorkLoad load = new WorkLoad(0.9, 0.0, "StressTest.txt");
 	    WarpSystem system = new WarpSystem(load, 4, ScheduleChoices.PRIORITY);
 	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(system.toProgram());
