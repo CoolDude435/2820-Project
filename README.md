@@ -267,7 +267,9 @@ Status - Will be updated at the very end when all classes and methods are comple
 <br>
 __UML Sequence Diagram:__
 <br>
-Status - Being worked on by Annalisa
+Status - Completed by Annalisa
+<br>
+Find in folder SequenceDiagrams
 <br>
 <br>
 __README:__
