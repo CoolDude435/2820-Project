@@ -49,14 +49,58 @@ public class ReliabilityAnalysisTest {
 	}
 	
 	@Test
-	void setReliabilityHeaderRowTest() {
-		//method not yet implemented
+    void setReliabilityHeaderRowTest() {
+        // Create a new ReliabilityAnalysis object with a test reliability table
+        ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program3);
+        reliabilityAnalysis.buildReliabilities();
+
+        ArrayList<String> newHeader = new ArrayList<>(Arrays.asList("Node", "Reliability"));
+        reliabilityAnalysis.setReliabilityHeaderRow(newHeader);
+
+        // Verify that header row was updated correctly
+        assertEquals(newHeader, reliabilityAnalysis.getReliabilityHeaderRow());
+    }
+	
+	@Test
+	public void getReliabilityHeaderRowTest1() {
+	    // Create a new ReliabilityAnalysis object
+	    ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program1);
+
+	    // Build the reliabilities
+	    reliabilityAnalysis.buildReliabilities();
+
+	    // Verify that the header row is not null after building the reliabilities
+	    assertNotNull(reliabilityAnalysis.getReliabilityHeaderRow());
+	    
+	    // Verify that the header row matches the expected values
+	    List<String>expectedHeaderRow = Arrays.asList("F0:A", "F0:B", "F0:C", "F1:C", "F1:B", "F1:A");
+	    
+	    assertEquals(expectedHeaderRow, new ArrayList<String>(reliabilityAnalysis.getReliabilityHeaderRow()));
 	}
 	
 	@Test
-	void getReliabilityHeaderRowTest() {
-		//method not yet implemented
+	public void getReliabilityHeaderStressTest() {
+	    // Create a new ReliabilityAnalysis object
+	    ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program3);
+
+	    // Build the reliabilities
+	    reliabilityAnalysis.buildReliabilities();
+
+	    // Verify that the header row is not null after building the reliabilities
+	    assertNotNull(reliabilityAnalysis.getReliabilityHeaderRow());
+	    
+	    // Verify that the header row matches the expected values
+	    List<String>expectedHeaderRow = Arrays.asList("F1:B", "F1:C", "F1:D", "F2:C", "F2:D",
+	    		"F2:E", "F2:F", "F2:G", "F2:H", "F2:I", "F3:C", "F3:D", "F3:E", "F3:J", "F3:K",
+	    		"F3:L", "F4:A", "F4:B", "F4:C", "F4:D", "F4:E", "F4:J", "F4:K", "F4:L", "F5:A", 
+	    		"F5:B", "F5:C", "F5:D", "F5:E", "F6:B", "F6:C", "F6:D", "F7:A", "F7:B", "F7:C",
+	    		"F7:D", "F7:E", "F8:C", "F8:D", "F8:E", "F8:F", "F8:G", "F8:H", "F8:I", "F9:A",
+	    		"F9:B", "F9:C", "F9:D", "F9:E", "F9:J", "F9:K", "F9:L", "F10:C", "F10:D", "F10:E",
+	    		"F10:J", "F10:K", "F10:L");
+	    
+	    assertEquals(expectedHeaderRow, new ArrayList<String>(reliabilityAnalysis.getReliabilityHeaderRow()));
 	}
+
 		
 	
 	/**
@@ -286,23 +330,35 @@ public class ReliabilityAnalysisTest {
 	    assertEquals(expectedRow, reliabilityAnalysis.getReliabilities().get(2));
 	}
 	
-//	@Test
-//	void testSetInitialStateForReleasedFlows() {
-//	    
-//
-//
-//	    // Call the setInitialStateForReleasedFlows() method with the new objects
-//	    ReliabilityAnalysis analysis = new ReliabilityAnalysis(program1);
-//	    //analysis.buildReliabilities();
-//	    analysis.setInitialStateForReleasedFlows();
-//	    System.out.println(analysis.getReliabilities());
-//	    // Check that the values in the reliability table were set correctly
-//	    //assertEquals(1.0, reliabilityTable.get(0, 0));
-//	    //assertEquals(1.0, reliabilityTable.get(1, 0));
-//	    //assertEquals(0.8, reliabilityTable.get(0, 1));
-//	    //assertEquals(0.6, reliabilityTable.get(1, 1));
-//	}
+	@Test
+	void setInitialStateForReleasedFlowsTest1() {
+	// Create a new ReliabilityAnalysis object with a test reliability table
+	ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program1);
+	reliabilityAnalysis.buildReliabilities();
+	// Call setInitialStateForReleasedFlows()
+	reliabilityAnalysis.setInitialStateForReleasedFlows();
 
-	    
+	// Verify that the reliability table was updated correctly
+	List<Double> expectedRow = Arrays.asList(1.0,0.9,0.0,1.0,0.0,0.0);
+	assertEquals(expectedRow, reliabilityAnalysis.getReliabilities().get(0));	    
 	}
+	
+	@Test
+	void setInitialStateForReleasedFlowsTest2() {
+	// Create a new ReliabilityAnalysis object with a test reliability table
+	ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program3);
+	reliabilityAnalysis.buildReliabilities();
+	// Call setInitialStateForReleasedFlows()
+	reliabilityAnalysis.setInitialStateForReleasedFlows();
+
+	// Verify that the reliability table was updated correctly
+	List<Double> expectedRow = Arrays.asList(1.0, 0.9, 0.0, 1.0, 0.0, 0.0, 0.0, 
+			0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0,
+			0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 
+			0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 
+			0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+	assertEquals(expectedRow, reliabilityAnalysis.getReliabilities().get(0));	    
+	}
+	
+}
 	
