@@ -41,9 +41,24 @@ public class ReliabilityAnalysisTest {
 	}
 	
 	
+	/**
+	* Creates a new reliabilityAnalysis and ReliabilityTable object in
+	* order to call getReliabilities and verifyReliabilities. Getting and
+	* verifying reliabilities works to ensure buildReliabilitie's functionality.
+	*
+	* @see void getReliabilitiesTest1()
+	* @see void verifyReliabiltiesTest1()
+	* @see ReliabilityAnalysis buildReliabilities()
+	*/
 	@Test
 	void buildReliabilitiesTest() {
-		//method not yet implemented
+	ReliabilityAnalysis reliabilityAnalysis = new ReliabilityAnalysis(program3);
+	reliabilityAnalysis.buildReliabilities();
+	ReliabilityTable reliabilities = reliabilityAnalysis.getReliabilities();
+	boolean reliabilityStatement = reliabilityAnalysis.verifyReliabilities();
+	// If able to get reliabilities and verify them, method buildReliabilities successfully works
+	assertNotNull(reliabilities);
+	assertTrue(reliabilityStatement);
 	}
 	
 	/**
