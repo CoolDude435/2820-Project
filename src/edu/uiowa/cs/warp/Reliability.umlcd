@@ -264,9 +264,6 @@
       <cardinality xmi:id="_Bm1sE8jfEe2eOaAItNFrdA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zsPzsuvAEe2uGpdm97WagA" targetItem="_zsQawOvAEe2uGpdm97WagA" sourceItem="_zsPzsevAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zsay0OvAEe2uGpdm97WagA" targetItem="_zsbZ4OvAEe2uGpdm97WagA" sourceItem="_zsRB0OvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zswKAOvAEe2uGpdm97WagA" targetItem="_zswKAevAEe2uGpdm97WagA" sourceItem="_zskj0OvAEe2uGpdm97WagA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_ztw2oOvAEe2uGpdm97WagA" sourceAnchor="258.0,0.0" targetAnchor="244.0,116.0" target="_-3jkoL1UEe2Ek7-6YsU1Aw" source="_-xs0QL1UEe2Ek7-6YsU1Aw">
     <modelElement href="Reliability.uml#_zsN-gOvAEe2uGpdm97WagA"/>
     <stereotypes xmi:id="_ztw2oevAEe2uGpdm97WagA" name="Reference">
@@ -285,6 +282,9 @@
       <modelElement href="Reliability.uml#_zsIe-OvAEe2uGpdm97WagA"/>
       <visualProperties xmi:id="_0xxRUevAEe2uGpdm97WagA" position="8.5,5.000000000000028"/>
       <stereotypes xmi:id="_zvriMOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8YumMOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement">
+        <modelElement href="Reliability.uml#_zsJGAOvAEe2uGpdm97WagA"/>
+      </stereotypes>
       <visibility xmi:id="_ztw2p-vAEe2uGpdm97WagA" label="+"/>
       <cardinality xmi:id="_ztw2qOvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
     </targetRole>
@@ -303,11 +303,13 @@
     <targetRole xmi:id="_zt6AluvAEe2uGpdm97WagA" aggregationKind="NONE" name="program" navigable="true">
       <modelElement href="Reliability.uml#_zsJGAevAEe2uGpdm97WagA"/>
       <stereotypes xmi:id="_zv2hUOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8Y3JEOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement">
+        <modelElement href="Reliability.uml#_zsJGAuvAEe2uGpdm97WagA"/>
+      </stereotypes>
       <visibility xmi:id="_zt6Al-vAEe2uGpdm97WagA" label="-"/>
       <cardinality xmi:id="_zt6AmOvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zuSbEOvAEe2uGpdm97WagA" targetItem="_-xs0QL1UEe2Ek7-6YsU1Aw" sourceItem="_zuHb8OvAEe2uGpdm97WagA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_zvGTYOvAEe2uGpdm97WagA" source="_-xs0QL1UEe2Ek7-6YsU1Aw">
     <modelElement href="Reliability.uml#_zsOllOvAEe2uGpdm97WagA"/>
     <stereotypes xmi:id="_zvGTYevAEe2uGpdm97WagA" name="Reference">
@@ -325,6 +327,12 @@
       <stereotypes xmi:id="_zwKDUOvAEe2uGpdm97WagA" name="Generics"/>
       <stereotypes xmi:id="_zwUbYOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_zwfagOvAEe2uGpdm97WagA" name="Generics"/>
+      <stereotypes xmi:id="_8Y7agOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement">
+        <modelElement href="Reliability.uml#_zsJGBOvAEe2uGpdm97WagA"/>
+      </stereotypes>
+      <stereotypes xmi:id="_8Y7agevBEe2iMrfOdrFYLQ" name="Generics">
+        <modelElement href="Reliability.uml#_zsJGBevAEe2uGpdm97WagA"/>
+      </stereotypes>
       <visibility xmi:id="_zvGTZ-vAEe2uGpdm97WagA" label="+"/>
       <cardinality xmi:id="_zvGTaOvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
     </targetRole>
@@ -343,6 +351,9 @@
     <targetRole xmi:id="_zvSgpuvAEe2uGpdm97WagA" aggregationKind="NONE" name="nodeMap" navigable="true">
       <modelElement href="Reliability.uml#_zsKUIevAEe2uGpdm97WagA"/>
       <stereotypes xmi:id="_zwqZoOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8Y8ooOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement">
+        <modelElement href="Reliability.uml#_zsKUIuvAEe2uGpdm97WagA"/>
+      </stereotypes>
       <visibility xmi:id="_zvSgp-vAEe2uGpdm97WagA" label="-"/>
       <cardinality xmi:id="_zvSgqOvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
     </targetRole>
@@ -361,17 +372,13 @@
     <targetRole xmi:id="_zvc4tuvAEe2uGpdm97WagA" aggregationKind="NONE" name="warpDSL" navigable="true">
       <modelElement href="Reliability.uml#_zsKUI-vAEe2uGpdm97WagA"/>
       <stereotypes xmi:id="_zw0KoOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8Y9PsOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement">
+        <modelElement href="Reliability.uml#_zsK7MOvAEe2uGpdm97WagA"/>
+      </stereotypes>
       <visibility xmi:id="_zvc4t-vAEe2uGpdm97WagA" label="-"/>
       <cardinality xmi:id="_zvc4uOvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zxITsOvAEe2uGpdm97WagA" targetItem="_DTiLQL1WEe2Ek7-6YsU1Aw" sourceItem="_zw97oOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zxdD0OvAEe2uGpdm97WagA" targetItem="_kd_JQL3rEe2lE4tWeJL-jQ" sourceItem="_zxXkQOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zx0QMOvAEe2uGpdm97WagA" targetItem="_-xupcb1UEe2Ek7-6YsU1Aw" sourceItem="_zxtigOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zyQVEOvAEe2uGpdm97WagA" targetItem="_0zTx4r3rEe2lE4tWeJL-jQ" sourceItem="_zyJAUOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zydwcOvAEe2uGpdm97WagA" targetItem="_8fBLwMjgEe2eOaAItNFrdA" sourceItem="_zyXCwOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_zyry4OvAEe2uGpdm97WagA" targetItem="_-xuCYb1UEe2Ek7-6YsU1Aw" sourceItem="_zylsQOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_8pYt0OvAEe2uGpdm97WagA" targetItem="_8pZU4OvAEe2uGpdm97WagA" sourceItem="_8pL5gOvAEe2uGpdm97WagA"/>
   <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_8pnXUOvAEe2uGpdm97WagA" source="_-8HUgL1UEe2Ek7-6YsU1Aw">
     <modelElement href="Reliability.uml#_8oTIu-vAEe2uGpdm97WagA"/>
     <stereotypes xmi:id="_8pnXUevAEe2uGpdm97WagA" name="Reference">
@@ -386,16 +393,30 @@
     <targetRole xmi:id="_8pn-Y-vAEe2uGpdm97WagA" aggregationKind="NONE" name="program" navigable="true">
       <modelElement href="Reliability.uml#_8oShoOvAEe2uGpdm97WagA"/>
       <stereotypes xmi:id="_8q3UgOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8Y92wOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement">
+        <modelElement href="Reliability.uml#_8oShoevAEe2uGpdm97WagA"/>
+      </stereotypes>
       <visibility xmi:id="_8pn-ZOvAEe2uGpdm97WagA" label="-"/>
       <cardinality xmi:id="_8pn-ZevAEe2uGpdm97WagA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_8qC1IOvAEe2uGpdm97WagA" targetItem="_-8HUgL1UEe2Ek7-6YsU1Aw" sourceItem="_8p0ytevAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_8rSLQOvAEe2uGpdm97WagA" targetItem="_-8HUlb1UEe2Ek7-6YsU1Aw" sourceItem="_8rDhwOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_9b_2gevAEe2uGpdm97WagA" targetItem="_EamWcL1VEe2Ek7-6YsU1Aw" sourceItem="_9b_2gOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_-CDJ4evAEe2uGpdm97WagA" targetItem="_-1K_AL1UEe2Ek7-6YsU1Aw" sourceItem="_-CDJ4OvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="__uKGYevAEe2uGpdm97WagA" targetItem="_LOzOIL1VEe2Ek7-6YsU1Aw" sourceItem="__uKGYOvAEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="__v2vgevAEe2uGpdm97WagA" targetItem="_LO1DWL1VEe2Ek7-6YsU1Aw" sourceItem="__v2vgOvAEe2uGpdm97WagA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AOTwoOvCEe2iMrfOdrFYLQ" targetItem="_-xs0QL1UEe2Ek7-6YsU1Aw" sourceItem="_ANpCQOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AQjzYOvCEe2iMrfOdrFYLQ" targetItem="_-xuCYb1UEe2Ek7-6YsU1Aw" sourceItem="_AQilQOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ASoP8OvCEe2iMrfOdrFYLQ" targetItem="_-xupcb1UEe2Ek7-6YsU1Aw" sourceItem="_ASnB0OvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AVIxYOvCEe2iMrfOdrFYLQ" targetItem="_DTiLQL1WEe2Ek7-6YsU1Aw" sourceItem="_AUt6oOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AYqmgOvCEe2iMrfOdrFYLQ" targetItem="_kd_JQL3rEe2lE4tWeJL-jQ" sourceItem="_AYmVEOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AcTJUOvCEe2iMrfOdrFYLQ" targetItem="_0zTx4r3rEe2lE4tWeJL-jQ" sourceItem="_AbppEOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AeycoOvCEe2iMrfOdrFYLQ" targetItem="_8fBLwMjgEe2eOaAItNFrdA" sourceItem="_AejzIOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Aht00OvCEe2iMrfOdrFYLQ" targetItem="_zsQawOvAEe2uGpdm97WagA" sourceItem="_AhoVQOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AkO9UOvCEe2iMrfOdrFYLQ" targetItem="_zsbZ4OvAEe2uGpdm97WagA" sourceItem="_AkGacOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_And3gOvCEe2iMrfOdrFYLQ" targetItem="_zswKAevAEe2uGpdm97WagA" sourceItem="_AmzwMOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_ApvIYOvCEe2iMrfOdrFYLQ" targetItem="_-1K_AL1UEe2Ek7-6YsU1Aw" sourceItem="_ApDL4OvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AsaB4OvCEe2iMrfOdrFYLQ" targetItem="_-8HUgL1UEe2Ek7-6YsU1Aw" sourceItem="_AsVwcOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_Avnt8OvCEe2iMrfOdrFYLQ" targetItem="_-8HUlb1UEe2Ek7-6YsU1Aw" sourceItem="_Avcu0OvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_AxmD4OvCEe2iMrfOdrFYLQ" targetItem="_8pZU4OvAEe2uGpdm97WagA" sourceItem="_AxLNIOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_A0vegOvCEe2iMrfOdrFYLQ" targetItem="_LOzOIL1VEe2Ek7-6YsU1Aw" sourceItem="_A0j4UOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_A39KkOvCEe2iMrfOdrFYLQ" targetItem="_LO1DWL1VEe2Ek7-6YsU1Aw" sourceItem="_A3i64OvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_A6LYIOvCEe2iMrfOdrFYLQ" targetItem="_EamWcL1VEe2Ek7-6YsU1Aw" sourceItem="_A6Ji8OvCEe2iMrfOdrFYLQ"/>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_yjfg0L3qEe2lE4tWeJL-jQ" sourceConnectionVisual="_yjfg0b3qEe2lE4tWeJL-jQ" text="Build the nodes and flows for the workload described in the workload description file, whose name&#xA;is passed into the Constructor via the parameter inputFileName. Good default values for the&#xA;constructors are m = 0.9, e2e = 0.99, and numFaults = 1 when the second constructor is used.&#xA;&#xA;@author sgoddard&#xA;@version 1.4&#xA; *">
     <modelElement href="Reliability.uml#_ummeoL1UEe2Ek7-6YsU1Aw"/>
   </nodes>
@@ -507,37 +528,7 @@
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_yjp44L3qEe2lE4tWeJL-jQ" sourceConnectionVisual="_yjp44b3qEe2lE4tWeJL-jQ" text="getNodeMapIndex returns a HashMap of ordered node names as Strings and their respective&#xA;   * indices as Integers.&#xA;   * &#xA;   * @return returns a HashMap of Strings and Integers">
     <modelElement href="Reliability.uml#_umi0QL1UEe2Ek7-6YsU1Aw"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zsPzsevAEe2uGpdm97WagA" sourceConnectionVisual="_zsPzsuvAEe2uGpdm97WagA" text="buildReliabilities creates the table containing the reliability of the flows." item="_zsQawOvAEe2uGpdm97WagA">
-    <modelElement href="Reliability.uml#_zsNXduvAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zsRB0OvAEe2uGpdm97WagA" sourceConnectionVisual="_zsay0OvAEe2uGpdm97WagA" text="carryForwardReliabilities moves up all reliabilities of the nodes from the last timeSlot&#xD;&#xA;    * if they were not affected by the schedule or it isn't the start of a new period for the flow&#xD;&#xA;    * of the node. Also doesn't change anything if it is the first timeSlot&#xD;&#xA;    * &#xD;&#xA;    * @param timeSlot the timeSlot that reliabilities are requested to be carried forward to" item="_zsbZ4OvAEe2uGpdm97WagA">
-    <modelElement href="Reliability.uml#_zsNXd-vAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zskj0OvAEe2uGpdm97WagA" sourceConnectionVisual="_zswKAOvAEe2uGpdm97WagA" text="setInititalStateForReleasedFlows iterates through the entries in the nodeMap and for any&#xD;&#xA;    * ReliabilityNode entry that is a srcNode set their index in the reliabilityTable to 1.0&#xD;&#xA;    * for all timeSlots reflecting that starting probability of the flow which is 1.0.&#xD;&#xA;    * called in buildReliabilities as a helper function" item="_zswKAevAEe2uGpdm97WagA">
-    <modelElement href="Reliability.uml#_zsNXeOvAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zuHb8OvAEe2uGpdm97WagA" sourceConnectionVisual="_zuSbEOvAEe2uGpdm97WagA" text="ReliabilityAnalysis analyzes the end-to-end reliability of messages transmitted in flows for the&#xD;&#xA;WARP system.&#xD;&#xA;&lt;p>&#xD;&#xA;&#xD;&#xA;Let M represent the Minimum Packet Reception Rate on an edge in a flow. The end-to-end&#xD;&#xA;reliability for each flow, flow:src->sink, is computed iteratively as follows:&lt;br>&#xD;&#xA;(1)The flow:src node has an initial probability of 1.0 when it is released. All other initial&#xD;&#xA;probabilities are 0.0. (That is, the reset of the nodes in the flow have an initial probability&#xD;&#xA;value of 0.0.) &lt;br>&#xD;&#xA;(2) each src->sink pair probability is computed as NewSinkNodeState = (1-M)*PrevSnkNodeState +&#xD;&#xA;M*PrevSrcNodeState &lt;br>&#xD;&#xA;This value represents the probability that the message as been received by the node SinkNode.&#xD;&#xA;Thus, the NewSinkNodeState probability will increase each time a push or pull is executed with&#xD;&#xA;SinkNode as a listener.&#xD;&#xA;&lt;p>&#xD;&#xA;&#xD;&#xA;The last probability state value for any node is the reliability of the message reaching that&#xD;&#xA;node, and the end-to-end reliability of a flow is the value of the last Flow:SinkNode&#xD;&#xA;probability.&#xD;&#xA;&lt;p>&#xD;&#xA;&#xD;&#xA;CS2820 Spring 2023 Project: Implement this class to compute the probabilities the comprise the&#xD;&#xA;ReliablityMatrix, which is the core of the file visualization that is requested in Warp.&#xD;&#xA;&lt;p>&#xD;&#xA;&#xD;&#xA;To do this, you will need to retrieve the program source, parse the instructions for each node,&#xD;&#xA;in each time slot, to extract the src and snk nodes in the instruction and then apply the message&#xD;&#xA;success probability equation defined above.&#xD;&#xA;&lt;p>&#xD;&#xA;&#xD;&#xA;I recommend using the getInstructionParameters method of the WarpDSL class to extract the src and&#xD;&#xA;snk nodes from the instruction string in a program schedule time slot.&#xD;&#xA;&#xD;&#xA;@author sgoddard&#xD;&#xA;@version 1.5&#xD;&#xA; *" item="_-xs0QL1UEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#_zsNXcOvAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zw97oOvAEe2uGpdm97WagA" sourceConnectionVisual="_zxITsOvAEe2uGpdm97WagA" text="getReliabilities returns the table containing reliability of the flows&#xD;&#xA;    * and calls buildReliabilities() if the table is not built yet&#xD;&#xA;    * &#xD;&#xA;    * @return reliabilityTable containing the reliability of the nodes in each flow" item="_DTiLQL1WEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#_zsNXdevAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zxXkQOvAEe2uGpdm97WagA" sourceConnectionVisual="_zxdD0OvAEe2uGpdm97WagA" text="numTxPerLinkAndTotalTxCost creates an ArrayList with numbers that correspond to the nodes in the flow&#xD;&#xA;    * that hold the cost of transmissions then computes the max transmissions and adds it to the array list&#xD;&#xA;    * &#xD;&#xA;    * @param flow takes in a flow&#xD;&#xA;    * &#xD;&#xA;    * @return ArrayList that has number of transmission attempts per link and total transmission cost" item="_kd_JQL3rEe2lE4tWeJL-jQ">
-    <modelElement href="Reliability.uml#_zsNXeevAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zxtigOvAEe2uGpdm97WagA" sourceConnectionVisual="_zx0QMOvAEe2uGpdm97WagA" text="ReliabilityAnalysis is a constructor to set up the Reliability analysis from a program. &#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param program the program that will be used during analysis" item="_-xupcb1UEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#_zsNXcevAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zyJAUOvAEe2uGpdm97WagA" sourceConnectionVisual="_zyQVEOvAEe2uGpdm97WagA" text="ReliabilityAnalysis is a constructor to set up the Reliability analysis from the minimum&#xD;&#xA;&#x9; * packet reception rate. &#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param e2e minimum link quality in the system thats being analyzed &#xD;&#xA;&#x9; * @param minPacketReceptionRate the minimum packet reception rate thats being analyzed" item="_0zTx4r3rEe2lE4tWeJL-jQ">
-    <modelElement href="Reliability.uml#_zsNXcuvAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zyXCwOvAEe2uGpdm97WagA" sourceConnectionVisual="_zydwcOvAEe2uGpdm97WagA" text="*ReliabilityAnalysis is a constructor to set up the Reliability analysis based on the number of &#xD;&#xA;&#x9; *faults tolerated. &#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param numFaults the number of faults tolerated in the system." item="_8fBLwMjgEe2eOaAItNFrdA">
-    <modelElement href="Reliability.uml#_zsNXc-vAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_zylsQOvAEe2uGpdm97WagA" sourceConnectionVisual="_zyry4OvAEe2uGpdm97WagA" text="verifyReliabilities checks to see if the end to end reliability is met&#xD;&#xA;    * by the flows and outputs an error message if end to end reliability is not met&#xD;&#xA;    * &#xD;&#xA;    * @return a boolean of true or false if end to end reliability is met" item="_-xuCYb1UEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#_zsNXdOvAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_-xs0QL1UEe2Ek7-6YsU1Aw" comments="_zuHb8OvAEe2uGpdm97WagA" targetConnectionVisual="_zuSbEOvAEe2uGpdm97WagA" name="ReliabilityAnalysis" associationsIn="_-5TREL1UEe2Ek7-6YsU1Aw" associationsOut="_ztw2oOvAEe2uGpdm97WagA _zt6AkOvAEe2uGpdm97WagA _zvGTYOvAEe2uGpdm97WagA _zvSgoOvAEe2uGpdm97WagA _zvc4sOvAEe2uGpdm97WagA">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_-xs0QL1UEe2Ek7-6YsU1Aw" comments="_ANpCQOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AOTwoOvCEe2iMrfOdrFYLQ" name="ReliabilityAnalysis" associationsIn="_-5TREL1UEe2Ek7-6YsU1Aw" associationsOut="_ztw2oOvAEe2uGpdm97WagA _zt6AkOvAEe2uGpdm97WagA _zvGTYOvAEe2uGpdm97WagA _zvSgoOvAEe2uGpdm97WagA _zvc4sOvAEe2uGpdm97WagA">
     <modelElement href="Reliability.uml#_tWjzEL1UEe2Ek7-6YsU1Aw"/>
     <visualProperties xmi:id="_-xtbUL1UEe2Ek7-6YsU1Aw" position="11.0,419.0" size="517.0,510.0"/>
     <visibility xmi:id="_-xuCYL1UEe2Ek7-6YsU1Aw" label="+"/>
@@ -587,9 +578,9 @@
     </attributes>
     <attributes xmi:id="_zuFmz-vAEe2uGpdm97WagA" name="reliabilityTable">
       <modelElement href="Reliability.uml#_zsIe-OvAEe2uGpdm97WagA"/>
-      <stereotypes xmi:id="_zuFm0OvAEe2uGpdm97WagA" name="LegacyStyledElement">
-        <modelElement href="Reliability.uml#_zsJGAOvAEe2uGpdm97WagA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_8dIlEOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dJMIOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dVZYOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_zuFm0evAEe2uGpdm97WagA" label="+"/>
       <cardinality xmi:id="_zuFm0uvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
       <type xmi:id="_zuFm0-vAEe2uGpdm97WagA" name="ReliabilityTable">
@@ -598,9 +589,9 @@
     </attributes>
     <attributes xmi:id="_zuFm1OvAEe2uGpdm97WagA" name="program">
       <modelElement href="Reliability.uml#_zsJGAevAEe2uGpdm97WagA"/>
-      <stereotypes xmi:id="_zuFm1evAEe2uGpdm97WagA" name="LegacyStyledElement">
-        <modelElement href="Reliability.uml#_zsJGAuvAEe2uGpdm97WagA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_8dKaQOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dLBUOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dVZYevBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_zuFm1uvAEe2uGpdm97WagA" label="-"/>
       <cardinality xmi:id="_zuFm1-vAEe2uGpdm97WagA" label="1" max="1" min="1"/>
       <type xmi:id="_zuFm2OvAEe2uGpdm97WagA" name="Program">
@@ -609,12 +600,12 @@
     </attributes>
     <attributes xmi:id="_zuFm2evAEe2uGpdm97WagA" name="reliabilityHeaderRow">
       <modelElement href="Reliability.uml#_zsJGA-vAEe2uGpdm97WagA"/>
-      <stereotypes xmi:id="_zuFm2uvAEe2uGpdm97WagA" name="LegacyStyledElement">
-        <modelElement href="Reliability.uml#_zsJGBOvAEe2uGpdm97WagA"/>
-      </stereotypes>
-      <stereotypes xmi:id="_zuFm2-vAEe2uGpdm97WagA" name="Generics">
-        <modelElement href="Reliability.uml#_zsJGBevAEe2uGpdm97WagA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_8dLoYOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dLoYevBEe2iMrfOdrFYLQ" name="Generics"/>
+      <stereotypes xmi:id="_8dM2gOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dOEoOvBEe2iMrfOdrFYLQ" name="Generics"/>
+      <stereotypes xmi:id="_8dWngOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dWngevBEe2iMrfOdrFYLQ" name="Generics"/>
       <visibility xmi:id="_zuFm3OvAEe2uGpdm97WagA" label="+"/>
       <cardinality xmi:id="_zuFm3evAEe2uGpdm97WagA" label="1" max="1" min="1"/>
       <type xmi:id="_zuFm3uvAEe2uGpdm97WagA" name="ArrayList">
@@ -623,9 +614,9 @@
     </attributes>
     <attributes xmi:id="_zuFm3-vAEe2uGpdm97WagA" name="nodeMap">
       <modelElement href="Reliability.uml#_zsKUIevAEe2uGpdm97WagA"/>
-      <stereotypes xmi:id="_zuFm4OvAEe2uGpdm97WagA" name="LegacyStyledElement">
-        <modelElement href="Reliability.uml#_zsKUIuvAEe2uGpdm97WagA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_8dPSwOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dP50OvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dX1oOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_zuFm4evAEe2uGpdm97WagA" label="-"/>
       <cardinality xmi:id="_zuFm4uvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
       <type xmi:id="_zuFm4-vAEe2uGpdm97WagA" name="NodeMap">
@@ -634,16 +625,16 @@
     </attributes>
     <attributes xmi:id="_zuFm5OvAEe2uGpdm97WagA" defaultValue="new WarpDSL()" name="warpDSL">
       <modelElement href="Reliability.uml#_zsKUI-vAEe2uGpdm97WagA"/>
-      <stereotypes xmi:id="_zuFm5evAEe2uGpdm97WagA" name="LegacyStyledElement">
-        <modelElement href="Reliability.uml#_zsK7MOvAEe2uGpdm97WagA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_8dRH8OvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dSWEOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dZDwOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_zuFm5uvAEe2uGpdm97WagA" label="-"/>
       <cardinality xmi:id="_zuFm5-vAEe2uGpdm97WagA" label="1" max="1" min="1"/>
       <type xmi:id="_zuFm6OvAEe2uGpdm97WagA" name="WarpDSL">
         <modelElement href="Reliability.uml#_tZjcsL1UEe2Ek7-6YsU1Aw"/>
       </type>
     </attributes>
-    <operations xmi:id="_-xuCYb1UEe2Ek7-6YsU1Aw" comments="_zylsQOvAEe2uGpdm97WagA" targetConnectionVisual="_zyry4OvAEe2uGpdm97WagA" name="verifyReliabilities">
+    <operations xmi:id="_-xuCYb1UEe2Ek7-6YsU1Aw" comments="_AQilQOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AQjzYOvCEe2iMrfOdrFYLQ" name="verifyReliabilities">
       <modelElement href="Reliability.uml#_tWlBML1UEe2Ek7-6YsU1Aw"/>
       <visibility xmi:id="_-xuCYr1UEe2Ek7-6YsU1Aw" label="+"/>
       <cardinality xmi:id="_-xuCY71UEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
@@ -654,7 +645,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_-xupcb1UEe2Ek7-6YsU1Aw" comments="_zxtigOvAEe2uGpdm97WagA" targetConnectionVisual="_zx0QMOvAEe2uGpdm97WagA" name="ReliabilityAnalysis">
+    <operations xmi:id="_-xupcb1UEe2Ek7-6YsU1Aw" comments="_ASnB0OvCEe2iMrfOdrFYLQ" targetConnectionVisual="_ASoP8OvCEe2iMrfOdrFYLQ" name="ReliabilityAnalysis">
       <modelElement href="Reliability.uml#_udJAoL1UEe2Ek7-6YsU1Aw"/>
       <keywords xmi:id="_-xupcr1UEe2Ek7-6YsU1Aw" keyword="create"/>
       <visibility xmi:id="_-xvQgL1UEe2Ek7-6YsU1Aw" label="+"/>
@@ -673,7 +664,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_DTiLQL1WEe2Ek7-6YsU1Aw" comments="_zw97oOvAEe2uGpdm97WagA" targetConnectionVisual="_zxITsOvAEe2uGpdm97WagA" name="getReliabilities">
+    <operations xmi:id="_DTiLQL1WEe2Ek7-6YsU1Aw" comments="_AUt6oOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AVIxYOvCEe2iMrfOdrFYLQ" name="getReliabilities">
       <modelElement href="Reliability.uml#_DS7HQL1WEe2Ek7-6YsU1Aw"/>
       <visibility xmi:id="_DTiyUL1WEe2Ek7-6YsU1Aw" label="+"/>
       <cardinality xmi:id="_DTiyUb1WEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
@@ -684,7 +675,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_kd_JQL3rEe2lE4tWeJL-jQ" comments="_zxXkQOvAEe2uGpdm97WagA" targetConnectionVisual="_zxdD0OvAEe2uGpdm97WagA" name="numTxPerLinkAndTotalTxCost">
+    <operations xmi:id="_kd_JQL3rEe2lE4tWeJL-jQ" comments="_AYmVEOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AYqmgOvCEe2iMrfOdrFYLQ" name="numTxPerLinkAndTotalTxCost">
       <modelElement href="Reliability.uml#_kd9UEL3rEe2lE4tWeJL-jQ"/>
       <stereotypes xmi:id="_fxNcIMjjEe28N_H3pzo_aQ" name="Generics">
         <modelElement href="Reliability.uml#_fwitwMjjEe28N_H3pzo_aQ"/>
@@ -705,7 +696,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_0zTx4r3rEe2lE4tWeJL-jQ" comments="_zyJAUOvAEe2uGpdm97WagA" targetConnectionVisual="_zyQVEOvAEe2uGpdm97WagA" name="ReliabilityAnalysis">
+    <operations xmi:id="_0zTx4r3rEe2lE4tWeJL-jQ" comments="_AbppEOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AcTJUOvCEe2iMrfOdrFYLQ" name="ReliabilityAnalysis">
       <modelElement href="Reliability.uml#_0zSjwL3rEe2lE4tWeJL-jQ"/>
       <keywords xmi:id="_tsfLkMjgEe2eOaAItNFrdA" keyword="create"/>
       <visibility xmi:id="_0zUY8L3rEe2lE4tWeJL-jQ" label="+"/>
@@ -731,7 +722,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_8fBLwMjgEe2eOaAItNFrdA" comments="_zyXCwOvAEe2uGpdm97WagA" targetConnectionVisual="_zydwcOvAEe2uGpdm97WagA" name="ReliabilityAnalysis">
+    <operations xmi:id="_8fBLwMjgEe2eOaAItNFrdA" comments="_AejzIOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AeycoOvCEe2iMrfOdrFYLQ" name="ReliabilityAnalysis">
       <modelElement href="Reliability.uml#_8e_9oMjgEe2eOaAItNFrdA"/>
       <keywords xmi:id="_9iZUUcjgEe2eOaAItNFrdA" keyword="create"/>
       <visibility xmi:id="_8fBLwcjgEe2eOaAItNFrdA" label="+"/>
@@ -750,12 +741,12 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_zsQawOvAEe2uGpdm97WagA" comments="_zsPzsevAEe2uGpdm97WagA" targetConnectionVisual="_zsPzsuvAEe2uGpdm97WagA" name="buildReliabilities">
+    <operations xmi:id="_zsQawOvAEe2uGpdm97WagA" comments="_AhoVQOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_Aht00OvCEe2iMrfOdrFYLQ" name="buildReliabilities">
       <modelElement href="Reliability.uml#_zrpWwOvAEe2uGpdm97WagA"/>
       <visibility xmi:id="_zsQawevAEe2uGpdm97WagA" label="+"/>
       <cardinality xmi:id="_zsQawuvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
     </operations>
-    <operations xmi:id="_zsbZ4OvAEe2uGpdm97WagA" comments="_zsRB0OvAEe2uGpdm97WagA" targetConnectionVisual="_zsay0OvAEe2uGpdm97WagA" name="carryForwardReliabilities">
+    <operations xmi:id="_zsbZ4OvAEe2uGpdm97WagA" comments="_AkGacOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AkO9UOvCEe2iMrfOdrFYLQ" name="carryForwardReliabilities">
       <modelElement href="Reliability.uml#_zrp90OvAEe2uGpdm97WagA"/>
       <visibility xmi:id="_zsbZ4evAEe2uGpdm97WagA" label="+"/>
       <cardinality xmi:id="_zsbZ4uvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
@@ -767,7 +758,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_zswKAevAEe2uGpdm97WagA" comments="_zskj0OvAEe2uGpdm97WagA" targetConnectionVisual="_zswKAOvAEe2uGpdm97WagA" name="setInitialStateForReleasedFlows">
+    <operations xmi:id="_zswKAevAEe2uGpdm97WagA" comments="_AmzwMOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_And3gOvCEe2iMrfOdrFYLQ" name="setInitialStateForReleasedFlows">
       <modelElement href="Reliability.uml#_zrp90uvAEe2uGpdm97WagA"/>
       <visibility xmi:id="_zswKAuvAEe2uGpdm97WagA" label="+"/>
       <cardinality xmi:id="_zswKA-vAEe2uGpdm97WagA" label="1" max="1" min="1"/>
@@ -785,7 +776,7 @@
       </parameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_-8HUgL1UEe2Ek7-6YsU1Aw" comments="_8p0ytevAEe2uGpdm97WagA" targetConnectionVisual="_8qC1IOvAEe2uGpdm97WagA" name="ReliabilityVisualization" associationsOut="_-5TREL1UEe2Ek7-6YsU1Aw _-8BN4L1UEe2Ek7-6YsU1Aw _8pnXUOvAEe2uGpdm97WagA" generalizations="_LN-uwL1VEe2Ek7-6YsU1Aw">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_-8HUgL1UEe2Ek7-6YsU1Aw" comments="_AsVwcOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AsaB4OvCEe2iMrfOdrFYLQ" name="ReliabilityVisualization" associationsOut="_-5TREL1UEe2Ek7-6YsU1Aw _-8BN4L1UEe2Ek7-6YsU1Aw _8pnXUOvAEe2uGpdm97WagA" generalizations="_LN-uwL1VEe2Ek7-6YsU1Aw">
     <modelElement href="Reliability.uml#_tW1f4L1UEe2Ek7-6YsU1Aw"/>
     <visualProperties xmi:id="_-8HUgb1UEe2Ek7-6YsU1Aw" position="716.0,558.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_-8HUgr1UEe2Ek7-6YsU1Aw" label="+"/>
@@ -825,6 +816,9 @@
       <stereotypes xmi:id="_vxcLAOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_vxcyEOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_vxhqkOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8cuVYOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8cwKkOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8daR4OvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_-8HUjb1UEe2Ek7-6YsU1Aw" label="-"/>
       <cardinality xmi:id="_-8HUjr1UEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
       <type xmi:id="_-8HUj71UEe2Ek7-6YsU1Aw" name="WarpInterface">
@@ -851,6 +845,9 @@
       <stereotypes xmi:id="_vxbj8OvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_vxbj8evAEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_vxiRoOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8cY-MOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8cqrAOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dbgAOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_-8HUkr1UEe2Ek7-6YsU1Aw" label="-"/>
       <cardinality xmi:id="_-8HUk71UEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
       <type xmi:id="_-8HUlL1UEe2Ek7-6YsU1Aw" name="ReliabilityAnalysis">
@@ -859,16 +856,16 @@
     </attributes>
     <attributes xmi:id="_8p0ysOvAEe2uGpdm97WagA" name="program">
       <modelElement href="Reliability.uml#_8oShoOvAEe2uGpdm97WagA"/>
-      <stereotypes xmi:id="_8p0ysevAEe2uGpdm97WagA" name="LegacyStyledElement">
-        <modelElement href="Reliability.uml#_8oShoevAEe2uGpdm97WagA"/>
-      </stereotypes>
+      <stereotypes xmi:id="_8dTkMOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dULQOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8dcuIOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_8p0ysuvAEe2uGpdm97WagA" label="-"/>
       <cardinality xmi:id="_8p0ys-vAEe2uGpdm97WagA" label="1" max="1" min="1"/>
       <type xmi:id="_8p0ytOvAEe2uGpdm97WagA" name="Program">
         <modelElement href="Reliability.uml#_tV2ocL1UEe2Ek7-6YsU1Aw"/>
       </type>
     </attributes>
-    <operations xmi:id="_-8HUlb1UEe2Ek7-6YsU1Aw" comments="_8rDhwOvAEe2uGpdm97WagA" targetConnectionVisual="_8rSLQOvAEe2uGpdm97WagA" name="ReliabilityVisualization">
+    <operations xmi:id="_-8HUlb1UEe2Ek7-6YsU1Aw" comments="_Avcu0OvCEe2iMrfOdrFYLQ" targetConnectionVisual="_Avnt8OvCEe2iMrfOdrFYLQ" name="ReliabilityVisualization">
       <modelElement href="Reliability.uml#_udSKkL1UEe2Ek7-6YsU1Aw"/>
       <keywords xmi:id="_-8HUlr1UEe2Ek7-6YsU1Aw" keyword="create"/>
       <visibility xmi:id="_-8HUl71UEe2Ek7-6YsU1Aw" label="~"/>
@@ -961,7 +958,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_8pZU4OvAEe2uGpdm97WagA" comments="_8pL5gOvAEe2uGpdm97WagA" targetConnectionVisual="_8pYt0OvAEe2uGpdm97WagA" name="createTitle">
+    <operations xmi:id="_8pZU4OvAEe2uGpdm97WagA" comments="_AxLNIOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_AxmD4OvCEe2iMrfOdrFYLQ" name="createTitle">
       <modelElement href="Reliability.uml#_8n4R8uvAEe2uGpdm97WagA"/>
       <visibility xmi:id="_8pZU4evAEe2uGpdm97WagA" label="#"/>
       <cardinality xmi:id="_8pZU4uvAEe2uGpdm97WagA" label="1" max="1" min="1"/>
@@ -973,16 +970,7 @@
       </outParameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_8pL5gOvAEe2uGpdm97WagA" sourceConnectionVisual="_8pYt0OvAEe2uGpdm97WagA" text="createTitle creates a title for the output file stating which graph is being analyzed.  &#xD;&#xA;    *&#xD;&#xA;    * @return returns the title for the graph's reliability that will be analyzed" item="_8pZU4OvAEe2uGpdm97WagA">
-    <modelElement href="Reliability.uml#_8oTIuuvAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_8p0ytevAEe2uGpdm97WagA" sourceConnectionVisual="_8qC1IOvAEe2uGpdm97WagA" text="ReliabilityVisualization creates the visualizations for&#xD;&#xA;the reliability analysis of the WARP program. &lt;p>&#xD;&#xA;&#xD;&#xA;CS2820 Spring 2023 Project: Implement this class to create&#xD;&#xA;the file visualization that is requested in Warp.&#xD;&#xA;&#xD;&#xA;@author sgoddard&#xD;&#xA; *" item="_-8HUgL1UEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#_8oTIuOvAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_8rDhwOvAEe2uGpdm97WagA" sourceConnectionVisual="_8rSLQOvAEe2uGpdm97WagA" text="ReliabilityVisualization will construct a reliability visualization of the warp program.&#xD;&#xA;    * &#xD;&#xA;    * @param warp is Warp that will be visualized" item="_-8HUlb1UEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#_8oTIuevAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_EamWcL1VEe2Ek7-6YsU1Aw" comments="_9b_2gOvAEe2uGpdm97WagA" targetConnectionVisual="_9b_2gevAEe2uGpdm97WagA" name="WarpInterface" associationsIn="_-8BN4L1UEe2Ek7-6YsU1Aw" generalizations="_yjbPYL3qEe2lE4tWeJL-jQ">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_EamWcL1VEe2Ek7-6YsU1Aw" comments="_A6Ji8OvCEe2iMrfOdrFYLQ" targetConnectionVisual="_A6LYIOvCEe2iMrfOdrFYLQ" name="WarpInterface" associationsIn="_-8BN4L1UEe2Ek7-6YsU1Aw" generalizations="_yjbPYL3qEe2lE4tWeJL-jQ">
     <modelElement href="Reliability.uml#_tYiJAL1UEe2Ek7-6YsU1Aw"/>
     <visualProperties xmi:id="_EankkL1VEe2Ek7-6YsU1Aw" position="1439.0,539.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_EaoLoL1VEe2Ek7-6YsU1Aw" label="+"/>
@@ -1080,10 +1068,7 @@
       </outParameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_9b_2gOvAEe2uGpdm97WagA" sourceConnectionVisual="_9b_2gevAEe2uGpdm97WagA" text="@author sgoddard&#xD;&#xA;@version 1.4" item="_EamWcL1VEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#_9b_PcOvAEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_-1K_AL1UEe2Ek7-6YsU1Aw" comments="_-CDJ4OvAEe2uGpdm97WagA" targetConnectionVisual="_-CDJ4evAEe2uGpdm97WagA" name="ReliabilityParameters" subclassedBy="_yjWW4L3qEe2lE4tWeJL-jQ _yjWW4b3qEe2lE4tWeJL-jQ">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_-1K_AL1UEe2Ek7-6YsU1Aw" comments="_ApDL4OvCEe2iMrfOdrFYLQ" targetConnectionVisual="_ApvIYOvCEe2iMrfOdrFYLQ" name="ReliabilityParameters" subclassedBy="_yjWW4L3qEe2lE4tWeJL-jQ _yjWW4b3qEe2lE4tWeJL-jQ">
     <modelElement href="Reliability.uml#_tWloQL1UEe2Ek7-6YsU1Aw"/>
     <visualProperties xmi:id="_-1MNIL1UEe2Ek7-6YsU1Aw" position="624.0,997.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_-1MNIb1UEe2Ek7-6YsU1Aw" label="~"/>
@@ -1103,9 +1088,6 @@
         <modelElement href="Reliability.uml#_uh8BEL1UEe2Ek7-6YsU1Aw"/>
       </type>
     </attributes>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_-CDJ4OvAEe2uGpdm97WagA" sourceConnectionVisual="_-CDJ4evAEe2uGpdm97WagA" text="@author sgoddard&#xD;&#xA; *" item="_-1K_AL1UEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#_-CCi0OvAEe2uGpdm97WagA"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_-3jkoL1UEe2Ek7-6YsU1Aw" name="ReliabilityTable" associationsIn="_ztw2oOvAEe2uGpdm97WagA">
     <modelElement href="Reliability.uml#_tWxOcL1UEe2Ek7-6YsU1Aw"/>
@@ -1228,7 +1210,7 @@
       </parameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_LOzOIL1VEe2Ek7-6YsU1Aw" comments="__uKGYOvAEe2uGpdm97WagA" targetConnectionVisual="__uKGYevAEe2uGpdm97WagA" name="VisualizationObject" abstractClass="true" associationsOut="_LOwx4L1VEe2Ek7-6YsU1Aw" subclassedBy="_LN-uwL1VEe2Ek7-6YsU1Aw">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_LOzOIL1VEe2Ek7-6YsU1Aw" comments="_A0j4UOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_A0vegOvCEe2iMrfOdrFYLQ" name="VisualizationObject" abstractClass="true" associationsOut="_LOwx4L1VEe2Ek7-6YsU1Aw" subclassedBy="_LN-uwL1VEe2Ek7-6YsU1Aw">
     <modelElement href="Reliability.uml#_tYJugL1UEe2Ek7-6YsU1Aw"/>
     <visualProperties xmi:id="_LO0cQL1VEe2Ek7-6YsU1Aw" position="549.0,31.0" size="-1.0,-1.0"/>
     <visibility xmi:id="_LO0cQb1VEe2Ek7-6YsU1Aw" label="~"/>
@@ -1252,6 +1234,9 @@
       <stereotypes xmi:id="_vxdZIOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_vxeAMOvAEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_vxhDgevAEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8cym0OvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8c0cAOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_8ddVMOvBEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_LO0cRL1VEe2Ek7-6YsU1Aw" label="-"/>
       <cardinality xmi:id="_LO0cRb1VEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
       <type xmi:id="_LO0cRr1VEe2Ek7-6YsU1Aw" name="FileManager">
@@ -1327,7 +1312,7 @@
         </type>
       </parameters>
     </operations>
-    <operations xmi:id="_LO1DWL1VEe2Ek7-6YsU1Aw" comments="__v2vgOvAEe2uGpdm97WagA" targetConnectionVisual="__v2vgevAEe2uGpdm97WagA" name="getFileManager">
+    <operations xmi:id="_LO1DWL1VEe2Ek7-6YsU1Aw" comments="_A3i64OvCEe2iMrfOdrFYLQ" targetConnectionVisual="_A39KkOvCEe2iMrfOdrFYLQ" name="getFileManager">
       <modelElement href="Reliability.uml#_tYMx0L1UEe2Ek7-6YsU1Aw"/>
       <visibility xmi:id="_LO1DWb1VEe2Ek7-6YsU1Aw" label="+"/>
       <cardinality xmi:id="_LO1DWr1VEe2Ek7-6YsU1Aw" label="1" max="1" min="1"/>
@@ -1611,10 +1596,55 @@
       </parameters>
     </operations>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="__uKGYOvAEe2uGpdm97WagA" sourceConnectionVisual="__uKGYevAEe2uGpdm97WagA" text="@author sgoddard&#xD;&#xA;@version 1.5&#xD;&#xA; *" item="_LOzOIL1VEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#__uI4QOvAEe2uGpdm97WagA"/>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ANpCQOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AOTwoOvCEe2iMrfOdrFYLQ" text="ReliabilityAnalysis analyzes the end-to-end reliability of messages transmitted in flows for the&#xA;WARP system.&#xA;&lt;p>&#xA;&#xA;Let M represent the Minimum Packet Reception Rate on an edge in a flow. The end-to-end&#xA;reliability for each flow, flow:src->sink, is computed iteratively as follows:&lt;br>&#xA;(1)The flow:src node has an initial probability of 1.0 when it is released. All other initial&#xA;probabilities are 0.0. (That is, the reset of the nodes in the flow have an initial probability&#xA;value of 0.0.) &lt;br>&#xA;(2) each src->sink pair probability is computed as NewSinkNodeState = (1-M)*PrevSnkNodeState +&#xA;M*PrevSrcNodeState &lt;br>&#xA;This value represents the probability that the message as been received by the node SinkNode.&#xA;Thus, the NewSinkNodeState probability will increase each time a push or pull is executed with&#xA;SinkNode as a listener.&#xA;&lt;p>&#xA;&#xA;The last probability state value for any node is the reliability of the message reaching that&#xA;node, and the end-to-end reliability of a flow is the value of the last Flow:SinkNode&#xA;probability.&#xA;&lt;p>&#xA;&#xA;CS2820 Spring 2023 Project: Implement this class to compute the probabilities the comprise the&#xA;ReliablityMatrix, which is the core of the file visualization that is requested in Warp.&#xA;&lt;p>&#xA;&#xA;To do this, you will need to retrieve the program source, parse the instructions for each node,&#xA;in each time slot, to extract the src and snk nodes in the instruction and then apply the message&#xA;success probability equation defined above.&#xA;&lt;p>&#xA;&#xA;I recommend using the getInstructionParameters method of the WarpDSL class to extract the src and&#xA;snk nodes from the instruction string in a program schedule time slot.&#xA;&#xA;@author sgoddard&#xA;@version 1.5&#xA; *" item="_-xs0QL1UEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALJu8OvCEe2iMrfOdrFYLQ"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="__v2vgOvAEe2uGpdm97WagA" sourceConnectionVisual="__v2vgevAEe2uGpdm97WagA" text="@return the fm" item="_LO1DWL1VEe2Ek7-6YsU1Aw">
-    <modelElement href="Reliability.uml#__uI4QevAEe2uGpdm97WagA"/>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AQilQOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AQjzYOvCEe2iMrfOdrFYLQ" text="verifyReliabilities checks to see if the end to end reliability is met&#xA;    * by the flows and outputs an error message if end to end reliability is not met&#xA;    * &#xA;    * @return a boolean of true or false if end to end reliability is met" item="_-xuCYb1UEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALOAYuvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ASnB0OvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_ASoP8OvCEe2iMrfOdrFYLQ" text="ReliabilityAnalysis is a constructor to set up the Reliability analysis from a program. &#xA;&#x9; * &#xA;&#x9; * @param program the program that will be used during analysis" item="_-xupcb1UEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALNZUOvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AUt6oOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AVIxYOvCEe2iMrfOdrFYLQ" text="getReliabilities returns the table containing reliability of the flows&#xA;    * and calls buildReliabilities() if the table is not built yet&#xA;    * &#xA;    * @return reliabilityTable containing the reliability of the nodes in each flow" item="_DTiLQL1WEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALOAY-vCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AYmVEOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AYqmgOvCEe2iMrfOdrFYLQ" text="numTxPerLinkAndTotalTxCost creates an ArrayList with numbers that correspond to the nodes in the flow&#xA;    * that hold the cost of transmissions then computes the max transmissions and adds it to the array list&#xA;    * &#xA;    * @param flow takes in a flow&#xA;    * &#xA;    * @return ArrayList that has number of transmission attempts per link and total transmission cost" item="_kd_JQL3rEe2lE4tWeJL-jQ">
+    <modelElement href="Reliability.uml#_ALOAZ-vCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AbppEOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AcTJUOvCEe2iMrfOdrFYLQ" text="ReliabilityAnalysis is a constructor to set up the Reliability analysis from the minimum&#xA;&#x9; * packet reception rate. &#xA;&#x9; * &#xA;&#x9; * @param e2e minimum link quality in the system thats being analyzed &#xA;&#x9; * @param minPacketReceptionRate the minimum packet reception rate thats being analyzed" item="_0zTx4r3rEe2lE4tWeJL-jQ">
+    <modelElement href="Reliability.uml#_ALOAYOvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AejzIOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AeycoOvCEe2iMrfOdrFYLQ" text="*ReliabilityAnalysis is a constructor to set up the Reliability analysis based on the number of &#xA;&#x9; *faults tolerated. &#xA;&#x9; * &#xA;&#x9; * @param numFaults the number of faults tolerated in the system." item="_8fBLwMjgEe2eOaAItNFrdA">
+    <modelElement href="Reliability.uml#_ALOAYevCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AhoVQOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_Aht00OvCEe2iMrfOdrFYLQ" text="buildReliabilities creates the table containing the reliability of the flows." item="_zsQawOvAEe2uGpdm97WagA">
+    <modelElement href="Reliability.uml#_ALOAZOvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AkGacOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AkO9UOvCEe2iMrfOdrFYLQ" text="carryForwardReliabilities moves up all reliabilities of the nodes from the last timeSlot&#xA;    * if they were not affected by the schedule or it isn't the start of a new period for the flow&#xA;    * of the node. Also doesn't change anything if it is the first timeSlot&#xA;    * &#xA;    * @param timeSlot the timeSlot that reliabilities are requested to be carried forward to" item="_zsbZ4OvAEe2uGpdm97WagA">
+    <modelElement href="Reliability.uml#_ALOAZevCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AmzwMOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_And3gOvCEe2iMrfOdrFYLQ" text="setInititalStateForReleasedFlows iterates through the entries in the nodeMap and for any&#xA;    * ReliabilityNode entry that is a srcNode set their index in the reliabilityTable to 1.0&#xA;    * for all timeSlots reflecting that starting probability of the flow which is 1.0.&#xA;    * called in buildReliabilities as a helper function" item="_zswKAevAEe2uGpdm97WagA">
+    <modelElement href="Reliability.uml#_ALOAZuvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_ApDL4OvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_ApvIYOvCEe2iMrfOdrFYLQ" text="@author sgoddard&#xA; *" item="_-1K_AL1UEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALPOg-vCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AsVwcOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AsaB4OvCEe2iMrfOdrFYLQ" text="ReliabilityVisualization creates the visualizations for&#xA;the reliability analysis of the WARP program. &lt;p>&#xA;&#xA;CS2820 Spring 2023 Project: Implement this class to create&#xA;the file visualization that is requested in Warp.&#xA;&#xA;@author sgoddard&#xA; *" item="_-8HUgL1UEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALPOhOvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_Avcu0OvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_Avnt8OvCEe2iMrfOdrFYLQ" text="ReliabilityVisualization will construct a reliability visualization of the warp program.&#xA;    * &#xA;    * @param warp is Warp that will be visualized" item="_-8HUlb1UEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALPOhevCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_AxLNIOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_AxmD4OvCEe2iMrfOdrFYLQ" text="createTitle creates a title for the output file stating which graph is being analyzed.  &#xA;    *&#xA;    * @return returns the title for the graph's reliability that will be analyzed" item="_8pZU4OvAEe2uGpdm97WagA">
+    <modelElement href="Reliability.uml#_ALP1kOvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_A0j4UOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_A0vegOvCEe2iMrfOdrFYLQ" text="@author sgoddard&#xA;@version 1.5&#xA; *" item="_LOzOIL1VEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALP1kevCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_A3i64OvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_A39KkOvCEe2iMrfOdrFYLQ" text="@return the fm" item="_LO1DWL1VEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALQcoOvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_A6Ji8OvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_A6LYIOvCEe2iMrfOdrFYLQ" text="@author sgoddard&#xA;@version 1.4" item="_EamWcL1VEe2Ek7-6YsU1Aw">
+    <modelElement href="Reliability.uml#_ALQcoevCEe2iMrfOdrFYLQ"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

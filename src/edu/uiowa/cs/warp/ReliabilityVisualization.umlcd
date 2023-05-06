@@ -304,13 +304,6 @@
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7J9A-vBEe2uGpdm97WagA" sourceItem="_H7J9AuvBEe2uGpdm97WagA"/>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7MZQevBEe2uGpdm97WagA" sourceItem="_H7MZQOvBEe2uGpdm97WagA"/>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7NnYevBEe2uGpdm97WagA" sourceItem="_H7NnYOvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7O1gevBEe2uGpdm97WagA" sourceItem="_H7O1gOvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7O1g-vBEe2uGpdm97WagA" sourceItem="_H7O1guvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7PckevBEe2uGpdm97WagA" sourceItem="_H7PckOvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7Pck-vBEe2uGpdm97WagA" sourceItem="_H7PckuvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7PclevBEe2uGpdm97WagA" sourceItem="_H7PclOvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7Pcl-vBEe2uGpdm97WagA" sourceItem="_H7PcluvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7PcmevBEe2uGpdm97WagA" sourceItem="_H7PcmOvBEe2uGpdm97WagA"/>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7QDoevBEe2uGpdm97WagA" sourceItem="_H7QDoOvBEe2uGpdm97WagA"/>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7QDo-vBEe2uGpdm97WagA" sourceItem="_H7QDouvBEe2uGpdm97WagA"/>
   <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_H7QqsevBEe2uGpdm97WagA" sourceItem="_H7QqsOvBEe2uGpdm97WagA"/>
@@ -334,9 +327,9 @@
       <cardinality xmi:id="_H7WxUuvBEe2uGpdm97WagA" label="1" max="1" min="1"/>
     </targetRole>
   </edges>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_JPMXwOvBEe2uGpdm97WagA" targetItem="_m8mV8OC3Ee2FFq766ivARA" sourceItem="_JPLwsOvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_JPkLMOvBEe2uGpdm97WagA" targetItem="_m8m9N-C3Ee2FFq766ivARA" sourceItem="_JPjkIOvBEe2uGpdm97WagA"/>
-  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_JP47UOvBEe2uGpdm97WagA" targetItem="_m8m9POC3Ee2FFq766ivARA" sourceItem="_JP4UQOvBEe2uGpdm97WagA"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_IbIBEOvCEe2iMrfOdrFYLQ" targetItem="_m8mV8OC3Ee2FFq766ivARA" sourceItem="_IbGL4OvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_IbLrcevCEe2iMrfOdrFYLQ" targetItem="_m8m9N-C3Ee2FFq766ivARA" sourceItem="_IbLrcOvCEe2iMrfOdrFYLQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_IbMSgevCEe2iMrfOdrFYLQ" targetItem="_m8m9POC3Ee2FFq766ivARA" sourceItem="_IbMSgOvCEe2iMrfOdrFYLQ"/>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7J9AuvBEe2uGpdm97WagA" sourceConnectionVisual="_H7J9A-vBEe2uGpdm97WagA" text="@return the fm">
     <modelElement href="ReliabilityVisualization.uml#_tWrONuu_Ee2uGpdm97WagA"/>
   </nodes>
@@ -345,27 +338,6 @@
   </nodes>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7NnYOvBEe2uGpdm97WagA" sourceConnectionVisual="_H7NnYevBEe2uGpdm97WagA" text="getNodeMapIndex returns a HashMap of ordered node names as Strings and their respective&#xD;&#xA;   * indices as Integers.&#xD;&#xA;   * &#xD;&#xA;   * @return returns a HashMap of Strings and Integers">
     <modelElement href="ReliabilityVisualization.uml#_tWuRhuu_Ee2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7O1gOvBEe2uGpdm97WagA" sourceConnectionVisual="_H7O1gevBEe2uGpdm97WagA" text="*ReliabilityAnalysis is a constructor to set up the Reliability analysis based on the number of &#xD;&#xA;&#x9; *faults tolerated. &#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param numFaults the number of faults tolerated in the system.">
-    <modelElement href="ReliabilityVisualization.uml#_tWtqduu_Ee2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7O1guvBEe2uGpdm97WagA" sourceConnectionVisual="_H7O1g-vBEe2uGpdm97WagA" text="verifyReliabilities checks to see if the end to end reliability is met&#xD;&#xA;    * by the flows and outputs an error message if end to end reliability is not met&#xD;&#xA;    * &#xD;&#xA;    * @return a boolean of true or false if end to end reliability is met">
-    <modelElement href="ReliabilityVisualization.uml#_tWtqd-u_Ee2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7PckOvBEe2uGpdm97WagA" sourceConnectionVisual="_H7PckevBEe2uGpdm97WagA" text="getReliabilities returns the table containing reliability of the flows&#xD;&#xA;    * and calls buildReliabilities() if the table is not built yet&#xD;&#xA;    * &#xD;&#xA;    * @return reliabilityTable containing the reliability of the nodes in each flow">
-    <modelElement href="ReliabilityVisualization.uml#_tWtqeOu_Ee2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7PckuvBEe2uGpdm97WagA" sourceConnectionVisual="_H7Pck-vBEe2uGpdm97WagA" text="buildReliabilities creates the table containing the reliability of the flows.">
-    <modelElement href="ReliabilityVisualization.uml#_tWtqeeu_Ee2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7PclOvBEe2uGpdm97WagA" sourceConnectionVisual="_H7PclevBEe2uGpdm97WagA" text="ReliabilityAnalysis is a constructor to set up the Reliability analysis from a program. &#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param program the program that will be used during analysis">
-    <modelElement href="ReliabilityVisualization.uml#_tWtqdOu_Ee2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7PcluvBEe2uGpdm97WagA" sourceConnectionVisual="_H7Pcl-vBEe2uGpdm97WagA" text="numTxPerLinkAndTotalTxCost creates an ArrayList with numbers that correspond to the nodes in the flow&#xD;&#xA;    * that hold the cost of transmissions then computes the max transmissions and adds it to the array list&#xD;&#xA;    * &#xD;&#xA;    * @param flow takes in a flow&#xD;&#xA;    * &#xD;&#xA;    * @return ArrayList that has number of transmission attempts per link and total transmission cost">
-    <modelElement href="ReliabilityVisualization.uml#_tWtqfOu_Ee2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7PcmOvBEe2uGpdm97WagA" sourceConnectionVisual="_H7PcmevBEe2uGpdm97WagA" text="ReliabilityAnalysis is a constructor to set up the Reliability analysis from the minimum&#xD;&#xA;&#x9; * packet reception rate. &#xD;&#xA;&#x9; * &#xD;&#xA;&#x9; * @param e2e minimum link quality in the system thats being analyzed &#xD;&#xA;&#x9; * @param minPacketReceptionRate the minimum packet reception rate thats being analyzed">
-    <modelElement href="ReliabilityVisualization.uml#_tWtqdeu_Ee2uGpdm97WagA"/>
   </nodes>
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7QDoOvBEe2uGpdm97WagA" sourceConnectionVisual="_H7QDoevBEe2uGpdm97WagA" text="@author sgoddard&#xD;&#xA;@version 1.5&#xD;&#xA; *">
     <modelElement href="ReliabilityVisualization.uml#_tWrONeu_Ee2uGpdm97WagA"/>
@@ -376,16 +348,7 @@
   <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_H7QqsOvBEe2uGpdm97WagA" sourceConnectionVisual="_H7QqsevBEe2uGpdm97WagA" text="@author sgoddard">
     <modelElement href="ReliabilityVisualization.uml#_tWuRhOu_Ee2uGpdm97WagA"/>
   </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_JPLwsOvBEe2uGpdm97WagA" sourceConnectionVisual="_JPMXwOvBEe2uGpdm97WagA" text="ReliabilityVisualization creates the visualizations for&#xD;&#xA;the reliability analysis of the WARP program. &lt;p>&#xD;&#xA;&#xD;&#xA;CS2820 Spring 2023 Project: Implement this class to create&#xD;&#xA;the file visualization that is requested in Warp.&#xD;&#xA;&#xD;&#xA;@author sgoddard&#xD;&#xA; *" item="_m8mV8OC3Ee2FFq766ivARA">
-    <modelElement href="ReliabilityVisualization.uml#_JO75EOvBEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_JPjkIOvBEe2uGpdm97WagA" sourceConnectionVisual="_JPkLMOvBEe2uGpdm97WagA" text="createTitle creates a title for the output file stating which graph is being analyzed.  &#xD;&#xA;    *&#xD;&#xA;    * @return returns the title for the graph's reliability that will be analyzed" item="_m8m9N-C3Ee2FFq766ivARA">
-    <modelElement href="ReliabilityVisualization.uml#_JO75EuvBEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_JP4UQOvBEe2uGpdm97WagA" sourceConnectionVisual="_JP47UOvBEe2uGpdm97WagA" text="ReliabilityVisualization will construct a reliability visualization of the warp program.&#xD;&#xA;    * &#xD;&#xA;    * @param warp is Warp that will be visualized" item="_m8m9POC3Ee2FFq766ivARA">
-    <modelElement href="ReliabilityVisualization.uml#_JO75EevBEe2uGpdm97WagA"/>
-  </nodes>
-  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_m8mV8OC3Ee2FFq766ivARA" comments="_JPLwsOvBEe2uGpdm97WagA" targetConnectionVisual="_m3tO4OC3Ee2FFq766ivARA _JPMXwOvBEe2uGpdm97WagA" name="ReliabilityVisualization" associationsOut="_m8eaIOC3Ee2FFq766ivARA _m8irkOC3Ee2FFq766ivARA _m8kgwOC3Ee2FFq766ivARA" generalizations="_pxYxwOC3Ee2FFq766ivARA">
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_m8mV8OC3Ee2FFq766ivARA" comments="_IbGL4OvCEe2iMrfOdrFYLQ" targetConnectionVisual="_m3tO4OC3Ee2FFq766ivARA _IbIBEOvCEe2iMrfOdrFYLQ" name="ReliabilityVisualization" associationsOut="_m8eaIOC3Ee2FFq766ivARA _m8irkOC3Ee2FFq766ivARA _m8kgwOC3Ee2FFq766ivARA" generalizations="_pxYxwOC3Ee2FFq766ivARA">
     <modelElement href="ReliabilityVisualization.uml#_Zon-cOC3Ee2FFq766ivARA"/>
     <visualProperties xmi:id="_m8m9AOC3Ee2FFq766ivARA" position="10.0,-20.0" size="541.0,437.0"/>
     <visibility xmi:id="_m8m9AeC3Ee2FFq766ivARA" label="+"/>
@@ -410,6 +373,9 @@
       <stereotypes xmi:id="_H7WxVevBEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_H7XYYOvBEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_H7etIuvBEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_HpdTkOvCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_HphlAOvCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_HprWAOvCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_m8m9DOC3Ee2FFq766ivARA" label="-"/>
       <cardinality xmi:id="_m8m9DeC3Ee2FFq766ivARA" label="1" max="1" min="1"/>
       <type xmi:id="_m8m9DuC3Ee2FFq766ivARA" name="WarpInterface">
@@ -421,6 +387,9 @@
       <stereotypes xmi:id="_H7XYYevBEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_H7X_cOvBEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_H7fUMOvBEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_HpiMEOvCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_HpizIOvCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_HprWAevCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_m8m9EeC3Ee2FFq766ivARA" label="-"/>
       <cardinality xmi:id="_m8m9EuC3Ee2FFq766ivARA" label="1" max="1" min="1"/>
       <type xmi:id="_m8m9E-C3Ee2FFq766ivARA" name="ReliabilityAnalysis">
@@ -432,6 +401,9 @@
       <stereotypes xmi:id="_H7X_cevBEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_H7X_cuvBEe2uGpdm97WagA" name="LegacyStyledElement"/>
       <stereotypes xmi:id="_H7fUMevBEe2uGpdm97WagA" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_HpjaMOvCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_HpjaMevCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
+      <stereotypes xmi:id="_Hpr9EOvCEe2iMrfOdrFYLQ" name="LegacyStyledElement"/>
       <visibility xmi:id="_m8m9FuC3Ee2FFq766ivARA" label="-"/>
       <cardinality xmi:id="_m8m9F-C3Ee2FFq766ivARA" label="1" max="1" min="1"/>
       <type xmi:id="_m8m9GOC3Ee2FFq766ivARA" name="Program">
@@ -512,7 +484,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_m8m9N-C3Ee2FFq766ivARA" comments="_JPjkIOvBEe2uGpdm97WagA" targetConnectionVisual="_m7sXAOC3Ee2FFq766ivARA _JPkLMOvBEe2uGpdm97WagA" name="createTitle">
+    <operations xmi:id="_m8m9N-C3Ee2FFq766ivARA" comments="_IbLrcOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_m7sXAOC3Ee2FFq766ivARA _IbLrcevCEe2iMrfOdrFYLQ" name="createTitle">
       <modelElement href="ReliabilityVisualization.uml#_Zo_x4OC3Ee2FFq766ivARA"/>
       <visibility xmi:id="_m8m9OOC3Ee2FFq766ivARA" label="#"/>
       <cardinality xmi:id="_m8m9OeC3Ee2FFq766ivARA" label="1" max="1" min="1"/>
@@ -523,7 +495,7 @@
         </type>
       </outParameters>
     </operations>
-    <operations xmi:id="_m8m9POC3Ee2FFq766ivARA" comments="_JP4UQOvBEe2uGpdm97WagA" targetConnectionVisual="_m7zEsOC3Ee2FFq766ivARA _JP47UOvBEe2uGpdm97WagA" name="ReliabilityVisualization">
+    <operations xmi:id="_m8m9POC3Ee2FFq766ivARA" comments="_IbMSgOvCEe2iMrfOdrFYLQ" targetConnectionVisual="_m7zEsOC3Ee2FFq766ivARA _IbMSgevCEe2iMrfOdrFYLQ" name="ReliabilityVisualization">
       <modelElement href="ReliabilityVisualization.uml#_awEHoOC3Ee2FFq766ivARA"/>
       <keywords xmi:id="_m8m9PeC3Ee2FFq766ivARA" keyword="create"/>
       <visibility xmi:id="_m8m9PuC3Ee2FFq766ivARA" label="~"/>
@@ -542,5 +514,14 @@
         </type>
       </parameters>
     </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_IbGL4OvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_IbIBEOvCEe2iMrfOdrFYLQ" text="ReliabilityVisualization creates the visualizations for&#xA;the reliability analysis of the WARP program. &lt;p>&#xA;&#xA;CS2820 Spring 2023 Project: Implement this class to create&#xA;the file visualization that is requested in Warp.&#xA;&#xA;@author sgoddard&#xA; *" item="_m8mV8OC3Ee2FFq766ivARA">
+    <modelElement href="ReliabilityVisualization.uml#_IaoR0OvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_IbLrcOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_IbLrcevCEe2iMrfOdrFYLQ" text="createTitle creates a title for the output file stating which graph is being analyzed.  &#xA;    *&#xA;    * @return returns the title for the graph's reliability that will be analyzed" item="_m8m9N-C3Ee2FFq766ivARA">
+    <modelElement href="ReliabilityVisualization.uml#_Iao44OvCEe2iMrfOdrFYLQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_IbMSgOvCEe2iMrfOdrFYLQ" sourceConnectionVisual="_IbMSgevCEe2iMrfOdrFYLQ" text="ReliabilityVisualization will construct a reliability visualization of the warp program.&#xA;    * &#xA;    * @param warp is Warp that will be visualized" item="_m8m9POC3Ee2FFq766ivARA">
+    <modelElement href="ReliabilityVisualization.uml#_IaoR0evCEe2iMrfOdrFYLQ"/>
   </nodes>
 </com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
