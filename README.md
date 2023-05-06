@@ -251,7 +251,7 @@ _____
 ___
 __Javadoc Comments:__
 <br>
-Status - Will be updated as progress is made.
+Status - Completed
 <br>
 The Javadocs for ReliabilityVisualizationTest JUnit tests were completed by Annalisa and Jake
 <br>
@@ -262,7 +262,9 @@ The Javadocs for the ReliabilityAnalysis was completed by Elizabeth and Justin
 <br>
 __UML Diagram:__
 <br>
-Status - Will be updated at the very end when all classes and methods are complete
+Status - Completed by Elizabeth and Annalisa
+<br>
+Added Reliability.uml, ReliabilityAnalysis.uml, and ReliabilityVisualization.uml
 <br>
 <br>
 __UML Sequence Diagram:__
@@ -274,5 +276,5 @@ Find in folder SequenceDiagrams (FinalSequenceDiagramV2.png)
 <br>
 __README:__
 <br>
-Status - Continuously updated; being updated by Elizabeth and Justin
+Status - Continuously updated; was updated by Elizabeth and Justin
 <br>
