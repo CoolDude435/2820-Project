@@ -186,7 +186,7 @@ Testing the methods in ReliabilityVisualization and ReliabilityAnalysis using JU
 Completed ReliabilityVisualization tests in Sprint 2, finalized tests and JavaDoc in Sprint 3
 Working on ReliabilityAnalysis tests and JavaDoc in Sprint 3
 <br> 
-Status: Being worked on by Annalisa and Jake
+Status: Completed by Annalisa and Jake
 <br>
 ___
 *ReliabilityVisualizationTest*: Status: Completed by Annalisa and Jake
@@ -215,10 +215,10 @@ ___
 *createVisualizationDataTest3(): Status: Completed by Annalisa
 <br>
 _____
-*ReliabilityAnalysisTest*: Status: Being worked on by Annalisa and Jake
+*ReliabilityAnalysisTest*: Status: Completed by Annalisa and Jake
 <br>
 <br>
-*buildReliabilitiesTest(): Status: Incomplete (to be completed by Jake)
+*buildReliabilitiesTest(): Status: Completed by Jake
 <br>
 *setReliabilityHeaderRowTest1(): Status: Completed by Annalisa
 <br>
@@ -255,7 +255,7 @@ Status - Will be updated as progress is made.
 <br>
 The Javadocs for ReliabilityVisualizationTest JUnit tests were completed by Annalisa and Jake
 <br>
-The Javadocs for ReliabilityAnalysisTest JUnit tests will be completed by Annalisa
+The Javadocs for ReliabilityAnalysisTest JUnit tests were completed by Annalisa and Jake
 <br>
 The Javadocs for the ReliabilityAnalysis was completed by Elizabeth and Justin
 <br>
@@ -269,7 +269,7 @@ __UML Sequence Diagram:__
 <br>
 Status - Completed by Annalisa
 <br>
-Find in folder SequenceDiagrams
+Find in folder SequenceDiagrams (FinalSequenceDiagramV2.png)
 <br>
 <br>
 __README:__
